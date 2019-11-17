@@ -1,0 +1,807 @@
+Microsoft Windows [Version 10.0.18362.476]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\charl>pyhton
+'pyhton' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\charl>python
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from selenium import webdriver as w
+>>> d = w.Firefox()
+>>> d.get("https://app.bto.org/webs-reporting/?tab=numbers&locid=LOC648397")
+>>>
+>>>
+>>> table = driver.find_element_by_xpath('//div[@class="maintable"]/*')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'driver' is not defined
+>>> table = d.find_element_by_xpath('//div[@class="maintable"]/*')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //div[@class="maintable"]/*
+
+>>> table = d.find_element_by_xpath('//table[@class="maintable"]/*')
+>>> table
+<selenium.webdriver.firefox.webelement.FirefoxWebElement (session="273235ce-512e-47fe-a38f-7ca7fa68bed0", element="eedc8f1f-97f1-41f5-9230-5f38893e620a")>
+>>> str(table)
+'<selenium.webdriver.firefox.webelement.FirefoxWebElement (session="273235ce-512e-47fe-a38f-7ca7fa68bed0", element="eedc8f1f-97f1-41f5-9230-5f38893e620a")>'
+>>> from pandas.io.html import read_html
+>>> from pandas.io.html import read_html as r
+>>> tablehtml = table.get_attribute('innerhtml')
+>>> r(tablehtml)[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pandas\io\html.py", line 987, in read_html
+    displayed_only=displayed_only)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pandas\io\html.py", line 793, in _parse
+    parser = _parser_dispatch(flav)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pandas\io\html.py", line 740, in _parser_dispatch
+    raise ImportError("html5lib not found, please install it")
+ImportError: html5lib not found, please install it
+>>> import pip
+>>> pip.install("html5lib")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'pip' has no attribute 'install'
+>>> help(pip)
+Help on package pip:
+
+NAME
+    pip
+
+PACKAGE CONTENTS
+    __main__
+    _internal (package)
+    _vendor (package)
+
+VERSION
+    19.3.1
+
+FILE
+    c:\users\charl\appdata\local\programs\python\python37-32\lib\site-packages\pip\__init__.py
+
+
+>>> d.close()
+>>> quit()
+
+C:\Users\charl>pip install html5lib
+Collecting html5lib
+  Downloading https://files.pythonhosted.org/packages/a5/62/bbd2be0e7943ec8504b517e62bab011b4946e1258842bc159e5dfde15b96/html5lib-1.0.1-py2.py3-none-any.whl (117kB)
+     |████████████████████████████████| 122kB 204kB/s
+Requirement already satisfied: six>=1.9 in c:\users\charl\appdata\local\programs\python\python37-32\lib\site-packages (from html5lib) (1.11.0)
+Collecting webencodings
+  Downloading https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl
+Installing collected packages: webencodings, html5lib
+Successfully installed html5lib-1.0.1 webencodings-0.5.1
+
+C:\Users\charl>python
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from selenium import webdriver as w
+>>> d = w.Firefox()
+>>> d.get("https://app.bto.org/webs-reporting/?tab=numbers&locid=LOC648397")
+>>> t = d.find_element_by_xpath('//table[@class="maintable"]/*')
+>>> from pandas.io.html import read_html as r
+>>> thtml = t.get_attribute("innerhtml")
+>>> r(thtml)[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pandas\io\html.py", line 987, in read_html
+    displayed_only=displayed_only)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pandas\io\html.py", line 815, in _parse
+    raise_with_traceback(retained)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\pandas\compat\__init__.py", line 404, in raise_with_traceback
+    raise exc.with_traceback(traceback)
+TypeError: Cannot read object of type 'NoneType'
+>>> t
+<selenium.webdriver.firefox.webelement.FirefoxWebElement (session="ab99d277-533b-4d42-8981-824d9aa8758e", element="d0984fa8-9363-4827-80fd-b0e9f2d5cd5a")>
+>>> help(t)
+Help on FirefoxWebElement in module selenium.webdriver.firefox.webelement object:
+
+class FirefoxWebElement(selenium.webdriver.remote.webelement.WebElement)
+ |  FirefoxWebElement(parent, id_, w3c=False)
+ |
+ |  Represents a DOM element.
+ |
+ |  Generally, all interesting operations that interact with a document will be
+ |  performed through this interface.
+ |
+ |  All method calls will do a freshness check to ensure that the element
+ |  reference is still valid.  This essentially determines whether or not the
+ |  element is still attached to the DOM.  If this test fails, then an
+ |  ``StaleElementReferenceException`` is thrown, and all future calls to this
+ |  instance will fail.
+ |
+ |  Method resolution order:
+ |      FirefoxWebElement
+ |      selenium.webdriver.remote.webelement.WebElement
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  find_anonymous_element_by_attribute(self, name, value)
+ |      Retrieve an anonymous descendant with a specified attribute
+ |      value.  Typically used with an (arbitrary) anonid attribute to
+ |      retrieve a specific anonymous child in an XBL binding.
+ |
+ |      See the  `anonymous content documentation
+ |      <https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XBL/XBL_1.0_Reference/Anonymous_Content>`_
+ |      on MDN for more information.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  anonymous_children
+ |      Retrieve the anonymous children of this element in an XBL
+ |      context.  This is only available in chrome context.
+^CTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\_sitebuiltins.py", line 103, in __call__
+    return pydoc.help(*args, **kwds)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1895, in __call__
+    self.help(request)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1954, in help
+    else: doc(request, 'Help on %s:', output=self._output)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1674, in doc
+    pager(render_doc(thing, title, forceload))
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1451, in pager
+    pager(text)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1472, in <lambda>
+    return lambda text: tempfilepager(plain(text), 'more <')
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1521, in tempfilepager
+    os.system(cmd + ' "' + filename + '"')
+KeyboardInterrupt
+>>> help(t)
+Help on FirefoxWebElement in module selenium.webdriver.firefox.webelement object:
+
+class FirefoxWebElement(selenium.webdriver.remote.webelement.WebElement)
+ |  FirefoxWebElement(parent, id_, w3c=False)
+ |
+ |  Represents a DOM element.
+ |
+ |  Generally, all interesting operations that interact with a document will be
+ |  performed through this interface.
+ |
+ |  All method calls will do a freshness check to ensure that the element
+ |  reference is still valid.  This essentially determines whether or not the
+ |  element is still attached to the DOM.  If this test fails, then an
+ |  ``StaleElementReferenceException`` is thrown, and all future calls to this
+ |  instance will fail.
+ |
+ |  Method resolution order:
+ |      FirefoxWebElement
+ |      selenium.webdriver.remote.webelement.WebElement
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  find_anonymous_element_by_attribute(self, name, value)
+ |      Retrieve an anonymous descendant with a specified attribute
+ |      value.  Typically used with an (arbitrary) anonid attribute to
+ |      retrieve a specific anonymous child in an XBL binding.
+ |
+ |      See the  `anonymous content documentation
+ |      <https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XBL/XBL_1.0_Reference/Anonymous_Content>`_
+ |      on MDN for more information.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  anonymous_children
+ |      Retrieve the anonymous children of this element in an XBL
+ |      context.  This is only available in chrome context.
+ |
+ |      See the  `anonymous content documentation
+ |      <https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XBL/XBL_1.0_Reference/Anonymous_Content>`_
+ |      on MDN for more information.
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from selenium.webdriver.remote.webelement.WebElement:
+ |
+ |  __eq__(self, element)
+ |      Return self==value.
+ |
+ |  __hash__(self)
+ |      Return hash(self).
+ |
+ |  __init__(self, parent, id_, w3c=False)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  __ne__(self, element)
+ |      Return self!=value.
+ |
+ |  __repr__(self)
+ |      Return repr(self).
+ |
+ |  clear(self)
+ |      Clears the text if it's a text entry element.
+ |
+ |  click(self)
+ |      Clicks the element.
+ |
+ |  find_element(self, by='id', value=None)
+ |      Find an element given a By strategy and locator. Prefer the find_element_by_* methods when
+ |      possible.
+ |
+ |      :Usage:
+ |          element = element.find_element(By.ID, 'foo')
+ |
+ |      :rtype: WebElement
+ |
+ |  find_element_by_class_name(self, name)
+ |      Finds element within this element's children by class name.
+ |
+ |      :Args:
+ |       - name: The class name of the element to find.
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_class_name('foo')
+ |
+ |  find_element_by_css_selector(self, css_selector)
+ |      Finds element within this element's children by CSS selector.
+ |
+ |      :Args:
+ |       - css_selector - CSS selector string, ex: 'a.nav#home'
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_css_selector('#foo')
+ |
+ |  find_element_by_id(self, id_)
+ |      Finds element within this element's children by ID.
+ |
+ |      :Args:
+ |       - id\_ - ID of child element to locate.
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          foo_element = element.find_element_by_id('foo')
+ |
+ |  find_element_by_link_text(self, link_text)
+ |      Finds element within this element's children by visible link text.
+ |
+ |      :Args:
+ |       - link_text - Link text string to search for.
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_link_text('Sign In')
+ |
+ |  find_element_by_name(self, name)
+ |      Finds element within this element's children by name.
+ |
+ |      :Args:
+ |       - name - name property of the element to find.
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_name('foo')
+ |
+ |  find_element_by_partial_link_text(self, link_text)
+ |      Finds element within this element's children by partially visible link text. |
+ |      :Args:
+ |       - link_text: The text of the element to partially match on.
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_partial_link_text('Sign')
+ |
+ |  find_element_by_tag_name(self, name)
+ |      Finds element within this element's children by tag name.
+ |
+ |      :Args:
+ |       - name - name of html tag (eg: h1, a, span)
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_tag_name('h1')
+ |
+ |  find_element_by_xpath(self, xpath)
+ |      Finds element by xpath.
+ |
+ |      :Args:
+ |       - xpath - xpath of element to locate.  "//input[@class='myelement']"
+ |
+ |      Note: The base path will be relative to this element's location.
+ |
+ |      This will select the first link under this element.
+ |
+ |      ::
+ |
+ |          myelement.find_element_by_xpath(".//a")
+ |
+ |      However, this will select the first link on the page.
+ |
+ |      ::
+ |
+ |          myelement.find_element_by_xpath("//a")
+ |
+ |      :Returns:
+ |       - WebElement - the element if it was found
+ |
+ |      :Raises:
+ |       - NoSuchElementException - if the element wasn't found
+ |
+ |      :Usage:
+ |          element = element.find_element_by_xpath('//div/td[1]')
+ |
+ |  find_elements(self, by='id', value=None)
+ |      Find elements given a By strategy and locator. Prefer the find_elements_by_* methods when
+ |      possible.
+ |
+ |      :Usage:
+ |          element = element.find_elements(By.CLASS_NAME, 'foo')
+ |
+ |      :rtype: list of WebElement
+ |
+ |  find_elements_by_class_name(self, name)
+ |      Finds a list of elements within this element's children by class name.
+ |
+ |      :Args:
+ |       - name: The class name of the elements to find.
+ |
+ |      :Returns:
+ |       - list of WebElement - a list with elements if any was found.  An
+ |         empty list if not
+ |
+ |      :Usage:
+ |          elements = element.find_elements_by_class_name('foo')
+ |
+ |  find_elements_by_css_selector(self, css_selector)
+ |      Finds a list of elements within this element's children by CSS selector.
+ |
+ |      :Args:
+ |       - css_selector - CSS selector string, ex: 'a.nav#home'
+ |
+ |      :Returns:
+^CTraceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\_sitebuiltins.py", line 103, in __call__
+    return pydoc.help(*args, **kwds)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1895, in __call__
+    self.help(request)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1954, in help
+    else: doc(request, 'Help on %s:', output=self._output)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1674, in doc
+    pager(render_doc(thing, title, forceload))
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1472, in <lambda>
+    return lambda text: tempfilepager(plain(text), 'more <')
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\pydoc.py", line 1521, in tempfilepager
+    os.system(cmd + ' "' + filename + '"')
+KeyboardInterrupt
+>>> thtml = t.get_attribute()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: get_attribute() missing 1 required positional argument: 'name'
+>>> thtml = t[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'FirefoxWebElement' object does not support indexing
+>>> thtml = t.elements
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'FirefoxWebElement' object has no attribute 'elements'
+>>> thtml = t.get_all_elements
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'FirefoxWebElement' object has no attribute 'get_all_elements'
+>>> thtml = t.get_all
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'FirefoxWebElement' object has no attribute 'get_all'
+>>> t.text
+Traceback (most recent call last):
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x03958890>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 76, in text
+    return self._execute(Command.GET_ELEMENT_TEXT)['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\request.py", line 68, in request
+    **urlopen_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\request.py", line 89, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\poolmanager.py", line 323, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=51244): Max retries exceeded with url: /session/ab99d277-533b-4d42-8981-824d9aa8758e/element/d0984fa8-9363-4827-80fd-b0e9f2d5cd5a/text (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x03958890>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+>>> d.close()
+Traceback (most recent call last):
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    (self._dns_host, self.port), self.timeout, **extra_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\util\connection.py", line 80, in create_connection
+    raise err
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\util\connection.py", line 70, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 354, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1229, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1275, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1224, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 1016, in _send_output
+    self.send(msg)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\http\client.py", line 956, in send
+    self.connect()
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connection.py", line 181, in connect
+    conn = self._new_conn()
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connection.py", line 168, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x03958990>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 688, in close
+    self.execute(Command.CLOSE)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 319, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 374, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 397, in _request
+    resp = self._conn.request(method, url, body=body, headers=headers)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\request.py", line 68, in request
+    **urlopen_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\request.py", line 89, in request_encode_url
+    return self.urlopen(method, url, **extra_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\poolmanager.py", line 323, in urlopen
+    response = conn.urlopen(method, u.request_uri, **kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 667, in urlopen
+    **response_kw)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\connectionpool.py", line 638, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\urllib3\util\retry.py", line 398, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=51244): Max retries exceeded with url: /session/ab99d277-533b-4d42-8981-824d9aa8758e/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x03958990>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+>>> d = w.Firefox()
+>>> d.get("https://app.bto.org/webs-reporting/?tab=numbers&locid=LOC648397")
+>>> t = d.find_element_by_xpath('//table[@class="maintable"]/*')
+>>> t.text
+''
+>>> t = d.find_element_by_xpath('/*')
+>>> t.text
+'Waterbirds in the UK:  \n17/18\n16/17\n15/16\n14/15\n13/14\n12/13\n11/12\n10/11\n09/10\n08/09\n07/08\n06/07\n05/06\nWeBS home\nAlerts\nNumbers & Trends\nLow Tide Counts\nNEWS\nSite Totals\nHelp\nSpecies: \nChoose...\nSpecies: \nLocation: \nSevern Estuary\nLocation: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSite:\nSevern Estuary\nNow displaying:\nPage 1 of 6\nPage 2 of 6\nPage 3 of 6\nPage 4 of 6\nPage 5 of 6\nPage 6 of 6\nInclude supplementary counts where available\nGroup:\nall\nwildfowl\nwaders\ngulls\nterns\nother\nSort taxonomically\nAnnual Peaks\nSpecies\n▲\n▼\n« ◄ 13/14\n▲\n▼\n14/15\n▲\n▼\n15/16\n▲\n▼\n16/17\n▲\n▼\n17/18\n▲\n▼\n► » Mon Moving\n5yr avg\n▲\n▼\n12/13-17/18\n5yr avg\n▲\n▼\ni\nLesser Whistling Duck\n0\n0\n0\n0\n0\n  0\n0\n  Brent Goose\n43\n24\n48\n63\n27\nJan\n41\n41\n  Brent Goose (Dark-bellied - bernicla)\n33\n15\n(11)\n22\n11\nFeb\n20\n20\n  Brent Goose (Light-bellied - hrota)\n(29)\n12\n42\n54\n17\nJan\n31\n31\n  Brent Goose (Svalbard Light-bellied)\n0\n0\n0\n0\n0\n  0\n0\n  Brent Goose (Light-bellied of Nearctic origin)\n(29)\n12\n42\n54\n17\nJan\n31\n31\n  Red-breasted Goose\n0\n0\n0\n0\n1\nOct\n0\n0\n  Canada Goose\n839\n735\n1,148\n1,270\n1,101\nOct\n1,019\n1,019\n  Cackling Goose\n0\n0\n0\n0\n0\n  0\n0\n  Canada x domestic Greylag Goose\n0\n0\n0\n0\n0\n  0\n0\n  Barnacle Goose\n161\n207\n213\n239\n233\nNov\n211\n211\n  Barnacle Goose (naturalised)\n161\n207\n213\n239\n233\nNov\n211\n211\n  Barnacle Goose (Greenland)\n0\n0\n0\n0\n0\n  0\n0\n  Barnacle Goose (Svalbard)\n0\n0\n0\n0\n0\n  0\n0\n  Bar-headed Goose\n2\n1\n3\n0\n0\n  1\n1\n  Ross\'s Goose\n0\n0\n0\n0\n0\n  0\n0\n  Snow Goose\n0\n0\n0\n0\n0\n  0\n0\n  Greylag Goose\n503\n598\n705\n570\n652\nSep\n606\n606\n  Greylag Goose (British/Irish)\n503\n598\n705\n570\n652\nSep\n606\n606\n  Domestic Greylag Goose\n0\n0\n4\n3\n0\n  1\n1\n  Swan Goose\n0\n0\n0\n0\n0\n  0\n0\n  Taiga/Tundra Bean Goose\n1\n0\n0\n1\n0\n  0\n0\n  Taiga Bean Goose\n0\n0\n0\n0\n0\n  0\n0\n  Tundra Bean Goose\n1\n0\n0\n1\n0\n  0\n0\n  Pink-footed Goose\n0\n2\n1\n1\n0\n  1\n1\n  White-fronted Goose\n238\n178\n137\n162\n125\nFeb\n168\n168\n  White-fronted Goose (Greenland - flavirostris)\n1\n0\n5\n0\n0\n  1\n1\n  White-fronted Goose (European - albifrons)\n238\n178\n132\n162\n125\nFeb\n167\n167\n  Lesser White-fronted Goose\n0\n0\n0\n0\n0\n  0\n0\n  Hybrid goose\n0\n0\n0\n0\n0\n  0\n0\n  Previous page Next page\n+\n−\n© 2019 Microsoft Corporation Earthstar Geographics SIO Terms of Use\n\n\nThis report should be cited as: Frost, T.M., Austin, G.E., Calbrade,  N.A., Mellan, H.J., Hearn, R.D., Robinson, A.E., Stroud, D.A., Wotton, S.R. and Balmer, D.E. 2019. \nWaterbirds in the UK 2017/18: The Wetland Bird Survey.  BTO/RSPB/JNCC. Thetford.\nData (except for supplementary counts highlighted in orange[*]) released under the Open Government Licence v3.0. To reuse, please include the following attribution statement:\n"Contains Wetland Bird Survey (WeBS) data from Waterbirds in the UK 2017/18 © copyright and database right 2019. WeBS is a partnership jointly funded by the BTO, RSPB and JNCC, in association with WWT, with fieldwork conducted by volunteers."\n[*]including supplementary counts from the Goose and Swan Monitoring Partnership (GSMP)\nhttp://www.bto.org/volunteer-surveys/webs/publications/webs-annual-report\nWeBS is a partnership jointly funded by the BTO, RSPB and JNCC, in association with WWT, with fieldwork conducted by volunteers Email: webs@bto.org\nTerms & Conditions of use | Privacy Statement | Cookies\n© British Trust for Ornithology, BTO, The Nunnery, Thetford, Norfolk IP24 2PU.\nTel: +44 (0)1842 750050  ·  Fax: +44 (0)1842 750030\nRegistered Charity Number 216652 (England & Wales), SC039193 (Scotland)'
+>>> t = d.find_element_by_xpath('//select/*')
+>>> t.text
+'17/18'
+>>> t = d.find_element_by_xpath('//select')
+>>> t.text
+'17/18\n16/17\n15/16\n14/15\n13/14\n12/13\n11/12\n10/11\n09/10\n08/09\n07/08\n06/07\n05/06'
+>>> t = d.find_element_by_xpath('//select[id="birdgroup"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //select[id="birdgroup"]
+
+>>> t = d.find_element_by_xpath('//select[@id="birdgroup"]')
+>>> t.text
+'all\nwildfowl\nwaders\ngulls\nterns\nother'
+>>> t.send_keys("wild")
+>>> t = d.find_element_by_xpath('//input[@id="taxonsort"]')
+>>> t.text
+''
+>>> t.send_keys(" ")
+>>> t.send_keys("q")
+>>> t.click()
+>>> t.click()
+>>> t.click()
+>>> t = d.find_element_by_xpath('//input[@id="taxonsort"]')
+>>> t.click()
+>>> t.unclick()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'FirefoxWebElement' object has no attribute 'unclick'
+>>> t.is_selected()
+True
+>>> t = d.find_element_by_xpath('//th[@class="sorter"][@id="mean5"]//span[@class="toggleDown activeSort"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //th[@class="sorter"][@id="mean5"]//span[@class="toggleDown activeSort"]
+
+>>> t = d.find_element_by_xpath('//th[@id="mean5"]//span[@class="toggleDown activeSort"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //th[@id="mean5"]//span[@class="toggleDown activeSort"]
+
+>>> t = d.find_element_by_xpath('//th[@id="mean5"]/span/span[@class="toggleDown activeSort"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //th[@id="mean5"]/span/span[@class="toggleDown activeSort"]
+
+>>> t = d.find_element_by_xpath('//span[@class="toggleDown activeSort"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //span[@class="toggleDown activeSort"]
+
+>>> t = d.find_element_by_xpath('//span[@class="toggleDown activeSort"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //span[@class="toggleDown activeSort"]
+
+>>> t = d.find_element_by_xpath('//span[@class="toggleDown activeSort"]/*')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //span[@class="toggleDown activeSort"]/*
+
+>>> t = d.find_element_by_xpath('//span[@class="toggleDown"]/*')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //span[@class="toggleDown"]/*
+
+>>> t = d.find_element_by_xpath('//span[@class="hal"]/*')
+>>> t.text
+'▲'
+>>> t = d.find_element_by_xpath('//span[@class="hal"]/span')
+>>> t.text
+'▲'
+>>> t = d.find_element_bys_xpath('//span[@class="hal"]/span')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'WebDriver' object has no attribute 'find_element_bys_xpath'
+>>> t = d.find_elements_by_xpath('//span[@class="hal"]/span')
+>>> t.text
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'text'
+>>> t[1].text
+'▼'
+>>> t[i].text for i in range(len(t))
+  File "<stdin>", line 1
+    t[i].text for i in range(len(t))
+                ^
+SyntaxError: invalid syntax
+>>> [t[i].text for i in range(len(t))]
+['▲', '▼', '▲', '▼', '▲', '▼', '▲', '▼', '▲', '▼', '▲', '▼', '▲', '▼', '▲', '▼']
+>>> t = d.find_element_by_xpath('//span[@class="hal"]')
+>>> t.click()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: Element <span class="hal"> could not be scrolled into view
+
+>>> t = d.find_element_by_xpath('//span[@id="mean5"]/span[@class="hal"]')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: Unable to locate element: //span[@id="mean5"]/span[@class="hal"]
+
+>>> t = d.find_element_by_xpath('//th[@id="mean5"]/span[@class="hal"]')
+>>> t.text
+'▲\n▼'
+>>> t.click()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: Element <span class="hal"> could not be scrolled into view
+
+>>> t.click()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: Element <span class="hal"> could not be scrolled into view
+
+>>> t.location_once_scrolled_into_view()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'dict' object is not callable
+>>> t.location_once_scrolled_into_view
+{'x': 625, 'y': 0}
+>>> t.click()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\charl\AppData\Local\Programs\Python\Python37-32\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotInteractableException: Message: Element <span class="hal"> could not be scrolled into view
+
+>>> t = d.find_element_by_xpath('//th[@id="mean5"]/span[@class="hal"]/span')
+>>> t.click()
+>>> t.click()
+>>> t.click()
+>>> t.click()
+>>> t.click()
+>>>
