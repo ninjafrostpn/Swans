@@ -18,8 +18,12 @@ try:
     driver.get(muteswan_site)
     print(" - Waiting for table to load...")
     table = WebDriverWait(driver, 60).until(
-        EC.presence_of_all_elements_located((By.XPATH,
-                                             '//table[@class="maintable"]/tbody/tr/td/div/*'))
+        EC.presence_of_all_elements_located((By.XPATH,'//table[@class="maintable"]'
+                                                      '/tbody'
+                                                      '/tr'
+                                                      '/td'
+                                                      '/div'
+                                                      '/*'))
     )
     print(" - Site and table loaded.\nExtracting data table...")
     # Joins table cells into a string, cells delineated using *
@@ -30,7 +34,8 @@ try:
     table = " ({} [{}])*".join(table.split("**"))
 
     # Gets the supplementary data sources and inserts them
-    hiders = driver.find_elements_by_xpath('//div[@class="hider"]/*')
+    hiders = driver.find_elements_by_xpath('//div[@class="hider"]'
+                                           '/*')
     hiders = [t.get_attribute("innerHTML") for t in hiders]
     hiders = re.split(r"</?em>", "".join(hiders))
     print(hiders)
@@ -39,15 +44,18 @@ try:
     # Breaks the string up into cells again and formats them as a table with 10 cells per row
     table = np.object_(table.split("*"))
     muteswa_table = table.reshape(-1, 10)
-    print(" - Data table extracted.\n\n", table)
+    print(" - Data table extracted.\n\n", table, "\n")
 
     # Finds the location dropdown menu and clicks it
     print("Extracting names for sites with data available...")
-    dropdown = driver.find_element_by_xpath('//div[@id="locationFg"]/div[contains(@class, "select2-container")]')
-    dropdown.click()
+    sitenamedropdown = driver.find_element_by_xpath('//div[@id="locationFg"]'
+                                                    '/div[contains(@class, "select2-container")]')
+    sitenamedropdown.click()
 
     # Finds the searchboxes (both visible and currently invisible)
     searchboxes = driver.find_elements_by_xpath('//input[contains(@class, "select2-input")]')
+    locationsearchbox = None
+    sitenames = []
     for searchbox in searchboxes:
         # Checks that it's the visible searchbox
         if searchbox.is_displayed():
@@ -55,14 +63,40 @@ try:
             # (The italicised ones don't appear to have any data on their tables)
             searchbox.clear()
             sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
-                                                           'not(contains(@class, "italicSpecies"))]/div')
+                                                      'not(contains(@class, "italicSpecies"))]'
+                                                      '/div')
 
             # Extracts all the site names from this list
+            # TODO: have it save these to a file, and use the file if it exists over searching
             print(" - Processing name data...")
             sitenames = ["".join(re.split(r"<span.*span>", sitename.get_attribute("innerHTML")))
                          for sitename in sitenames]
-            print(" - Site names extracted.\n\n", sitenames)
-    time.sleep(2)
+            print(" - Site names extracted.\n\n", sitenames, "\n")
+    locationsearchbox = searchbox
+
+    # Now for the real data extraction. This will enter each site name in turn and get the relevant data table
+    for sitename in sitenames:
+        locationsearchbox.send_keys(sitename + "\n")
+
+        # Ensure that the bird group selector is set to wildfowl
+        # (The letter combination "wi" seems to consistently get it to select "wildfowl"; longer and shorter do not)
+        birdgroupdropdown = driver.find_element_by_xpath('//select[@id="birdgroup"]')
+        birdgroupdropdown.send_keys("wi")
+
+        # Ensure that supplementary data are always included
+        suppbutton = driver.find_element_by_xpath('//input[@id="supps"]')
+        if not suppbutton.is_selected():
+            suppbutton.click()
+
+        # Ensure that the birds are arranged in descending 5-year mean abundance
+        mean5descendingbutton = driver.find_element_by_xpath('//th[@id="mean5"]'
+                                                             '/span[@class="hal"]'
+                                                             '/span[contains(@class, "toggledown")]')
+        if "activeSort" not in mean5descendingbutton.get_attribute("class"):
+            mean5descendingbutton.click()
+
+        # TODO: Extract table of data
+        break
 finally:
     print("Closing driver...")
     driver.close()
