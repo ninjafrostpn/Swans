@@ -72,6 +72,7 @@ try:
             print(" - Processing name data...")
             sitenames = ["".join(re.split(r"<span.*span>", sitename.get_attribute("innerHTML")))
                          for sitename in sitenames]
+            # sitenames = ["A1 Flashes", "Abberton Reservoir", "Abbey Field Pool"]
             print(" - Site names extracted.\n\n", sitenames, "\n")
 
     # Now for the real data extraction. This will enter each site name in turn and get the relevant data table
@@ -81,21 +82,21 @@ try:
         print(" - Extracting data table for " + sitename + "...")
         print(" -  - Navigating to page...")
         locationsearchbox.send_keys(sitename + "\n")
-        time.sleep(2)
+        time.sleep(1)
 
         # Ensure that the bird group selector is set to wildfowl
         # (The letter combination "wi" seems to consistently get it to select "wildfowl"; longer and shorter do not)
         print(" -  - Selecting correct table settings...\n -  -  - Selecting wildfowl...")
         birdgroupdropdown = driver.find_element_by_xpath('//select[@id="birdgroup"]')
         birdgroupdropdown.send_keys("wi")
-        time.sleep(2)
+        time.sleep(1)
 
         # Ensure that supplementary data are always included
         print(" -  -  - Selecting supplementary data...")
         suppbutton = driver.find_element_by_xpath('//input[@id="supps"]')
         if not suppbutton.is_selected():
             suppbutton.click()
-        time.sleep(2)
+        time.sleep(1)
 
         # Ensure that the birds are arranged in descending 5-year mean abundance
         print(" -  -  - Selecting sort descending by 5-year-mean abundance...")
@@ -130,10 +131,10 @@ try:
         table = table.format(*hiders)
 
         # Breaks the string up into cells again and formats them as a table with 10 cells per row
-        table = np.object_(table.split("*"))
+        table = np.object_(table.split("*"))  # TODO: Actually save these tables
         sitetables.append(table.reshape(-1, 10))
         print(" -  - Data table extracted.\n\n", sitetables[-1], "\n")
-        break
+        sitenamedropdown.click()
 finally:
     print("Closing driver...")
     driver.close()
