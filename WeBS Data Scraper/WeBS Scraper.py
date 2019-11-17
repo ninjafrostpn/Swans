@@ -1,3 +1,4 @@
+import csv
 import numpy as np
 import re
 from selenium import webdriver
@@ -63,16 +64,23 @@ try:
             # (The italicised ones don't appear to have any data on their tables)
             locationsearchbox = searchbox
             searchbox.clear()
-            sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
+            try:
+                sitenamesfile = open("sitenames.txt", "x")
+                sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
                                                       'not(contains(@class, "italicSpecies"))]'
                                                       '/div')
 
-            # Extracts all the site names from this list
-            # TODO: have it save these to a file, and use the file if it exists over searching
-            print(" - Processing name data...")
-            sitenames = ["".join(re.split(r"<span.*span>", sitename.get_attribute("innerHTML")))
-                         for sitename in sitenames]
-            # sitenames = ["A1 Flashes", "Abberton Reservoir", "Abbey Field Pool"]
+                # Extracts all the site names from this list
+                print(" - Processing name data...")
+                sitenames = ["".join(re.split(r"<span.*span>", sitename.get_attribute("innerHTML")))
+                             for sitename in sitenames]
+                sitenamesfile.write("\n".join(sitenames))
+            except FileExistsError:
+                sitenamesfile = open("sitenames.txt", "r")
+                sitenames = sitenamesfile.read()
+                sitenames = sitenames.split("\n")
+            finally:
+                sitenamesfile.close()
             print(" - Site names extracted.\n\n", sitenames, "\n")
 
     # Now for the real data extraction. This will enter each site name in turn and get the relevant data table
