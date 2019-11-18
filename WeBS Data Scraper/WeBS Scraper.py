@@ -27,6 +27,26 @@ try:
                                                        '/*'))
     )
     print(" - Site and table loaded.\nExtracting data table...")
+
+    overwritepolicy = ""
+    try:
+        print(" - Creating 'muteswans.csv'...")
+        muteswanfile = open("muteswans.csv", "x", encoding="utf-8", newline="")
+    except FileExistsError:
+        print(" -  - Found old 'muteswans.csv'...")
+        overwritepolicy = input("\nKeep this file?\n"
+                                " - Enter to keep the old file,\n"
+                                " - a then enter to keep all\n"
+                                " - o then Enter to overwrite it,\n"
+                                " - x then Enter to overwrite all\n"
+                                ">>> ").lower()
+        if overwritepolicy.lower() in ["o", "x"]:
+            print(" -  - Overwriting old 'muteswans.csv'...")
+            muteswanfile = open("muteswans.csv", "w", encoding="utf-8", newline="")
+            print(" -  - Old 'muteswans.csv' overwritten.")
+        else:
+            print(" -  - Old 'muteswans.csv' kept.\n - Table extraction skipped.")
+
     # Joins table cells into a string, cells delineated using *
     # (Skips delineator which sits before the first cell)
     table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
@@ -45,9 +65,18 @@ try:
     # Breaks the string up into cells again and formats them as a table with 10 cells per row
     table = np.object_(table.split("*"))
     muteswantable = table.reshape(-1, 10)
+    muteswanwriter = csv.writer(muteswanfile)
+    muteswanwriter.writerow(["Site",
+                             "13/14", "14/15", "15/16", "16/17", "17/18",
+                             "MaximalMonth", "Mean5yr", "Mean12/13-17/18"])
+    for row in muteswantable:
+        muteswanwriter.writerow(row)
+    muteswanfile.close()
+    # TODO: extend this to include more pages of mute swans
     print(" - Data table extracted.\n\n", muteswantable, "\n")
 
     # Finds the location dropdown menu and clicks it
+    # TODO: probably change this to use the list of mute swan sites, not just EVERY site
     print("Extracting names for sites with data available...")
     sitenamedropdown = driver.find_element_by_xpath('//div[@id="locationFg"]'
                                                     '/div[contains(@class, "select2-container")]')
@@ -66,7 +95,7 @@ try:
             searchbox.clear()
             try:
                 print(" - Checking for 'sitenames.txt'...")
-                sitenamesfile = open("sitenames.txt", "x")
+                sitenamesfile = open("sitenames.txt", "x", encoding="utf-8")
                 print(" -  - Created new 'sitenames.txt'.")
                 sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
                                                                'not(contains(@class, "italicSpecies"))]'
@@ -78,12 +107,14 @@ try:
                              for sitename in sitenames]
                 print(" -  - Writing site names to 'sitenames.txt'...")
                 sitenamesfile.write("\n".join(sitenames))
-
             except FileExistsError:
                 print(" -  - Found old 'sitenames.txt'.")
-                sitenamesfile = open("sitenames.txt", "r")
-                ohgoonthen = input("\nUse this file? (Enter to proceed, n then Enter to cancel)\n>>> ")
-                if ohgoonthen.lower() == "n":
+                sitenamesfile = open("sitenames.txt", "r", encoding="utf-8")
+                ohgoonthen = input("\nUse this file?\n"
+                                   " - Enter to proceed with this name list,\n"
+                                   " - o then Enter to overwrite it\n"  # TODO: Implement this.
+                                   ">>> ").lower()
+                if ohgoonthen.lower() == "o":
                     quit()
                 print(" - Reading old 'sitenames.txt'...")
                 sitenames = sitenamesfile.read()
@@ -97,6 +128,32 @@ try:
     sitetables = []
     for sitename in sitenames:
         print(" - Extracting data table for " + sitename + "...")
+        try:
+            print(" -  - Creating '" + sitename + ".csv'...")
+            sitefile = open(sitename + ".csv", "x", encoding="utf-8", newline="")
+        except FileExistsError:
+            print(" -  -  - Found old '" + sitename + ".csv'...")
+            if overwritepolicy.lower() == "a":
+                print(" -  -  - Old '" + sitename + ".csv' kept.\n -  - Data extraction skipped for this site.")
+                continue
+            elif overwritepolicy.lower() == "x":
+                print(" -  -  - Overwriting old '" + sitename + ".csv'...")
+                sitefile = open(sitename + ".csv", "w", encoding="utf-8", newline="")
+                print(" -  -  - Old '" + sitename + ".csv' overwritten.")
+            else:
+                overwritepolicy = input("\nKeep this file?\n"
+                                        " - Enter to keep the old file,\n"
+                                        " - a then enter to keep all\n"
+                                        " - o then Enter to overwrite it,\n"
+                                        " - x then Enter to overwrite all\n"
+                                        ">>> ").lower()
+                if overwritepolicy.lower() in ["o", "x"]:
+                    print(" -  -  - Overwriting old '" + sitename + ".csv'...")
+                    sitefile = open(sitename + ".csv", "w", encoding="utf-8", newline="")
+                    print(" -  -  - Old '" + sitename + ".csv' overwritten.")
+                else:
+                    print(" -  -  - Old '" + sitename + ".csv' kept.\n -  - Data extraction skipped for this site.")
+                    continue
         print(" -  - Navigating to page...")
         locationsearchbox.send_keys(sitename + "\n")
         time.sleep(1)
@@ -122,7 +179,7 @@ try:
                                                              '/span[contains(@class, "toggleDown")]')
         if "activeSort" not in mean5descendingbutton.get_attribute("class"):
             mean5descendingbutton.click()
-        time.sleep(2)
+        time.sleep(1)
         print(" -  -  - Settings set.")
 
         table = driver.find_elements_by_xpath('//table[@class="maintable"]'
@@ -136,7 +193,7 @@ try:
         # Joins table cells into a string, cells delineated using *
         # (Skips delineator which sits before the first cell)
         table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
-        # TODO: Fix potential issue with wildfowl-free sites yielding a spurious "**" sequence
+        # TODO: Fix potential issue with wildfowl-free sites yielding a spurious "**" sequence (may be misinterpreted)
 
         # Replaces gaps left by supplementary data hiders with placeholders
         table = " ({} [{}])*".join(table.split("**"))
@@ -150,8 +207,15 @@ try:
         table = table.format(*hiders)
 
         # Breaks the string up into cells again and formats them as a table with 10 cells per row
-        table = np.object_(table.split("*"))  # TODO: Actually save these tables
+        table = np.object_(table.split("*"))
         sitetables.append(table.reshape(-1, 10))
+        sitewriter = csv.writer(sitefile)
+        sitewriter.writerow(["Species",
+                             "13/14", "14/15", "15/16", "16/17", "17/18",
+                             "MaximalMonth", "Mean5yr", "Mean12/13-17/18"])
+        for row in sitetables[-1]:
+            sitewriter.writerow(row)
+        sitefile.close()
         print(" -  - Data table extracted.\n\n", sitetables[-1], "\n")
         sitenamedropdown.click()
 finally:
@@ -171,4 +235,6 @@ https://www.bto.org/sites/default/files/webs_methods.pdf
 https://app.bto.org/webs-reporting/?tab=numbers&locid=LOC648397
 https://stackoverflow.com/questions/29807856/selenium-python-how-to-get-texthtml-source-from-div#comment47745057_29808188
 https://stackoverflow.com/questions/35573625/getting-current-select-value-from-drop-down-menu-with-python-selenium
+https://docs.python.org/3/library/functions.html?highlight=open#open
+https://docs.python.org/3/tutorial/controlflow.html
 """
