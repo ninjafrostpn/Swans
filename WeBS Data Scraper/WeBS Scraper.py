@@ -1,15 +1,24 @@
 import csv
 import numpy as np
+import os
 import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 import time
+import winsound
 
 webs_site = "https://app.bto.org/webs-reporting/"
 muteswan_site = webs_site + "?tab=numbers&speciescode=46"
 severnestuary_site = webs_site + "?tab=numbers&locid=LOC648397"
+
+try:
+    print("Creating 'csvdata' directory...")
+    os.mkdir("csvdata")
+    print(" - Created 'csvdata' directory.")
+except FileExistsError:
+    print(" - There already exists a 'csvdata' directory.")
 
 print("Opening driver...")
 driver = webdriver.Firefox()
@@ -18,20 +27,21 @@ try:
     print("Loading WeBS site...")
     driver.get(muteswan_site)
     print(" - Waiting for table to load...")
-    table = WebDriverWait(driver, 60).until(
-        ec.presence_of_all_elements_located((By.XPATH, '//table[@class="maintable"]'
-                                                       '/tbody'
-                                                       '/tr'
-                                                       '/td'
-                                                       '/div'
-                                                       '/*'))
+    WebDriverWait(driver, 60).until(
+        ec.presence_of_element_located((By.XPATH, '//table[@class="maintable"]'
+                                                  '/tbody'
+                                                  '/tr'
+                                                  '/td'
+                                                  '/div'
+                                                  '/*'))
     )
-    print(" - Site and table loaded.\nExtracting data table...")
+    print(" - Site loaded.")
 
+    print("Extracting data table...")
     overwritepolicy = ""
     try:
         print(" - Creating 'muteswans.csv'...")
-        muteswanfile = open("muteswans.csv", "x", encoding="utf-8", newline="")
+        muteswanfile = open("csvdata//muteswans.csv", "x", encoding="utf-8", newline="")
     except FileExistsError:
         print(" -  - Found old 'muteswans.csv'...")
         overwritepolicy = input("\nKeep this file?\n"
@@ -42,37 +52,56 @@ try:
                                 ">>> ").lower()
         if overwritepolicy.lower() in ["o", "x"]:
             print(" -  - Overwriting old 'muteswans.csv'...")
-            muteswanfile = open("muteswans.csv", "w", encoding="utf-8", newline="")
+            muteswanfile = open("csvdata//muteswans.csv", "w", encoding="utf-8", newline="")
             print(" -  - Old 'muteswans.csv' overwritten.")
         else:
             print(" -  - Old 'muteswans.csv' kept.\n - Table extraction skipped.")
 
-    # Joins table cells into a string, cells delineated using *
-    # (Skips delineator which sits before the first cell)
-    table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
-
-    # Replaces gaps left by supplementary data hiders with placeholders
-    table = " ({} [{}])*".join(table.split("**"))
-
-    # Gets the supplementary data sources and inserts them
-    hiders = driver.find_elements_by_xpath('//div[@class="hider"]'
-                                           '/*')
-    hiders = [t.get_attribute("innerHTML") for t in hiders]
-    hiders = re.split(r"</?em>", "".join(hiders))
-    print(hiders)
-    table = table.format(*hiders)
-
-    # Breaks the string up into cells again and formats them as a table with 10 cells per row
-    table = np.object_(table.split("*"))
-    muteswantable = table.reshape(-1, 10)
     muteswanwriter = csv.writer(muteswanfile)
     muteswanwriter.writerow(["Site",
                              "13/14", "14/15", "15/16", "16/17", "17/18",
                              "MaximalMonth", "Mean5yr", "Mean12/13-17/18"])
-    for row in muteswantable:
-        muteswanwriter.writerow(row)
+    nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
+    muteswanpage = 1
+
+    while True:
+        print(" - Processing page {}...".format(muteswanpage))
+        table = driver.find_elements_by_xpath('//table[@class="maintable"]'
+                                              '/tbody'
+                                              '/tr'
+                                              '/td'
+                                              '/div'
+                                              '/*')
+        # TODO: see if it's quicker to parse all this using innerHTML of the table with regex
+
+        # Joins table cells into a string, cells delineated using *
+        # (Skips delineator which sits before the first cell)
+        table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
+
+        # Replaces gaps left by supplementary data hiders with placeholders
+        table = " ({} [{}])*".join(table.split("**"))
+
+        # Gets the supplementary data sources and inserts them
+        hiders = driver.find_elements_by_xpath('//div[@class="hider"]'
+                                               '/*')
+        hiders = [t.get_attribute("innerHTML") for t in hiders]
+        hiders = re.split(r"</?em>", "".join(hiders))
+        table = table.format(*hiders)
+
+        # Breaks the string up into cells again and formats them as a table with 10 cells per row
+        table = np.object_(table.split("*"))
+        muteswantable = table.reshape(-1, 10)
+        for row in muteswantable:
+            muteswanwriter.writerow(row)
+        if np.any(np.int32(muteswantable[:, 7]) < 5):
+            muteswanwriter.writerow(["END"] * 10)
+            break
+        else:
+            nextpagebutton.click()
+            muteswanpage += 1
+    winsound.Beep(2500, 1000)
     muteswanfile.close()
-    # TODO: extend this to include more pages of mute swans
+    # TODO: extend this to include more years of mute swans
     print(" - Data table extracted.\n\n", muteswantable, "\n")
 
     # Finds the location dropdown menu and clicks it
@@ -127,10 +156,11 @@ try:
     print("Extracting individual site data tables...")
     sitetables = []
     for sitename in sitenames:
+        # TODO: maybe save screenshots of site maps too?
         print(" - Extracting data table for " + sitename + "...")
         try:
             print(" -  - Creating '" + sitename + ".csv'...")
-            sitefile = open(sitename + ".csv", "x", encoding="utf-8", newline="")
+            sitefile = open("csvdata//" + sitename + ".csv", "x", encoding="utf-8", newline="")
         except FileExistsError:
             print(" -  -  - Found old '" + sitename + ".csv'...")
             if overwritepolicy.lower() == "a":
@@ -138,7 +168,7 @@ try:
                 continue
             elif overwritepolicy.lower() == "x":
                 print(" -  -  - Overwriting old '" + sitename + ".csv'...")
-                sitefile = open(sitename + ".csv", "w", encoding="utf-8", newline="")
+                sitefile = open("csvdata//" + sitename + ".csv", "w", encoding="utf-8", newline="")
                 print(" -  -  - Old '" + sitename + ".csv' overwritten.")
             else:
                 overwritepolicy = input("\nKeep this file?\n"
@@ -149,7 +179,7 @@ try:
                                         ">>> ").lower()
                 if overwritepolicy.lower() in ["o", "x"]:
                     print(" -  -  - Overwriting old '" + sitename + ".csv'...")
-                    sitefile = open(sitename + ".csv", "w", encoding="utf-8", newline="")
+                    sitefile = open("csvdata//" + sitename + ".csv", "w", encoding="utf-8", newline="")
                     print(" -  -  - Old '" + sitename + ".csv' overwritten.")
                 else:
                     print(" -  -  - Old '" + sitename + ".csv' kept.\n -  - Data extraction skipped for this site.")
@@ -215,6 +245,7 @@ try:
                              "MaximalMonth", "Mean5yr", "Mean12/13-17/18"])
         for row in sitetables[-1]:
             sitewriter.writerow(row)
+        sitewriter.writerow(["END"] * 10)
         sitefile.close()
         print(" -  - Data table extracted.\n\n", sitetables[-1], "\n")
         sitenamedropdown.click()
