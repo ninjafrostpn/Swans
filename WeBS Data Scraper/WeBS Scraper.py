@@ -65,7 +65,9 @@ try:
             locationsearchbox = searchbox
             searchbox.clear()
             try:
+                print(" - Checking for 'sitenames.txt'...")
                 sitenamesfile = open("sitenames.txt", "x")
+                print(" -  - Created new 'sitenames.txt'.")
                 sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
                                                       'not(contains(@class, "italicSpecies"))]'
                                                       '/div')
@@ -74,14 +76,21 @@ try:
                 print(" - Processing name data...")
                 sitenames = ["".join(re.split(r"<span.*span>", sitename.get_attribute("innerHTML")))
                              for sitename in sitenames]
+                print(" -  - Writing site names to 'sitenames.txt'...")
                 sitenamesfile.write("\n".join(sitenames))
+
             except FileExistsError:
+                print(" -  - Found old 'sitenames.txt'.")
                 sitenamesfile = open("sitenames.txt", "r")
+                ohgoonthen = input("\nUse this file? (Enter to proceed, n then Enter to cancel)\n>>> ")
+                if ohgoonthen.lower() == "n":
+                    quit()
+                print(" - Reading old 'sitenames.txt'...")
                 sitenames = sitenamesfile.read()
                 sitenames = sitenames.split("\n")
             finally:
                 sitenamesfile.close()
-            print(" - Site names extracted.\n\n", sitenames, "\n")
+            print(" -  - Site names ready.\n\n", sitenames, "\n")
 
     # Now for the real data extraction. This will enter each site name in turn and get the relevant data table
     print("Extracting individual site data tables...")
