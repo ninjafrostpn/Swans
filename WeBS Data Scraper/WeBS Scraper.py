@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 import os
+from pandas.io.html import read_html
 import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -58,43 +59,24 @@ try:
             print(" -  - Old 'muteswans.csv' kept.\n - Table extraction skipped.")
 
     muteswanwriter = csv.writer(muteswanfile)
-    muteswanwriter.writerow(["Site",
-                             "13/14", "14/15", "15/16", "16/17", "17/18",
-                             "MaximalMonth", "Mean5yr", "Mean12/13-17/18"])
+    muteswanwriter.writerow(["Site", "",
+                             "13/14", "14/15", "15/16", "16/17", "17/18", "",
+                             "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
     nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
     muteswanpage = 1
 
     while True:
         print(" - Processing page {}...".format(muteswanpage))
-        table = driver.find_elements_by_xpath('//table[@class="maintable"]'
-                                              '/tbody'
-                                              '/tr'
-                                              '/td'
-                                              '/div'
-                                              '/*')
-        # TODO: see if it's quicker to parse all this using innerHTML of the table with regex
+        table = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                             '/tbody[@id="wr_webs_report"]'
+                                             '/..'
+                                             '/..')
+        muteswantable = np.object_(read_html(table.get_attribute("innerHTML"))[0])
 
-        # Joins table cells into a string, cells delineated using *
-        # (Skips delineator which sits before the first cell)
-        table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
-
-        # Replaces gaps left by supplementary data hiders with placeholders
-        table = " ({} [{}])*".join(table.split("**"))
-
-        # Gets the supplementary data sources and inserts them
-        hiders = driver.find_elements_by_xpath('//div[@class="hider"]'
-                                               '/*')
-        hiders = [t.get_attribute("innerHTML") for t in hiders]
-        hiders = re.split(r"</?em>", "".join(hiders))
-        table = table.format(*hiders)
-
-        # Breaks the string up into cells again and formats them as a table with 10 cells per row
-        table = np.object_(table.split("*"))
-        muteswantable = table.reshape(-1, 10)
         for row in muteswantable:
             muteswanwriter.writerow(row)
-        if np.any(np.int32(muteswantable[:, 7]) < 5):
-            muteswanwriter.writerow(["END"] * 10)
+        if muteswanpage == 168:  # TODO: do this better
+            muteswanwriter.writerow(["END"] * 12)
             break
         else:
             nextpagebutton.click()
@@ -212,40 +194,20 @@ try:
         time.sleep(1)
         print(" -  -  - Settings set.")
 
-        table = driver.find_elements_by_xpath('//table[@class="maintable"]'
-                                              '/tbody'
-                                              '/tr'
-                                              '/td'
-                                              '/div'
-                                              '/*')
-
-        # TODO: Maybe break out the table parsing to a separate function
-        # Joins table cells into a string, cells delineated using *
-        # (Skips delineator which sits before the first cell)
-        table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
-        # TODO: Fix potential issue with wildfowl-free sites yielding a spurious "**" sequence (may be misinterpreted)
-
-        # Replaces gaps left by supplementary data hiders with placeholders
-        table = " ({} [{}])*".join(table.split("**"))
-
-        # Gets the supplementary data sources and inserts them
-        hiders = driver.find_elements_by_xpath('//div[@class="hider"]'
-                                               '/*')
-        hiders = [t.get_attribute("innerHTML") for t in hiders]
-        hiders = re.split(r"</?em>", "".join(hiders))
-        print(hiders)
-        table = table.format(*hiders)
-
-        # Breaks the string up into cells again and formats them as a table with 10 cells per row
-        table = np.object_(table.split("*"))
-        sitetables.append(table.reshape(-1, 10))
+        table = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                             '/tbody[@id="wr_webs_report"]'
+                                             '/..'
+                                             '/..')
+        sitetable = np.object_(read_html(table.get_attribute("innerHTML"))[0])
+        sitetables.append(sitetable)
         sitewriter = csv.writer(sitefile)
-        sitewriter.writerow(["Species",
-                             "13/14", "14/15", "15/16", "16/17", "17/18",
-                             "MaximalMonth", "Mean5yr", "Mean12/13-17/18"])
+        sitewriter.writerow(["Species", "",
+                             "13/14", "14/15", "15/16", "16/17", "17/18", "",
+                             "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
         for row in sitetables[-1]:
             sitewriter.writerow(row)
         sitewriter.writerow(["END"] * 10)
+        # TODO: extend this to include more years of site data?
         sitefile.close()
         print(" -  - Data table extracted.\n\n", sitetables[-1], "\n")
         sitenamedropdown.click()
