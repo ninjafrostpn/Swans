@@ -1,6 +1,7 @@
 import csv
 import numpy as np
 import os
+import pandas as pd
 from pandas.io.html import read_html
 import re
 from selenium import webdriver
@@ -56,38 +57,59 @@ try:
             muteswanfile = open("csvdata//muteswans.csv", "w", encoding="utf-8", newline="")
             print(" -  - Old 'muteswans.csv' overwritten.")
         else:
-            print(" -  - Old 'muteswans.csv' kept.\n - Table extraction skipped.")
+            print(" -  - Old 'muteswans.csv' kept.\n - Table extraction skipped.")  # TODO: Fix this...
 
     muteswanwriter = csv.writer(muteswanfile)
-    muteswanwriter.writerow(["Site", "",
-                             "13/14", "14/15", "15/16", "16/17", "17/18", "",
+    muteswanwriter.writerow(["Site",
+                             *["{}/{}".format(i % 100, (i+1) % 100) for i in range(98, 117)],
                              "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
     nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
+    backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
+    finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
     muteswanpage = 1
+    totalmuteswanpages = int(driver.find_element_by_xpath('//select[@id="pageNo"]'
+                                                          '/option[last()]').get_attribute("value"))
 
     while True:
         print(" - Processing page {}...".format(muteswanpage))
+        finalyearbutton.click()
         table = driver.find_element_by_xpath('//table[@class="maintable"]'
                                              '/tbody[@id="wr_webs_report"]'
                                              '/..'
                                              '/..')
-        muteswantable = np.object_(read_html(table.get_attribute("innerHTML"))[0])
+        table = read_html(table.get_attribute("innerHTML"))[0]
+        for i in range(3):
+            for j in range(5):
+                backyearbutton.click()
+            table = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                                 '/tbody[@id="wr_webs_report"]'
+                                                 '/..'
+                                                 '/..')
+            table = read_html(table.get_attribute("innerHTML"))[0]
+            muteswantable = pd.concat([table, table[table.columns[2:7]]], axis=1)
+        cols = muteswantable.columns.tolist()
+        print(cols)
+        cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
+        print(cols)
+        muteswantable = muteswantable[cols]
+        muteswantable = np.object_(muteswantable)
+        print(muteswantable)
 
         for row in muteswantable:
             muteswanwriter.writerow(row)
-        if muteswanpage == 168:  # TODO: do this better
+
+        if muteswanpage == totalmuteswanpages:
             muteswanwriter.writerow(["END"] * 12)
             break
         else:
             nextpagebutton.click()
             muteswanpage += 1
-    winsound.Beep(2500, 1000)
+    # winsound.Beep(2500, 1000)
     muteswanfile.close()
-    # TODO: extend this to include more years of mute swans
     print(" - Data table extracted.\n\n", muteswantable, "\n")
 
     # Finds the location dropdown menu and clicks it
-    # TODO: probably change this to use the list of mute swan sites, not just EVERY site
+    # TODO: probably change this to use the list of mute swan sites first, not just EVERY site
     print("Extracting names for sites with data available...")
     sitenamedropdown = driver.find_element_by_xpath('//div[@id="locationFg"]'
                                                     '/div[contains(@class, "select2-container")]')
@@ -109,7 +131,7 @@ try:
                 sitenamesfile = open("sitenames.txt", "x", encoding="utf-8")
                 print(" -  - Created new 'sitenames.txt'.")
                 sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
-                                                               'not(contains(@class, "italicSpecies"))]'
+                                                          'not(contains(@class, "italicSpecies"))]'
                                                           '/div')
 
                 # Extracts all the site names from this list
@@ -198,7 +220,11 @@ try:
                                              '/tbody[@id="wr_webs_report"]'
                                              '/..'
                                              '/..')
-        sitetable = np.object_(read_html(table.get_attribute("innerHTML"))[0])
+        table = read_html(table.get_attribute("innerHTML"))[0]
+        table = table.drop([table.columns[1],
+                            table.columns[7],
+                            table.columns[11]], axis=1)
+        sitetable = np.object_(table)
         sitetables.append(sitetable)
         sitewriter = csv.writer(sitefile)
         sitewriter.writerow(["Species", "",
@@ -230,4 +256,6 @@ https://stackoverflow.com/questions/29807856/selenium-python-how-to-get-texthtml
 https://stackoverflow.com/questions/35573625/getting-current-select-value-from-drop-down-menu-with-python-selenium
 https://docs.python.org/3/library/functions.html?highlight=open#open
 https://docs.python.org/3/tutorial/controlflow.html
+https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
+https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
 """
