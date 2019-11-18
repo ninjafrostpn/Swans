@@ -3,7 +3,7 @@ import numpy as np
 import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 
@@ -19,7 +19,7 @@ try:
     driver.get(muteswan_site)
     print(" - Waiting for table to load...")
     table = WebDriverWait(driver, 60).until(
-        EC.presence_of_all_elements_located((By.XPATH, '//table[@class="maintable"]'
+        ec.presence_of_all_elements_located((By.XPATH, '//table[@class="maintable"]'
                                                        '/tbody'
                                                        '/tr'
                                                        '/td'
@@ -69,8 +69,8 @@ try:
                 sitenamesfile = open("sitenames.txt", "x")
                 print(" -  - Created new 'sitenames.txt'.")
                 sitenames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result") and '
-                                                      'not(contains(@class, "italicSpecies"))]'
-                                                      '/div')
+                                                               'not(contains(@class, "italicSpecies"))]'
+                                                          '/div')
 
                 # Extracts all the site names from this list
                 print(" - Processing name data...")
@@ -102,10 +102,10 @@ try:
         time.sleep(1)
 
         # Ensure that the bird group selector is set to wildfowl
-        # (The letter combination "wi" seems to consistently get it to select "wildfowl"; longer and shorter do not)
         print(" -  - Selecting correct table settings...\n -  -  - Selecting wildfowl...")
         birdgroupdropdown = driver.find_element_by_xpath('//select[@id="birdgroup"]')
-        birdgroupdropdown.send_keys("wi")
+        while birdgroupdropdown.get_attribute("value") != "WIL":
+            birdgroupdropdown.send_keys("wi")
         time.sleep(1)
 
         # Ensure that supplementary data are always included
@@ -132,9 +132,11 @@ try:
                                               '/div'
                                               '/*')
 
+        # TODO: Maybe break out the table parsing to a separate function
         # Joins table cells into a string, cells delineated using *
         # (Skips delineator which sits before the first cell)
         table = "".join([t.text if t.text != "" else "*" for t in table[1:]])
+        # TODO: Fix potential issue with wildfowl-free sites yielding a spurious "**" sequence
 
         # Replaces gaps left by supplementary data hiders with placeholders
         table = " ({} [{}])*".join(table.split("**"))
@@ -168,4 +170,5 @@ https://www.bto.org/our-science/projects/wetland-bird-survey/publications/webs-a
 https://www.bto.org/sites/default/files/webs_methods.pdf
 https://app.bto.org/webs-reporting/?tab=numbers&locid=LOC648397
 https://stackoverflow.com/questions/29807856/selenium-python-how-to-get-texthtml-source-from-div#comment47745057_29808188
+https://stackoverflow.com/questions/35573625/getting-current-select-value-from-drop-down-menu-with-python-selenium
 """
