@@ -11,6 +11,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 import time
 import winsound
 
+# Script First Worked on: 2019-11-17
+# By: Charles S Turvey
+
 webs_site = "https://app.bto.org/webs-reporting/"
 muteswan_site = webs_site + "?tab=numbers&speciescode=46"
 severnestuary_site = webs_site + "?tab=numbers&locid=LOC648397"
@@ -88,12 +91,9 @@ try:
             table = read_html(table.get_attribute("innerHTML"))[0]
             muteswantable = pd.concat([table, table[table.columns[2:7]]], axis=1)
         cols = muteswantable.columns.tolist()
-        print(cols)
         cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
-        print(cols)
         muteswantable = muteswantable[cols]
         muteswantable = np.object_(muteswantable)
-        print(muteswantable)
 
         for row in muteswantable:
             muteswanwriter.writerow(row)
