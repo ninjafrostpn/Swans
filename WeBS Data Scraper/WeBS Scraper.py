@@ -31,7 +31,6 @@ print(" - Driver opened.")
 try:
     print("Loading WeBS site...")
     driver.get(muteswan_site)
-    print(" - Waiting for table to load...")
     WebDriverWait(driver, 60).until(
         ec.presence_of_element_located((By.XPATH, '//table[@class="maintable"]'
                                                   '/tbody'
@@ -143,10 +142,11 @@ try:
             except FileExistsError:
                 print(" -  - Found old 'sitenames.txt'.")
                 sitenamesfile = open("sitenames.txt", "r", encoding="utf-8")
+                # TODO: Variable needs a better name
                 ohgoonthen = input("\nUse this file?\n"
                                    " - Enter to proceed with this name list,\n"
                                    " - o then Enter to overwrite it\n"  # TODO: Implement this.
-                                   ">>> ").lower()
+                                   ">>> ").lower()  # TODO: Cull the calls of lower()
                 if ohgoonthen.lower() == "o":
                     quit()
                 print(" - Reading old 'sitenames.txt'...")

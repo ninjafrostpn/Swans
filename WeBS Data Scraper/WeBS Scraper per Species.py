@@ -16,7 +16,10 @@ import winsound
 
 webs_site = "https://app.bto.org/webs-reporting/"
 muteswan_site = webs_site + "?tab=numbers&speciescode=46"
-severnestuary_site = webs_site + "?tab=numbers&locid=LOC648397"
+
+print("Opening driver...")
+driver = webdriver.Firefox()
+print(" - Driver opened.")
 
 try:
     print("Creating 'csvdata' directory...")
@@ -25,13 +28,9 @@ try:
 except FileExistsError:
     print(" - There already exists a 'csvdata' directory.")
 
-print("Opening driver...")
-driver = webdriver.Firefox()
-print(" - Driver opened.")
 try:
     print("Loading WeBS site...")
     driver.get(muteswan_site)
-    print(" - Waiting for table to load...")
     WebDriverWait(driver, 60).until(
         ec.presence_of_element_located((By.XPATH, '//table[@class="maintable"]'
                                                   '/tbody'
@@ -42,70 +41,120 @@ try:
     )
     print(" - Site loaded.")
 
-    print("Extracting data table...")
-    overwritepolicy = ""
-    try:
-        print(" - Creating 'muteswans.csv'...")
-        muteswanfile = open("csvdata//muteswans.csv", "x", encoding="utf-8", newline="")
-    except FileExistsError:
-        print(" -  - Found old 'muteswans.csv'...")
-        overwritepolicy = input("\nKeep this file?\n"
-                                " - Enter to keep the old file,\n"
-                                " - a then enter to keep all\n"
-                                " - o then Enter to overwrite it,\n"
-                                " - x then Enter to overwrite all\n"
-                                ">>> ").lower()
-        if overwritepolicy.lower() in ["o", "x"]:
-            print(" -  - Overwriting old 'muteswans.csv'...")
-            muteswanfile = open("csvdata//muteswans.csv", "w", encoding="utf-8", newline="")
-            print(" -  - Old 'muteswans.csv' overwritten.")
-        else:
-            print(" -  - Old 'muteswans.csv' kept.\n - Table extraction skipped.")  # TODO: Fix this...
+    print("Extracting bird name list...")
+    birdnamedropdown = driver.find_element_by_xpath('//div[@id="speciesFg"]'
+                                                    '/div[contains(@class, "select2-container")]')
+    birdnamedropdown.click()
+    searchboxes = driver.find_elements_by_xpath('//input[contains(@class, "select2-input")]')
+    birdsearchbox = None
+    for searchbox in searchboxes:
+        # Checks that it's the visible searchbox
+        if searchbox.is_displayed():
+            birdsearchbox = searchbox
+    birdsearchbox.clear()
 
-    muteswanwriter = csv.writer(muteswanfile)
-    muteswanwriter.writerow(["Site",
-                             *["{}/{}".format(i % 100, (i+1) % 100) for i in range(98, 117)],
-                             "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
-    nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
-    backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
-    finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
-    muteswanpage = 1
-    totalmuteswanpages = int(driver.find_element_by_xpath('//select[@id="pageNo"]'
-                                                          '/option[last()]').get_attribute("value"))
+    birdnames = []
+    try:
+        print(" - Checking for 'birdnames.txt'...")
+        birdnamesfile = open("birdnames.txt", "x", encoding="utf-8")
+        print(" -  - Created new 'birdnames.txt'.")
+        birdnames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result")]'
+                                                  '/div')
+        print(" - Processing name data...")
+        birdnames = ["".join(re.split(r"<span.*span>", birdname.get_attribute("innerHTML")))
+                     for birdname in birdnames]
+        print(" -  - Writing site names to 'birdnames.txt'...")
+        birdnamesfile.write("\n".join(birdnames))
+    except FileExistsError:
+        print(" -  - Found old 'birdnames.txt'...")
+        # TODO: Variable needs a better name
+        ohgoonthen = input("\nUse this file?\n"
+                           " - Enter to proceed with this name list,\n"
+                           " - o then Enter to overwrite it\n"
+                           ">>> ").lower()
+        if ohgoonthen == "o":
+            birdnamesfile = open("birdnames.txt", "w", encoding="utf-8")
+            # TODO: Reroute this code to avoid duplication
+            print(" -  - Old 'birdnames.txt' overwritten.")
+            birdnames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result")]'
+                                                      '/div')
+            print(" - Processing name data...")
+            birdnames = ["".join(re.split(r"<span.*span>", birdname.get_attribute("innerHTML")))
+                         for birdname in birdnames]
+            print(" -  - Writing site names to 'birdnames.txt'...")
+            birdnamesfile.write("\n".join(birdnames))
+        else:
+            birdnamesfile = open("birdnames.txt", "r", encoding="utf-8")
+            birdnames = birdnamesfile.read()
+            birdnames = birdnames.split("\n")
+    finally:
+        birdnamesfile.close()
 
     while True:
-        print(" - Processing page {}...".format(muteswanpage))
-        finalyearbutton.click()
-        table = driver.find_element_by_xpath('//table[@class="maintable"]'
-                                             '/tbody[@id="wr_webs_report"]'
-                                             '/..'
-                                             '/..')
-        table = read_html(table.get_attribute("innerHTML"))[0]
-        for i in range(3):
-            for j in range(5):
-                backyearbutton.click()
+        print("Extracting data table...")
+        overwritepolicy = ""
+        try:
+            print(" - Creating 'birds.csv'...")
+            birdfile = open("csvdata//birds.csv", "x", encoding="utf-8", newline="")
+        except FileExistsError:
+            print(" -  - Found old 'birds.csv'...")
+            overwritepolicy = input("\nKeep this file?\n"
+                                    " - Enter to keep the old file,\n"
+                                    " - a then enter to keep all\n"
+                                    " - o then Enter to overwrite it,\n"
+                                    " - x then Enter to overwrite all\n"
+                                    ">>> ").lower()
+            if overwritepolicy.lower() in ["o", "x"]:
+                print(" -  - Overwriting old 'birds.csv'...")
+                birdfile = open("csvdata//birds.csv", "w", encoding="utf-8", newline="")
+                print(" -  - Old 'birds.csv' overwritten.")
+            else:
+                print(" -  - Old 'birds.csv' kept.\n - Table extraction skipped.")  # TODO: Fix this...
+
+        birdwriter = csv.writer(birdfile)
+        birdwriter.writerow(["Site",
+                             *["{}/{}".format(i % 100, (i+1) % 100) for i in range(98, 117)],
+                             "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
+        nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
+        backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
+        finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
+        birdpage = 1
+        totalbirdpages = int(driver.find_element_by_xpath('//select[@id="pageNo"]'
+                                                          '/option[last()]').get_attribute("value"))
+
+        while True:
+            print(" - Processing page {}...".format(birdpage))
+            finalyearbutton.click()
             table = driver.find_element_by_xpath('//table[@class="maintable"]'
                                                  '/tbody[@id="wr_webs_report"]'
                                                  '/..'
                                                  '/..')
             table = read_html(table.get_attribute("innerHTML"))[0]
-            muteswantable = pd.concat([table, table[table.columns[2:7]]], axis=1)
-        cols = muteswantable.columns.tolist()
-        cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
-        muteswantable = muteswantable[cols]
-        muteswantable = np.object_(muteswantable)
+            for i in range(3):
+                for j in range(5):
+                    backyearbutton.click()
+                table = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                                     '/tbody[@id="wr_webs_report"]'
+                                                     '/..'
+                                                     '/..')
+                table = read_html(table.get_attribute("innerHTML"))[0]
+                birdtable = pd.concat([table, table[table.columns[2:7]]], axis=1)
+            cols = birdtable.columns.tolist()
+            cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
+            birdtable = birdtable[cols]
+            birdtable = np.object_(birdtable)
 
-        for row in muteswantable:
-            muteswanwriter.writerow(row)
+            for row in birdtable:
+                birdwriter.writerow(row)
 
-        if muteswanpage == totalmuteswanpages:
-            muteswanwriter.writerow(["END"] * 12)
-            break
-        else:
-            nextpagebutton.click()
-            muteswanpage += 1
-    muteswanfile.close()
-    print(" - Data table extracted.\n\n", muteswantable, "\n")
+            if birdpage == totalbirdpages:
+                birdwriter.writerow(["END"] * 12)
+                break
+            else:
+                nextpagebutton.click()
+                birdpage += 1
+        birdfile.close()
+        print(" - Data table extracted.\n\n", birdtable, "\n")
 finally:
     print("Closing driver...")
     driver.close()
