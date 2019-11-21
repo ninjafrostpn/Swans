@@ -5,6 +5,7 @@ import pandas as pd
 from pandas.io.html import read_html
 import re
 from selenium import webdriver
+from selenium.common.exceptions import UnexpectedAlertPresentException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
@@ -99,7 +100,7 @@ try:
         if len(chosenbirdnames) == 0:
             print(" - No bird name matches found.")
             continue
-        print(" - Bird name matches found ({}).\n\n".format(len(chosenbirdnames)), "\n".join(chosenbirdnames))
+        print(" - Bird name matches found ({}).\n\n".format(len(chosenbirdnames)), "\n".join(chosenbirdnames), sep="")
         ohgoonthen = input("\nUse these birds?\n"
                            " - Enter to proceed with extracting data for these birds,\n"
                            " - n then Enter to try a different search.\n"
@@ -107,12 +108,11 @@ try:
         if ohgoonthen == "n":
             continue
         for birdname in chosenbirdnames:
-
-            print("\nExtracting data table...")
+            print("\nExtracting data table [{}]...".format(time.strftime("%H:%M:%S")))
             overwritepolicy = ""
             try:
                 print(" - Creating '{}.csv'...".format(birdname))
-                birdfile = open("csvdata//{}.csv".format(birdname), "x", encoding="utf-8", newline="")
+                birdfile = open("BirdCSVs//{}.csv".format(birdname), "x", encoding="utf-8", newline="")
             except FileExistsError:
                 print(" -  - Found old '{}.csv'...".format(birdname))
                 overwritepolicy = input("\nKeep this file?\n"
@@ -123,7 +123,7 @@ try:
                                         ">>> ").lower()
                 if overwritepolicy.lower() in ["o", "x"]:
                     print(" -  - Overwriting old '{}.csv'...".format(birdname))
-                    birdfile = open("csvdata//{}.csv".format(birdname), "w", encoding="utf-8", newline="")
+                    birdfile = open("BirdCSVs//{}.csv".format(birdname), "w", encoding="utf-8", newline="")
                     print(" -  - Old '{}.csv' overwritten.".format(birdname))
                 else:
                     print(" -  - Old '{}.csv' kept.\n - Table extraction skipped.".format(birdname))  # TODO: Fix this...
@@ -140,12 +140,16 @@ try:
             backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
             finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
             birdpage = 1
-            totalbirdpages = int(driver.find_element_by_xpath('//select[@id="pageNo"]'
-                                                              '/option[last()]').get_attribute("value"))
 
             while True:
-                print(" - Processing page {}...".format(birdpage))
-                finalyearbutton.click()
+                try:
+                    finalyearbutton.click()
+                except UnexpectedAlertPresentException:
+                    # This Exception being raised means that the alert is dismissed anyway
+                    # driver.switch_to.alert.dismiss()
+                    birdwriter.writerow(["END"])
+                    break
+                print(" - Processing page {} [{}]...".format(birdpage, time.strftime("%H:%M:%S")))
                 table = driver.find_element_by_xpath('//table[@class="maintable"]'
                                                      '/tbody[@id="wr_webs_report"]'
                                                      '/..'
@@ -168,14 +172,11 @@ try:
                 for row in birdtable:
                     birdwriter.writerow(row)
 
-                if birdpage == totalbirdpages:
-                    birdwriter.writerow(["END"] * 12)
-                    break
-                else:
-                    nextpagebutton.click()
-                    birdpage += 1
+                nextpagebutton.click()
+                birdpage += 1
             birdfile.close()
             print(" - Data table extracted.\n\n", birdtable, "\n")
+            birdnamedropdown.click()
 finally:
     print("Closing driver...")
     driver.close()
@@ -197,4 +198,5 @@ https://docs.python.org/3/library/functions.html?highlight=open#open
 https://docs.python.org/3/tutorial/controlflow.html
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
 https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
+https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
 """
