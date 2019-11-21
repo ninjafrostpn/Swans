@@ -50,9 +50,9 @@ try:
         print(" -  - Found old 'muteswans.csv'...")
         overwritepolicy = input("\nKeep this file?\n"
                                 " - Enter to keep the old file,\n"
-                                " - a then enter to keep all\n"
+                                " - a then enter to keep all,\n"
                                 " - o then Enter to overwrite it,\n"
-                                " - x then Enter to overwrite all\n"
+                                " - x then Enter to overwrite all.\n"
                                 ">>> ").lower()
         if overwritepolicy.lower() in ["o", "x"]:
             print(" -  - Overwriting old 'muteswans.csv'...")
@@ -145,7 +145,7 @@ try:
                 # TODO: Variable needs a better name
                 ohgoonthen = input("\nUse this file?\n"
                                    " - Enter to proceed with this name list,\n"
-                                   " - o then Enter to overwrite it\n"  # TODO: Implement this.
+                                   " - o then Enter to overwrite it.\n"  # TODO: Implement this.
                                    ">>> ").lower()  # TODO: Cull the calls of lower()
                 if ohgoonthen.lower() == "o":
                     quit()
@@ -155,6 +155,7 @@ try:
             finally:
                 sitenamesfile.close()
             print(" -  - Site names ready.\n\n", sitenames, "\n")
+    print(" - Site names extracted.")
 
     # Now for the real data extraction. This will enter each site name in turn and get the relevant data table
     print("Extracting individual site data tables...")
@@ -177,9 +178,9 @@ try:
             else:
                 overwritepolicy = input("\nKeep this file?\n"
                                         " - Enter to keep the old file,\n"
-                                        " - a then enter to keep all\n"
+                                        " - a then enter to keep all,\n"
                                         " - o then Enter to overwrite it,\n"
-                                        " - x then Enter to overwrite all\n"
+                                        " - x then Enter to overwrite all.\n"
                                         ">>> ").lower()
                 if overwritepolicy.lower() in ["o", "x"]:
                     print(" -  -  - Overwriting old '" + sitename + ".csv'...")

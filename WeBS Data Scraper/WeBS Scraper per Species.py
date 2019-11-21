@@ -22,11 +22,11 @@ driver = webdriver.Firefox()
 print(" - Driver opened.")
 
 try:
-    print("Creating 'csvdata' directory...")
-    os.mkdir("csvdata")
-    print(" - Created 'csvdata' directory.")
+    print("Creating 'BirdCSVs' directory...")
+    os.mkdir("BirdCSVs")
+    print(" - Created 'BirdCSVs' directory.")
 except FileExistsError:
-    print(" - There already exists a 'csvdata' directory.")
+    print(" - There already exists a 'BirdCSVs' directory.")
 
 try:
     print("Loading WeBS site...")
@@ -70,7 +70,7 @@ try:
         # TODO: Variable needs a better name
         ohgoonthen = input("\nUse this file?\n"
                            " - Enter to proceed with this name list,\n"
-                           " - o then Enter to overwrite it\n"
+                           " - o then Enter to overwrite it.\n"
                            ">>> ").lower()
         if ohgoonthen == "o":
             birdnamesfile = open("birdnames.txt", "w", encoding="utf-8")
@@ -89,72 +89,93 @@ try:
             birdnames = birdnames.split("\n")
     finally:
         birdnamesfile.close()
+    print(" -  - Bird names ready.\n\n", birdnames, "\n - Bird names extracted.")
 
     while True:
-        print("Extracting data table...")
-        overwritepolicy = ""
-        try:
-            print(" - Creating 'birds.csv'...")
-            birdfile = open("csvdata//birds.csv", "x", encoding="utf-8", newline="")
-        except FileExistsError:
-            print(" -  - Found old 'birds.csv'...")
-            overwritepolicy = input("\nKeep this file?\n"
-                                    " - Enter to keep the old file,\n"
-                                    " - a then enter to keep all\n"
-                                    " - o then Enter to overwrite it,\n"
-                                    " - x then Enter to overwrite all\n"
-                                    ">>> ").lower()
-            if overwritepolicy.lower() in ["o", "x"]:
-                print(" -  - Overwriting old 'birds.csv'...")
-                birdfile = open("csvdata//birds.csv", "w", encoding="utf-8", newline="")
-                print(" -  - Old 'birds.csv' overwritten.")
-            else:
-                print(" -  - Old 'birds.csv' kept.\n - Table extraction skipped.")  # TODO: Fix this...
+        birdname = input("\nEnter bird name or regex pattern, case insensitive\n>>> ")
+        print("Finding bird name matches...")
+        matcher = re.compile(birdname, re.IGNORECASE)
+        chosenbirdnames = list(filter(matcher.search, birdnames))
+        if len(chosenbirdnames) == 0:
+            print(" - No bird name matches found.")
+            continue
+        print(" - Bird name matches found ({}).\n\n".format(len(chosenbirdnames)), "\n".join(chosenbirdnames))
+        ohgoonthen = input("\nUse these birds?\n"
+                           " - Enter to proceed with extracting data for these birds,\n"
+                           " - n then Enter to try a different search.\n"
+                           ">>> ")
+        if ohgoonthen == "n":
+            continue
+        for birdname in chosenbirdnames:
 
-        birdwriter = csv.writer(birdfile)
-        birdwriter.writerow(["Site",
-                             *["{}/{}".format(i % 100, (i+1) % 100) for i in range(98, 117)],
-                             "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
-        nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
-        backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
-        finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
-        birdpage = 1
-        totalbirdpages = int(driver.find_element_by_xpath('//select[@id="pageNo"]'
-                                                          '/option[last()]').get_attribute("value"))
+            print("\nExtracting data table...")
+            overwritepolicy = ""
+            try:
+                print(" - Creating '{}.csv'...".format(birdname))
+                birdfile = open("csvdata//{}.csv".format(birdname), "x", encoding="utf-8", newline="")
+            except FileExistsError:
+                print(" -  - Found old '{}.csv'...".format(birdname))
+                overwritepolicy = input("\nKeep this file?\n"
+                                        " - Enter to keep the old file,\n"
+                                        " - a then Enter to keep all,\n"
+                                        " - o then Enter to overwrite it,\n"
+                                        " - x then Enter to overwrite all.\n"
+                                        ">>> ").lower()
+                if overwritepolicy.lower() in ["o", "x"]:
+                    print(" -  - Overwriting old '{}.csv'...".format(birdname))
+                    birdfile = open("csvdata//{}.csv".format(birdname), "w", encoding="utf-8", newline="")
+                    print(" -  - Old '{}.csv' overwritten.".format(birdname))
+                else:
+                    print(" -  - Old '{}.csv' kept.\n - Table extraction skipped.".format(birdname))  # TODO: Fix this...
 
-        while True:
-            print(" - Processing page {}...".format(birdpage))
-            finalyearbutton.click()
-            table = driver.find_element_by_xpath('//table[@class="maintable"]'
-                                                 '/tbody[@id="wr_webs_report"]'
-                                                 '/..'
-                                                 '/..')
-            table = read_html(table.get_attribute("innerHTML"))[0]
-            for i in range(3):
-                for j in range(5):
-                    backyearbutton.click()
+            print(" - Navigating to page...")
+            birdsearchbox.send_keys(birdname + "\n")
+            time.sleep(1)
+
+            birdwriter = csv.writer(birdfile)
+            birdwriter.writerow(["Site",
+                                 *["{}/{}".format(i % 100, (i+1) % 100) for i in range(98, 117)],
+                                 "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
+            nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
+            backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
+            finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
+            birdpage = 1
+            totalbirdpages = int(driver.find_element_by_xpath('//select[@id="pageNo"]'
+                                                              '/option[last()]').get_attribute("value"))
+
+            while True:
+                print(" - Processing page {}...".format(birdpage))
+                finalyearbutton.click()
                 table = driver.find_element_by_xpath('//table[@class="maintable"]'
                                                      '/tbody[@id="wr_webs_report"]'
                                                      '/..'
                                                      '/..')
                 table = read_html(table.get_attribute("innerHTML"))[0]
-                birdtable = pd.concat([table, table[table.columns[2:7]]], axis=1)
-            cols = birdtable.columns.tolist()
-            cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
-            birdtable = birdtable[cols]
-            birdtable = np.object_(birdtable)
+                for i in range(3):
+                    for j in range(5):
+                        backyearbutton.click()
+                    table = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                                         '/tbody[@id="wr_webs_report"]'
+                                                         '/..'
+                                                         '/..')
+                    table = read_html(table.get_attribute("innerHTML"))[0]
+                    birdtable = pd.concat([table, table[table.columns[2:7]]], axis=1)
+                cols = birdtable.columns.tolist()
+                cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
+                birdtable = birdtable[cols]
+                birdtable = np.object_(birdtable)
 
-            for row in birdtable:
-                birdwriter.writerow(row)
+                for row in birdtable:
+                    birdwriter.writerow(row)
 
-            if birdpage == totalbirdpages:
-                birdwriter.writerow(["END"] * 12)
-                break
-            else:
-                nextpagebutton.click()
-                birdpage += 1
-        birdfile.close()
-        print(" - Data table extracted.\n\n", birdtable, "\n")
+                if birdpage == totalbirdpages:
+                    birdwriter.writerow(["END"] * 12)
+                    break
+                else:
+                    nextpagebutton.click()
+                    birdpage += 1
+            birdfile.close()
+            print(" - Data table extracted.\n\n", birdtable, "\n")
 finally:
     print("Closing driver...")
     driver.close()

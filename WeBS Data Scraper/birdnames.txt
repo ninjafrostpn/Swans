@@ -1,0 +1,261 @@
+Magpie Goose
+White-faced Whistling Duck
+Black-bellied Whistling Duck
+Fulvous Whistling Duck
+Lesser Whistling Duck
+Brent Goose
+Brent Goose (Black Brant - nigricans)
+Brent Goose (Dark-bellied - bernicla)
+Brent Goose (Light-bellied - hrota)
+Brent Goose (Svalbard Light-bellied)
+Brent Goose (Light-bellied of Nearctic origin)
+Red-breasted Goose
+Nene
+Canada Goose
+Cackling Goose
+Barnacle Goose
+Barnacle Goose (naturalised)
+Barnacle Goose (Greenland)
+Barnacle Goose (Svalbard)
+Bar-headed Goose
+Emperor Goose
+Ross's Goose
+Snow Goose
+Snow Goose (Lesser - caerulescens)
+Greylag Goose
+Greylag Goose (British/Irish)
+Greylag Goose (Icelandic)
+Domestic Greylag Goose
+Swan Goose
+Taiga/Tundra Bean Goose
+Taiga Bean Goose
+Tundra Bean Goose
+Pink-footed Goose
+White-fronted Goose
+White-fronted Goose (Greenland - flavirostris)
+White-fronted Goose (European - albifrons)
+Lesser White-fronted Goose
+Coscoroba Swan
+Black Swan
+Black-necked Swan
+Mute Swan
+Trumpeter Swan
+Bewick's Swan
+Bewick's Swan (Whistling - columbianus)
+Whooper Swan
+Blue-winged Goose
+Egyptian Goose
+Orinoco Goose
+Upland Goose
+Shelduck
+Ruddy Shelduck
+South African Shelduck
+Australian Shelduck
+Paradise Shelduck
+Muscovy Duck
+Wood Duck
+Mandarin Duck
+Maned Duck
+Ringed Teal
+Baikal Teal
+Garganey
+Silver Teal
+Red Shoveler
+Cinnamon Teal
+Blue-winged Teal
+Australasian Shoveler
+Shoveler
+Gadwall
+Falcated Duck
+Wigeon
+Chiloe Wigeon
+American Wigeon
+Mallard
+American Black Duck
+Cape Teal
+White-cheeked Pintail
+Red-billed Teal
+Yellow-billed Pintail
+Pintail
+Teal
+Green-winged Teal
+Yellow-billed Teal
+Chestnut Teal
+Bernier's Teal
+Marbled Duck
+Red-crested Pochard
+Rosy-billed Pochard
+Canvasback
+Redhead
+Pochard
+Ferruginous Duck
+New Zealand Scaup
+Ring-necked Duck
+Tufted Duck
+Scaup
+Lesser Scaup
+King Eider
+Eider (except Shetland)
+Eider (Shetland)
+Harlequin Duck
+Surf Scoter
+Velvet Scoter
+Common Scoter
+Black Scoter
+Long-tailed Duck
+Bufflehead
+Goldeneye
+Barrow's Goldeneye
+Smew
+Hooded Merganser
+Goosander
+Red-breasted Merganser
+Ruddy Duck
+Lake Duck
+White-headed Duck
+Red-throated Diver
+Black-throated Diver
+Pacific Diver
+Great Northern Diver
+White-billed Diver
+Little Grebe
+Pied-billed Grebe
+Red-necked Grebe
+Great Crested Grebe
+Slavonian Grebe
+Black-necked Grebe
+Greater Flamingo
+Chilean Flamingo
+Lesser Flamingo
+Black Stork
+White Stork
+African Sacred Ibis
+Glossy Ibis
+Spoonbill
+African Spoonbill
+Bittern
+Little Bittern
+Night Heron
+Squacco Heron
+Cattle Egret
+Grey Heron
+Purple Heron
+Great White Egret
+Snowy Egret
+Little Egret
+Great White Pelican
+Dalmatian Pelican
+Shag
+Cormorant
+Water Rail
+Corncrake
+Little Crake
+Baillon's Crake
+Spotted Crake
+Moorhen
+Coot
+American Coot
+Crane
+Stone-curlew
+Oystercatcher
+Black-winged Stilt
+Avocet
+Lapwing
+Blacksmith Lapwing
+Sociable Lapwing
+Golden Plover
+Pacific Golden Plover
+American Golden Plover
+American/Pacific Golden Plover
+Grey Plover
+Ringed Plover
+Semipalmated Plover
+Little Ringed Plover
+Killdeer
+Kentish Plover
+Lesser Sand Plover
+Greater Sand Plover
+Dotterel
+Whimbrel
+Whimbrel (Hudsonian - hudsonicus)
+Curlew
+Bar-tailed Godwit
+Black-tailed Godwit
+Hudsonian Godwit
+Turnstone
+Great Knot
+Knot
+Ruff
+Broad-billed Sandpiper
+Sharp-tailed Sandpiper
+Stilt Sandpiper
+Curlew Sandpiper
+Temminck's Stint
+Sanderling
+Dunlin
+Purple Sandpiper
+Baird's Sandpiper
+Little Stint
+Least Sandpiper
+White-rumped Sandpiper
+Buff-breasted Sandpiper
+Pectoral Sandpiper
+Semipalmated Sandpiper
+Western Sandpiper
+Long-billed Dowitcher
+Short-billed Dowitcher
+Woodcock
+Jack Snipe
+Great Snipe
+Snipe
+Terek Sandpiper
+Wilson's Phalarope
+Red-necked Phalarope
+Grey Phalarope
+Common Sandpiper
+Spotted Sandpiper
+Green Sandpiper
+Solitary Sandpiper
+Lesser Yellowlegs
+Redshank
+Marsh Sandpiper
+Wood Sandpiper
+Spotted Redshank
+Greenshank
+Greater Yellowlegs
+Oriental Pratincole
+Black-winged Pratincole
+Kittiwake
+Ivory Gull
+Sabine's Gull
+Bonaparte's Gull
+Black-headed Gull
+Little Gull
+Ross's Gull
+Laughing Gull
+Franklin's Gull
+Mediterranean Gull
+Common Gull
+Ring-billed Gull
+Great Black-backed Gull
+Glaucous Gull
+Iceland Gull
+Iceland Gull (Kumlien's - kumlieni)
+Herring Gull
+Caspian Gull
+Yellow-legged Gull
+Lesser Black-backed Gull
+Gull-billed Tern
+Caspian Tern
+Royal Tern
+Lesser Crested Tern
+Sandwich Tern
+Little Tern
+Roseate Tern
+Common Tern
+Arctic Tern
+Forster's Tern
+Whiskered Tern
+White-winged Black Tern
+Black Tern
+Kingfisher
