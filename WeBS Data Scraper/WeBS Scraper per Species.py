@@ -10,7 +10,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.ui import WebDriverWait
 import time
-import winsound
 
 # Script First Worked on: 2019-11-20
 # By: Charles S Turvey
@@ -107,9 +106,10 @@ try:
                            ">>> ")
         if ohgoonthen == "n":
             continue
+
+        overwritepolicy = ""
         for birdname in chosenbirdnames:
             print("\nExtracting data table [{}]...".format(time.strftime("%H:%M:%S")))
-            overwritepolicy = ""
             try:
                 print(" - Creating '{}.csv'...".format(birdname))
                 birdfile = open("BirdCSVs//{}.csv".format(birdname), "x", encoding="utf-8", newline="")
@@ -133,9 +133,6 @@ try:
             time.sleep(1)
 
             birdwriter = csv.writer(birdfile)
-            birdwriter.writerow(["Site",
-                                 *["{}/{}".format(i % 100, (i+1) % 100) for i in range(98, 117)],
-                                 "MaximalMonthOf18", "Mean5yr", "Mean12/13-17/18"])
             nextpagebutton = driver.find_element_by_xpath('//button[@id="nextLot"]')
             backyearbutton = driver.find_element_by_xpath('//span[@id="wr_backInTime"]')
             finalyearbutton = driver.find_element_by_xpath('//span[@id="wr_forwardToEnd"]')
@@ -145,38 +142,59 @@ try:
                 try:
                     finalyearbutton.click()
                 except UnexpectedAlertPresentException:
+                    print(" - Reaching end of table...")
                     # This Exception being raised means that the alert is dismissed anyway
                     # driver.switch_to.alert.dismiss()
                     birdwriter.writerow(["END"])
                     break
+                accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
                 print(" - Processing page {} [{}]...".format(birdpage, time.strftime("%H:%M:%S")))
-                table = driver.find_element_by_xpath('//table[@class="maintable"]'
-                                                     '/tbody[@id="wr_webs_report"]'
-                                                     '/..'
-                                                     '/..')
-                table = read_html(table.get_attribute("innerHTML"))[0]
-                for i in range(3):
-                    for j in range(5):
-                        backyearbutton.click()
-                    table = driver.find_element_by_xpath('//table[@class="maintable"]'
+                birdtable = driver.find_element_by_xpath('//table[@class="maintable"]'
                                                          '/tbody[@id="wr_webs_report"]'
                                                          '/..'
                                                          '/..')
-                    table = read_html(table.get_attribute("innerHTML"))[0]
-                    birdtable = pd.concat([table, table[table.columns[2:7]]], axis=1)
+                birdtable = read_html(birdtable.get_attribute("innerHTML"))[0]
+                for i in range(3):
+                    for j in range(5):
+                        backyearbutton.click()
+                    pagetable = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                                             '/tbody[@id="wr_webs_report"]'
+                                                             '/..'
+                                                             '/..')
+                    pagetable = read_html(pagetable.get_attribute("innerHTML"))[0]
+                    birdtable = pd.concat([birdtable, pagetable[pagetable.columns[2:7]]], axis=1)
                 cols = birdtable.columns.tolist()
-                cols = [cols[0]] + cols[12:] + cols[2:7] + cols[8:11]
-                birdtable = birdtable[cols]
-                birdtable = np.object_(birdtable)
+                cols = [cols[0]] + cols[22:] + cols[17:22] + cols[12:17] + cols[2:7] + cols[8:11]
+                print(cols)
 
-                for row in birdtable:
-                    birdwriter.writerow(row)
+                try:
+                    if cols == origcols:
+                        # TODO: Somehow avoid code duplication here? Need me some functions
+                        birdtable = birdtable[cols]
+                        birdtable = birdtable.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
+                        birdtable = np.object_(birdtable)
 
-                nextpagebutton.click()
-                birdpage += 1
+                        for row in birdtable:
+                            birdwriter.writerow(row)
+                        nextpagebutton.click()
+                        birdpage += 1
+                    else:
+                        print(" -  - Error in page processing; table headings do not match.")
+                except NameError:
+                    origcols = cols
+                    birdtable = birdtable[cols]
+                    birdtable = birdtable.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
+                    birdtable = np.object_(birdtable)
+
+                    birdwriter.writerow(cols)
+                    for row in birdtable:
+                        birdwriter.writerow(row)
+                    nextpagebutton.click()
+                    birdpage += 1
             birdfile.close()
             print(" - Data table extracted.\n\n", birdtable, "\n")
             birdnamedropdown.click()
+            del origcols  # This code is a mess
 finally:
     print("Closing driver...")
     driver.close()
@@ -199,4 +217,6 @@ https://docs.python.org/3/tutorial/controlflow.html
 https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html
 https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
 https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
+https://www.techbeamers.com/handle-alert-popup-selenium-python/
+https://stackoverflow.com/questions/12555323/adding-new-column-to-existing-dataframe-in-python-pandas
 """
