@@ -163,15 +163,15 @@ try:
                                                              '/..')
                     pagetable = read_html(pagetable.get_attribute("innerHTML"))[0]
                     birdtable = pd.concat([birdtable, pagetable[pagetable.columns[2:7]]], axis=1)
+                birdtable = birdtable.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
                 cols = birdtable.columns.tolist()
-                cols = [cols[0]] + cols[22:] + cols[17:22] + cols[12:17] + cols[2:7] + cols[8:11]
+                cols = [cols[0]] + cols[22:27] + cols[17:22] + cols[12:17] + cols[2:7] + cols[8:11] + cols[27:]
                 print(cols)
 
                 try:
                     if cols == origcols:
                         # TODO: Somehow avoid code duplication here? Need me some functions
                         birdtable = birdtable[cols]
-                        birdtable = birdtable.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
                         birdtable = np.object_(birdtable)
 
                         for row in birdtable:
@@ -183,7 +183,6 @@ try:
                 except NameError:
                     origcols = cols
                     birdtable = birdtable[cols]
-                    birdtable = birdtable.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
                     birdtable = np.object_(birdtable)
 
                     birdwriter.writerow(cols)
