@@ -153,6 +153,7 @@ try:
                     break
                 accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
                 print(" - Processing page {} [{}]...".format(birdpage, time.strftime("%H:%M:%S")))
+                # TODO: Add some sort of check and delay to ensure that the page has properly loaded before reading
                 birdtable = driver.find_element_by_xpath('//table[@class="maintable"]'
                                                          '/tbody[@id="wr_webs_report"]'
                                                          '/..'
@@ -184,6 +185,8 @@ try:
                         birdpage += 1
                     else:
                         print(" -  - Error in page processing; table headings do not match.")
+                        input("We're going to have to skip this one for now\n>>> ")
+                        # TODO: Set up some options for what to do at this point
                 except NameError:
                     origcols = cols
                     birdtable = birdtable[cols]
