@@ -110,23 +110,27 @@ try:
         overwritepolicy = ""
         for birdname in chosenbirdnames:
             print("\nExtracting data table [{}]...".format(time.strftime("%H:%M:%S")))
+            # Prevents issues with file name misinterpretation as folder/file
+            birdfilename = "-".join(birdname.split("/"))
             try:
-                print(" - Creating '{}.csv'...".format(birdname))
-                birdfile = open("BirdCSVs//{}.csv".format(birdname), "x", encoding="utf-8", newline="")
+                print(" - Creating '{}.csv'...".format(birdfilename))
+                birdfile = open("BirdCSVs//{}.csv".format(birdfilename), "x", encoding="utf-8", newline="")
             except FileExistsError:
-                print(" -  - Found old '{}.csv'...".format(birdname))
-                overwritepolicy = input("\nKeep this file?\n"
-                                        " - Enter to keep the old file,\n"
-                                        " - a then Enter to keep all,\n"
-                                        " - o then Enter to overwrite it,\n"
-                                        " - x then Enter to overwrite all.\n"
-                                        ">>> ").lower()
+                print(" -  - Found old '{}.csv'...".format(birdfilename))
+                if overwritepolicy not in ["a", "o"]:
+                    overwritepolicy = input("\nKeep this file?\n"
+                                            " - Enter to keep the old file,\n"
+                                            " - a then Enter to keep all,\n"
+                                            " - o then Enter to overwrite it,\n"
+                                            " - x then Enter to overwrite all.\n"
+                                            ">>> ").lower()
                 if overwritepolicy.lower() in ["o", "x"]:
-                    print(" -  - Overwriting old '{}.csv'...".format(birdname))
-                    birdfile = open("BirdCSVs//{}.csv".format(birdname), "w", encoding="utf-8", newline="")
-                    print(" -  - Old '{}.csv' overwritten.".format(birdname))
+                    print(" -  - Overwriting old '{}.csv'...".format(birdfilename))
+                    birdfile = open("BirdCSVs//{}.csv".format(birdfilename), "w", encoding="utf-8", newline="")
+                    print(" -  - Old '{}.csv' overwritten.".format(birdfilename))
                 else:
-                    print(" -  - Old '{}.csv' kept.\n - Table extraction skipped.".format(birdname))  # TODO: Fix this...
+                    print(" -  - Old '{}.csv' kept.\n - Table extraction skipped.".format(birdfilename))
+                    continue
 
             print(" - Navigating to page...")
             birdsearchbox.send_keys(birdname + "\n")
