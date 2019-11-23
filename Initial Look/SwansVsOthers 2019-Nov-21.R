@@ -3,12 +3,13 @@
 
 # Clear and setup (may need to install packages)
 rm(list=ls())
-library(tidyr)
+library(colorRamps)
 library(dplyr)
-library(lubridate)
 library(ggplot2)
+library(lubridate)
 library(reshape2)
 library(rstudioapi)
+library(tidyr)
 
 #### Get Raw Population Data ####
 
@@ -117,6 +118,9 @@ save(MallardPopDiff, file="Initial Look/MallardPopDiff.Rdata")
 
 #### Plotting and Analysis (Coming Soon) ####
 
+# See what the Mute Swan Populations are doing
+plot(MuteSwanPop$Pop98.99)  # TODO: Graph traces per site across years on x
+
 # Get rows of differential data according to list of shared sites
 # TODO: Sort out the problem with which duplicates to use (probably has to be done at scraper level)
 MS.CG.FlatMuteSwanPopDiff = melt(MuteSwanPopDiff[match(MS.CG.SharedSites, MuteSwanPopDiff$Site), ], id="Site")
@@ -126,16 +130,44 @@ plot(MS.CG.FlatMuteSwanPopDiff$value, MS.CG.FlatCanadaGoosePopDiff$value,
      col=rgb(20, 10, 20, 15, maxColorValue=40), pch=20)
 # This plot appears to show a lot of 0 in a big +
 # TODO: Try offsetting the changes a few years or transforming the data
+
 # Try zooming in
 focus = (abs(MS.CG.FlatCanadaGoosePopDiff$value) < 10000) & (abs(MS.CG.FlatMuteSwanPopDiff$value) < 2000)
 plot(MS.CG.FlatMuteSwanPopDiff$value[focus], MS.CG.FlatCanadaGoosePopDiff$value[focus],
      xlab="Change in Max Mute Swan Population [#/yr]", ylab="Change in Max Canada Goose Population [#/yr]",
      col=rgb(20, 10, 20, 15, maxColorValue=40), pch=20)
+
 # Try removing nas (looks like plot already does this)
 focus = !(is.na(MS.CG.FlatCanadaGoosePopDiff$value) | is.na(MS.CG.FlatMuteSwanPopDiff$value))
 plot(MS.CG.FlatMuteSwanPopDiff$value[focus], MS.CG.FlatCanadaGoosePopDiff$value[focus],
      xlab="Change in Max Mute Swan Population [#/yr]", ylab="Change in Max Canada Goose Population [#/yr]",
      col=rgb(20, 10, 20, 15, maxColorValue=40), pch=20)
+
+# Try looking at only certain sites
+focus = (MS.CG.FlatCanadaGoosePopDiff$Site == MS.CG.SharedSites[3])
+plot(MS.CG.FlatMuteSwanPopDiff$value[focus], MS.CG.FlatCanadaGoosePopDiff$value[focus],
+     xlab="Change in Max Mute Swan Population [#/yr]", ylab="Change in Max Canada Goose Population [#/yr]",
+     col=rgb(20, 10, 20, 15, maxColorValue=40), pch=20)
+# Or the same but bigger
+focus = MS.CG.FlatMuteSwanPopDiff$Site %in% MS.CG.SharedSites[101:109]
+ggplot(MS.CG.FlatMuteSwanPopDiff[focus,],
+       aes(x=MS.CG.FlatMuteSwanPopDiff$value[focus],
+           y=MS.CG.FlatCanadaGoosePopDiff$value[focus])) +
+  geom_point(shape="O") +
+  facet_wrap(~MS.CG.FlatMuteSwanPopDiff$Site[focus])
+plot(MS.CG.FlatMuteSwanPopDiff$value[focus], MS.CG.FlatCanadaGoosePopDiff$value[focus],
+     xlab="Change in Max Mute Swan Population [#/yr]", ylab="Change in Max Canada Goose Population [#/yr]",
+     col=primary.colors(20)[as.numeric(factor(MS.CG.FlatMuteSwanPopDiff$Site[focus])) + 5],
+     pch=as.numeric(factor(MS.CG.FlatMuteSwanPopDiff$Site[focus])))
+
+# Try only data where populations are higher than 50
+MS.CG.FlatMuteSwanPopDiff = melt(MuteSwanPopDiff[match(MS.CG.SharedSites, MuteSwanPopDiff$Site), ], id="Site")
+MS.CG.FlatCanadaGoosePopDiff = melt(CanadaGoosePopDiff[match(MS.CG.SharedSites, CanadaGoosePopDiff$Site), ], id="Site")
+focus = (abs(MS.CG.FlatCanadaGoosePop$value) < 10000) & (abs(MS.CG.FlatMuteSwanPopDiff$value) < 2000)
+plot(MS.CG.FlatMuteSwanPopDiff$value[focus], MS.CG.FlatCanadaGoosePopDiff$value[focus],
+     xlab="Change in Max Mute Swan Population [#/yr]", ylab="Change in Max Canada Goose Population [#/yr]",
+     col=rgb(20, 10, 20, 15, maxColorValue=40), pch=20)
+
 # Some sanity checking
 # plot(lm(MS.CG.FlatCanadaGoosePopDiff$value ~ MS.CG.FlatMuteSwanPopDiff$value))
 max(select(MuteSwanPop, starts_with("Pop")), na.rm=T)
@@ -158,4 +190,3 @@ plot(MS.M.FlatMuteSwanPopDiff$value[focus], MS.M.FlatMallardPopDiff$value[focus]
 # plot(lm(MS.M.FlatMallardPopDiff$value ~ MS.M.FlatMuteSwanPopDiff$value))
 max(select(MallardPop, starts_with("Pop")), na.rm=T)
 max(select(MallardPopDiff, starts_with("Diff")), na.rm=T)
-
