@@ -171,8 +171,10 @@ plot(MS.CG.FlatMuteSwanPopDiff$value[focus], MS.CG.FlatCanadaGoosePopDiff$value[
 # Some sanity checking
 # plot(lm(MS.CG.FlatCanadaGoosePopDiff$value ~ MS.CG.FlatMuteSwanPopDiff$value))
 max(select(MuteSwanPop, starts_with("Pop")), na.rm=T)
+hist(MS.CG.FlatMuteSwanPopDiff$value, breaks=100)
 max(select(MuteSwanPopDiff, starts_with("Diff")), na.rm=T)
 max(select(CanadaGoosePop, starts_with("Pop")), na.rm=T)
+hist(MS.CG.FlatCanadaGoosePopDiff$value, breaks=100)
 max(select(CanadaGoosePopDiff, starts_with("Diff")), na.rm=T)
 
 # And now for Mallard
