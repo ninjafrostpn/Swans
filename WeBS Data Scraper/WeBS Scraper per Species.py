@@ -142,6 +142,12 @@ try:
         # Go through each bird name in the selection and download the relevant table
         overwritepolicy = ""
         for birdname in chosenbirdnames:
+            # Take baseline table read against which to check if updates have actually occurred later
+            birdtable = driver.find_element_by_xpath('//table[@class="maintable"]'
+                                                     '/tbody[@id="wr_webs_report"]'
+                                                     '/..'
+                                                     '/..')
+            birdtablehtml = birdtable.get_attribute("innerHMTL")
             print("\nExtracting data table [{}]...".format(time.strftime("%H:%M:%S")))
             # Prevent issues with file name misinterpretation as folder/file by replacing all /s with -s
             birdfilename = "-".join(birdname.split("/"))
@@ -175,7 +181,6 @@ try:
             birdsearchbox.send_keys(birdname + "\n")
             # Wait a moment to give the page a chance to load
             time.sleep(1)  # TODO: find a way to do this more efficiently, but just as certainly
-
             # Initialise interface for easily writing to the csv file
             birdwriter = csv.writer(birdfile)
             # Get the elements which move the table to the next page...
@@ -204,30 +209,44 @@ try:
                 accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
                 print(" - Processing page {} [{}]...".format(birdpage, time.strftime("%H:%M:%S")))
                 # Get the element corresponding to the visible table
-                # TODO: Add some sort of check and delay to ensure that the page has properly loaded before reading
-                birdtable = driver.find_element_by_xpath('//table[@class="maintable"]'
-                                                         '/tbody[@id="wr_webs_report"]'
-                                                         '/..'
-                                                         '/..')
+                newbirdtablehtml = birdtablehtml
+                checks = 0
+                while birdtablehtml == newbirdtablehtml:
+                    # This loop checks whether the data has actually changed since the last read, as a safeguard
+                    if checks == 5:
+                        break
+                    print(" -  - Attempting to grab table data (0:{})...".format(checks))
+                    time.sleep(1)
+                    newbirdtablehtml = birdtable.get_attribute("innerHTML")
+                    checks += 1
+                birdtablehtml = newbirdtablehtml
                 # Convert the html of the table into a DataFrame of population data + Supplementary info
-                birdtable = read_html(birdtable.get_attribute("innerHTML"))[0]
+                birdtabledata = read_html(birdtable.get_attribute("innerHTML"))[0]
                 # Scroll back 5 years 3 times, to bring the total table range to 20 years
                 for i in range(3):
                     for j in range(5):
                         backyearbutton.click()
+                    time.sleep(1)
                     # Get the table each 5 new years
-                    pagetable = driver.find_element_by_xpath('//table[@class="maintable"]'
-                                                             '/tbody[@id="wr_webs_report"]'
-                                                             '/..'
-                                                             '/..')
-                    # Convert its html into a DataFrmae, as before
-                    pagetable = read_html(pagetable.get_attribute("innerHTML"))[0]
+                    newbirdtablehtml = birdtablehtml
+                    checks = 0
+                    while birdtablehtml == newbirdtablehtml:
+                        # This loop checks whether the data has actually changed since the last read, as a safeguard
+                        if checks == 5:
+                            break
+                        print(" -  - Attempting to grab table data ({}:{})...".format(i + 1, checks))
+                        time.sleep(0.1)
+                        newbirdtablehtml = birdtable.get_attribute("innerHTML")
+                        checks += 1
+                    birdtablehtml = newbirdtablehtml
+                    # Convert its html into a DataFrame, as before
+                    pagetabledata = read_html(birdtablehtml)[0]
                     # Connect the new data columns onto the end of the existing table
-                    birdtable = pd.concat([birdtable, pagetable[pagetable.columns[2:7]]], axis=1)
+                    birdtabledata = pd.concat([birdtabledata, pagetabledata[pagetabledata.columns[2:7]]], axis=1)
                 # Add columns giving the table page number and time of access as metadata alongside the population data
-                birdtable = birdtable.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
+                birdtabledata = birdtabledata.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
                 # Get the column names and organise them Site - Population (oldest to youngest) - Metadata
-                cols = birdtable.columns.tolist()
+                cols = birdtabledata.columns.tolist()
                 cols = [cols[0]] + cols[22:27] + cols[17:22] + cols[12:17] + cols[2:7] + cols[8:11] + cols[27:]
                 print(cols)
 
@@ -237,10 +256,10 @@ try:
                     if cols == origcols:
                         # TODO: Somehow avoid code duplication here? Need me some functions
                         # Rearrange the downloaded table data as above
-                        birdtable = np.object_(birdtable[cols])
+                        birdtabledata = np.object_(birdtabledata[cols])
 
                         # Write each row of the downloaded table to the csv file
-                        for row in birdtable:
+                        for row in birdtabledata:
                             birdwriter.writerow(row)
                         # Move on to the next page of data
                         # N.B. This raises an alert (handled above) if there are no more pages
@@ -255,20 +274,21 @@ try:
                     # If origcols doesn't yet exist, this is the first page, so set the standard for column names
                     origcols = cols
                     # Rearrange the downloaded table data as per cols above
-                    birdtable = np.object_(birdtable[cols])
+                    birdtabledata = np.object_(birdtabledata[cols])
 
                     # Write each row of the downloaded table to the csv file
                     birdwriter.writerow(cols)
-                    for row in birdtable:
+                    for row in birdtabledata:
                         birdwriter.writerow(row)
 
                     # Move on to the next page of data
                     # N.B. This raises an alert (handled above) if there are no more pages
                     nextpagebutton.click()
                     birdpage += 1
+                time.sleep(1)
             # Close the csv file, now that nothing more need be written to it
             birdfile.close()
-            print(" - Data table extracted.\n\n", birdtable, "\n")
+            print(" - Data table extracted.\n\n", birdtabledata, "\n")
             # Reset ready for the next bird name
             birdnamedropdown.click()
             del origcols
@@ -297,4 +317,6 @@ https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
 https://stackoverflow.com/questions/3640359/regular-expressions-search-in-list
 https://www.techbeamers.com/handle-alert-popup-selenium-python/
 https://stackoverflow.com/questions/12555323/adding-new-column-to-existing-dataframe-in-python-pandas
+https://www.gobirding.eu/Photos/Swoose.php
+https://www.gobirding.eu/Photos/HybridGeese.php
 """
