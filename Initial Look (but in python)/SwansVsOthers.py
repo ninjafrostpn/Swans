@@ -8,9 +8,11 @@ import re
 
 # Array of which plots to plot
 plotids = [5]
+# Name of the bird to plot against Mute Swans
+birdname = "Canada Goose"
 
 muteswanfile = open("../WeBS Data Scraper/BirdCSVs/Mute Swan.csv")
-birdfile = open("../WeBS Data Scraper/BirdCSVs/Canada Goose.csv")
+birdfile = open("../WeBS Data Scraper/BirdCSVs/{}.csv".format(birdname))
 muteswanreader = csv.reader(muteswanfile)
 birdreader = csv.reader(birdfile)
 muteswantable = [row for row in muteswanreader]
@@ -98,9 +100,9 @@ if 1 in plotids:
         plt.plot(xlab, birdpop[i, :], ".-")
     plt.legend(birdloc)
     plt.xticks(rotation="vertical")
-    plt.suptitle("Top 10 sites' [Other Bird] numbers over the last 20yr")
+    plt.suptitle("Top 10 sites' {} numbers over the last 20yr".format(birdname))
     plt.title("(Ranked according to 13/14 - 17/18 population average)")
-    plt.ylabel("Maximum Recorded [Other Bird] Population in Recording Period")
+    plt.ylabel("Maximum Recorded {} Population in Recording Period".format(birdname))
     plt.xlabel("Recording Period")
     plt.show()
 
@@ -125,10 +127,10 @@ if 2 in plotids:
     plt.plot(muteswanpop[muteswanlocsharedmask].flatten(),
              birdpop[birdlocsharedmask].flatten(),
              ".")
-    plt.suptitle("[Other Bird] Numbers vs Mute Swan Numbers")
+    plt.suptitle("{} Numbers vs Mute Swan Numbers".format(birdname))
     plt.title("(Data for all Sites and Recording Periods for which both were available)")
     plt.xlabel("Maximum Recorded Mute Swan Population at Site in Recording Period")
-    plt.ylabel("Maximum Recorded [Other Bird] Population at Site in Recording Period")
+    plt.ylabel("Maximum Recorded {} Population at Site in Recording Period".format(birdname))
     plt.show()
 
 # Compute year-to-year differences in population where possible
@@ -141,10 +143,11 @@ if 3 in plotids:
     plt.plot(muteswandiff[muteswanlocsharedmask].flatten(),
              birddiff[birdlocsharedmask].flatten(),
              ".")
-    plt.suptitle("Change in [Other Bird] Numbers vs Change in Mute Swan Numbers")
+    plt.suptitle("Change in {} Numbers vs Change in Mute Swan Numbers".format(birdname))
     plt.title("(Data for all Sites and Pairs of Temporally Adjacent Recording Periods for which both were available)")
     plt.xlabel("Difference in Maximum Recorded Mute Swan Population\nat Site from one Recording Period to the next")
-    plt.ylabel("Difference in Maximum Recorded [Other Bird] Population\nat Site from one Recording Period to the next")
+    plt.ylabel("Difference in Maximum Recorded {} Population\n"
+               "at Site from one Recording Period to the next".format(birdname))
     plt.show()
 
 # Plot [other bird] population changes over mute swan population changes occurring up to 5yr ago
@@ -152,7 +155,7 @@ if 3 in plotids:
 if 4 in plotids:
     # Create a bunch of stacked plots {see Source 2}
     fig = plt.figure()
-    fig.suptitle("Change in [Other Bird] Numbers vs Change in Mute Swan Numbers")
+    fig.suptitle("Change in {} Numbers vs Change in Mute Swan Numbers".format(birdname))
     fig.subplots_adjust(hspace=0)
     for i in range(1, 6):
         ax = fig.add_subplot(5, 1, i, ylim=(np.nanmin(birddiff[birdlocsharedmask]),
@@ -164,9 +167,9 @@ if 4 in plotids:
             ax.set_title("(Data for all Sites and Pairs of Temporally Adjacent Recording Periods"
                          " for which both were available)")
         if i == 3:
-            ax.set_ylabel("Difference in Maximum Recorded [Other Bird] Population\n"
+            ax.set_ylabel("Difference in Maximum Recorded {} Population\n"
                           "at Site from one Recording Period to the next,\n"
-                          "taken ___yr after the corresponding change in Mute Swan numbers\n\n3")
+                          "taken ___yr after the corresponding change in Mute Swan numbers\n\n3".format(birdname))
         else:
             ax.set_ylabel(i)
         if i == 5:
@@ -197,7 +200,7 @@ if 6 in plotids:
         plt.ylim(0, max(muteswanpopmax, birdpopmax))
         plt.plot(xlab, muteswanpop[muteswanlocsharedmask][i], "b.-")
         plt.plot(xlab, birdpop[birdlocsharedmask][i], "r.-")
-        plt.legend(["Mute Swans", "[Other Bird]s"])
+        plt.legend(["Mute Swan", "{}".format(birdname)])
         plt.xticks(rotation="vertical")
         plt.subplot(1, 2, 2)
         plt.xlim(0, muteswanpopmax)
