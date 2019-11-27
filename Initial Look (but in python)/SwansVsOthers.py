@@ -6,9 +6,11 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import re
+import scipy.stats as sps
 
 # Array of which plots to plot
-plotids = [9]
+# TODO: Seriously, find a better way of doing this
+plotids = [10]
 # Name of the bird to plot against Mute Swans
 birdname = "Canada Goose"
 
@@ -273,9 +275,43 @@ if 9 in plotids:
     plt.ylabel("Frequency")
     plt.show()
 
+# Try comparing the 20yr trends in increase and decrease (if they exist)
+years = np.arange(muteswanpop.shape[1])
+
+def trendgetter(sitedata):
+    notnanmask = ~np.isnan(sitedata)  # {Article on missing data in source 4}
+    n = np.sum(notnanmask)
+    if n != 0:
+        m, c, r, p, err = sps.linregress(years[notnanmask], sitedata[notnanmask])
+        return m, p, r ** 2, n
+    return np.nan, np.nan, np.nan, np.nan
+
+# Get trend data for both datasets
+muteswantrenddata = np.float64([trendgetter(sitedata)for sitedata
+                                in muteswanpop[muteswanlocsharedmask]])
+birdtrenddata = np.float64([trendgetter(sitedata)for sitedata
+                            in birdpop[birdlocsharedmask]])
+# Set gradients to 0 for all non-significant gradients
+# TODO: Ensure that bonferroni shouldn't be used here
+# TODO: Figure out whether to do anything with the trends based on 3 or fewer points
+muteswantrenddata[muteswantrenddata[:, 1] >= 0.05][:, 0] = 0
+birdtrenddata[birdtrenddata[:, 1] >= 0.05][:, 0] = 0
+# Determine in which pairs both gradients are significant or fits are good
+# TODO: Figure out what R² counts as a good fit, or indeed if should filter by that
+significantmask = (muteswantrenddata[:, 1] < 0.05) & (birdtrenddata[:, 1] < 0.05)
+goodfitmask = (muteswantrenddata[:, 2] > 0.5) & (birdtrenddata[:, 2] > 0.5)
+print(np.nansum(significantmask), np.nansum(goodfitmask),
+      np.nansum(significantmask & goodfitmask))
+if 10 in plotids:
+    plt.plot(muteswantrenddata[goodfitmask][:, 0],
+             birdtrenddata[goodfitmask][:, 0], ".")
+    plt.show()
+
+
 """
 0 https://stackoverflow.com/a/8251668
 1 https://www.oreilly.com/learning/handling-missing-data
 2 https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_subplot
 3 https://www.svds.com/avoiding-common-mistakes-with-time-series/
+4 https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4
 """
