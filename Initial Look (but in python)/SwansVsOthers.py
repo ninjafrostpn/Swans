@@ -7,7 +7,7 @@ import numpy as np
 import re
 
 # Array of which plots to plot
-plotids = [5]
+plotids = [2, 3, 5]
 # Name of the bird to plot against Mute Swans
 birdname = "Canada Goose"
 
@@ -209,8 +209,41 @@ if 6 in plotids:
                  birdpop[birdlocsharedmask][i], "g.")
         plt.show()
 
+# Attempt removal of autocorrelation by first difference method (as per email of 25-11-2019)
+muteswandiff1stdiff = muteswandiff[:, 1:] - muteswandiff[:, :-1]
+birddiff1stdiff = birddiff[:, 1:] - birddiff[:, :-1]
+if 7 in plotids:
+    plt.plot(muteswandiff1stdiff[muteswanlocsharedmask].flatten(),
+             birddiff1stdiff[birdlocsharedmask].flatten(),
+             ".")
+    plt.show()
+
+# Also by link relatives method {found after search, in source 3}
+muteswandifflinkrel = muteswandiff[:, 1:] / muteswandiff[:, :-1]
+birddifflinkrel = birddiff[:, 1:] / birddiff[:, :-1]
+if 8 in plotids:
+    plt.plot(muteswandifflinkrel[muteswanlocsharedmask].flatten(),
+             birddifflinkrel[birdlocsharedmask].flatten(),
+             ".")
+    plt.show()
+
+# Take a look at the profile of values in the data
+# Shows up the very very large number of zeroes
+if 9 in plotids:
+    plt.subplot(2, 1, 1)
+    plt.hist([muteswanpop.flatten(), birdpop.flatten()], 50)
+    plt.legend(["Mute Swan", birdname])
+    plt.xlabel("Population")
+    plt.ylabel("Frequency")
+    plt.subplot(2, 1, 2)
+    plt.hist([muteswandiff.flatten(), birddiff.flatten()], 50)
+    plt.xlabel("Change in Population")
+    plt.ylabel("Frequency")
+    plt.show()
+
 """
 0 https://stackoverflow.com/a/8251668
 1 https://www.oreilly.com/learning/handling-missing-data
 2 https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_subplot
+3 https://www.svds.com/avoiding-common-mistakes-with-time-series/
 """
