@@ -3,11 +3,12 @@
 
 import csv
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
 import re
 
 # Array of which plots to plot
-plotids = [2, 3, 5]
+plotids = [9]
 # Name of the bird to plot against Mute Swans
 birdname = "Canada Goose"
 
@@ -82,8 +83,7 @@ xlab = ["{:02d}-{:02d}".format(i % 100, (i + 1) % 100) for i in np.arange(98, 11
 
 if 0 in plotids:
     # Plot the top 10 sites (by 5-yr average up to 2017/18) as Swan numbers over the last 20yr
-    for i, site in enumerate(muteswanloc[:10]):
-        print(muteswanpop[i])
+    for i in range(10):
         plt.plot(xlab, muteswanpop[i], ".-")
     plt.legend(muteswanloc)
     plt.xticks(rotation="vertical")
@@ -93,10 +93,25 @@ if 0 in plotids:
     plt.xlabel("Recording Period")
     plt.show()
 
+    # Alternative rubbishy 3D plot for the top 20
+    fig = plt.figure()
+    ax = fig.add_subplot(121, projection='3d')
+    for i in range(20):
+        ax.plot(np.repeat(i, muteswanpop.shape[1]),
+                np.arange(muteswanpop.shape[1]),
+                muteswanpop[i])
+    ax.set_xticks(np.arange(20))
+    ax.set_yticks(np.arange(muteswanpop.shape[1]))
+    ax.set_ylabel("\n\n\n\nWeBS Year")
+    ax.set_xticklabels(" " * 20)
+    ax.set_yticklabels(xlab, rotation="vertical")
+    ax.set_zlabel("Mute Swan Population")
+    fig.legend(muteswanloc, loc="right")
+    plt.show()
+
 if 1 in plotids:
     # Plot the top 10 sites (by 5-yr average up to 2017/18) as [Whatever other bird] numbers over the last 20yr
-    for i, site in enumerate(birdloc[:10]):
-        print(birdpop[i, :])
+    for i in range(10):
         plt.plot(xlab, birdpop[i, :], ".-")
     plt.legend(birdloc)
     plt.xticks(rotation="vertical")
@@ -104,6 +119,22 @@ if 1 in plotids:
     plt.title("(Ranked according to 13/14 - 17/18 population average)")
     plt.ylabel("Maximum Recorded {} Population in Recording Period".format(birdname))
     plt.xlabel("Recording Period")
+    plt.show()
+
+    # Alternative rubbishy 3D plot for the top 20
+    fig = plt.figure()
+    ax = fig.add_subplot(121, projection='3d')
+    for i in range(20):
+        ax.plot(np.repeat(i, birdpop.shape[1]),
+                np.arange(birdpop.shape[1]),
+                birdpop[i])
+    ax.set_xticks(np.arange(20))
+    ax.set_yticks(np.arange(birdpop.shape[1]))
+    ax.set_ylabel("\n\n\n\nWeBS Year")
+    ax.set_xticklabels(" " * 20)
+    ax.set_yticklabels(xlab, rotation="vertical")
+    ax.set_zlabel("{}} Population".format(birdname))
+    fig.legend(birdloc, loc="right")
     plt.show()
 
 # Show which sites are duplicated. TODO: deal with which to use somehow?
@@ -208,6 +239,7 @@ if 6 in plotids:
         plt.plot(muteswanpop[muteswanlocsharedmask][i],
                  birdpop[birdlocsharedmask][i], "g.")
         plt.show()
+
 
 # Attempt removal of autocorrelation by first difference method (as per email of 25-11-2019)
 muteswandiff1stdiff = muteswandiff[:, 1:] - muteswandiff[:, :-1]
