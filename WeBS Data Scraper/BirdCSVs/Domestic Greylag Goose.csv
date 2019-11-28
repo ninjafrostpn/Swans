@@ -1,12 +1,623 @@
-Site▲▼,98/99▲▼,99/00▲▼,00/01▲▼,01/02▲▼,02/03▲▼,03/04▲▼,04/05▲▼,05/06▲▼,06/07▲▼,07/08▲▼,08/09▲▼,09/10▲▼,10/11▲▼,11/12▲▼,12/13▲▼,13/14▲▼,14/15▲▼,15/16▲▼,16/17▲▼,17/18▲▼,Mon,Moving5yr avg▲▼,13/14-17/185yr avg▲▼,WebPageNo,RoughTimeAccessed
-Wright's Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Wrightington Lakes,103.0,44.0,26.0,66.0,32.0,16.0,3.0,3.0,(0),0.0,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Wroxham Broad,nan,0.0,92.0,153.0,20.0,3.0,nan,nan,nan,nan,(44),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Wyken Hall,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Wynnstay Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Wyre Lake,0.0,0.0,nan,nan,0.0,1.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Yarwell Gravel Pits,154.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Yeldersley Pond,nan,1.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-Ythan to Cruden Bay,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
-confidential site (Perth and Kinross),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2019-11-24 18:37:35
+Site▲▼,78/79▲▼,79/80▲▼,80/81▲▼,81/82▲▼,82/83▲▼,83/84▲▼,84/85▲▼,85/86▲▼,86/87▲▼,87/88▲▼,88/89▲▼,89/90▲▼,90/91▲▼,91/92▲▼,92/93▲▼,93/94▲▼,94/95▲▼,95/96▲▼,96/97▲▼,97/98▲▼,98/99▲▼,99/00▲▼,00/01▲▼,01/02▲▼,02/03▲▼,03/04▲▼,04/05▲▼,05/06▲▼,06/07▲▼,07/08▲▼,08/09▲▼,09/10▲▼,10/11▲▼,11/12▲▼,12/13▲▼,13/14▲▼,14/15▲▼,15/16▲▼,16/17▲▼,17/18▲▼,Mon,Moving5yr avg▲▼,13/14-17/185yr avg▲▼,WebPageNo,RoughTimeAccessed
+Lower Windrush Valley Gravel Pits,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,15,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,4.0,0,0.0,8.0,2,0.0,238.0,130.0,100,47.0,2,Oct,103,103,1,2019-11-28 09:48:36
+Overcote Marina,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,62.0,60.0,nan,nan,nan,nan,nan,60,60,1,2019-11-28 09:48:36
+Roath Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,0.0,nan,nan,nan,0.0,0,0.0,0.0,0.0,0.0,1.0,0.0,0,0.0,0.0,(0),0.0,75.0,0.0,nan,51.0,69,Jul,49,49,1,2019-11-28 09:48:36
+Caerphilly Castle Moat,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,0,nan,0,0,0.0,0.0,0,0.0,0.0,0.0,6,7.0,10.0,14.0,11.0,9.0,6.0,8,0.0,8.0,6,6.0,56.0,40.0,43,47.0,44,Aug,46,46,1,2019-11-28 09:48:36
+River Severn and River Vyrnwy Confluence,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,(0),0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0.0,2.0,143.0,47,0.0,0,nan,38,38,1,2019-11-28 09:48:36
+Ellesmere Lakes,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,37.0,9.0,9,9.0,4.0,4,3.0,38.0,42.0,39,33.0,34,Jul,37,37,1,2019-11-28 09:48:36
+Hatfield Moors,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,(0),nan,nan,74.0,(0),nan,nan,nan,74,74,1,2019-11-28 09:48:36
+Thwaite Flat and Roanhead Ponds,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,11,60.0,59,Jun,26,26,1,2019-11-28 09:48:36
+Llynnau Y Fali,0.0,nan,0.0,0.0,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,1,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,7,0.0,0.0,74.0,18,33.0,0,nan,25,25,1,2019-11-28 09:48:36
+Doffcocker Lodge,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,nan,nan,0.0,nan,0.0,(0),0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,17.0,13.0,0.0,0.0,0,0.0,0.0,0,43.0,58.0,nan,7,5.0,nan,nan,23,23,1,2019-11-28 09:48:36
+Poolsbrook,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21.0,nan,nan,nan,nan,21,21,1,2019-11-28 09:48:36
+Arlington Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,1.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0.0,0.0,9.0,79,0.0,0,nan,18,18,1,2019-11-28 09:48:36
+Clydach Vale Countryside Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,9.0,9,16.0,16.0,19.0,18,18.0,16,Nov,17,17,1,2019-11-28 09:48:36
+Swithland Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,(0),0.0,0.0,0.0,0.0,0.0,0.0,0,7.0,0.0,0,0.0,58.0,0.0,9,17.0,1,Jan,17,17,1,2019-11-28 09:48:36
+Exeter River Valley Park and Matford Marshes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,1.0,1.0,0.0,0.0,2.0,2,0.0,0.0,0,0.0,13.0,16.0,15,18.0,19,Jan,16,16,1,2019-11-28 09:48:36
+Chetwynd Pool,nan,nan,nan,nan,0.0,nan,nan,0.0,nan,0.0,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,0.0,0,0.0,0.0,1.0,0,0.0,75Supplementary visit under the WeBS Core Count SurveyWeBS,Sep,15,15,1,2019-11-28 09:48:36
+Heaton Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,26,29.0,28.0,27.0,25.0,29.0,0.0,0,0.0,0.0,0,nan,16.0,14.0,14,18.0,13,Jan,15,15,1,2019-11-28 09:48:36
+Ormsgill Reservoir,0.0,nan,0.0,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,1.0,0.0,6,0.0,0.0,1,0.0,18.0,0.0,0,50.0,0,nan,14,14,1,2019-11-28 09:48:36
+Watermead Country Park South,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,3.0,0,0.0,16.0,12.0,18,23.0,27.0,27.0,20.0,34.0,29.0,37,48.0,66.0,181,72.0,66.0,0.0,0,0.0,0,nan,13,13,1,2019-11-28 09:48:36
+Cossington Meadows,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,5,0.0,0.0,0,0.0,52.0,2.0,4,0.0,1,Oct,12,12,1,2019-11-28 09:48:36
+Low Skirlington,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,18.0,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0.0,23.0,nan,nan,nan,nan,12,12,1,2019-11-28 09:48:36
+Winscar Reservoir,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,0.0,nan,nan,nan,nan,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3.0,4,nan,nan,0,0.0,14.0,13.0,9,10.0,14,Oct,12,12,1,2019-11-28 09:48:36
+River Severn - Bridgnorth Cemetery to Stanley Hall,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,8.0,8.0,6,9.0,12.0,24.0,13,0.0,8,Oct,11,11,1,2019-11-28 09:48:36
+Tundry Pond,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,nan,0.0,nan,nan,nan,0.0,0,0.0,0.0,2.0,0,0.0,0.0,0.0,0.0,0.0,2.0,7,3.0,3.0,6,0.0,13.0,14.0,12,9.0,8,Sep,11,11,1,2019-11-28 09:48:36
+Hainault Country Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,1.0,0,0.0,1.0,1.0,1.0,nan,nan,nan,3.0,2.0,3,8.0,7.0,24.0,18,0.0,0,nan,10,10,1,2019-11-28 09:48:36
+Llyn Coed-y-Dinas,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,8.0,nan,nan,nan,nan,nan,nan,0.0,15.0,26,0.0,nan,nan,10,10,1,2019-11-28 09:48:36
+Mersey Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,1.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,1,3.0,2.0,7.0,13,22.0,6,Apr,10,10,1,2019-11-28 09:48:36
+Stanley Park Lakes,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,5.0,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0.0,nan,6.0,9,13.0,13,Aug,10,10,1,2019-11-28 09:48:36
+Alton Water,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,nan,0.0,0.0,0,0.0,0,0,0.0,0.0,24,12.0,18.0,24.0,25,23.0,24.0,25.0,24.0,24.0,8.0,9,9.0,9.0,9,9.0,9.0,9.0,9,6.0,9,Sep,8,8,1,2019-11-28 09:48:36
+Ardingly Reservoir,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,2.0,5.0,6.0,7,9.0,15,Oct,8,8,1,2019-11-28 09:48:36
+Babbs Mill,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,9.0,9,9,9.0,10,8,6,5.0,Jul,8,8,2,2019-11-28 09:49:11
+Brackley Lake and Sheppards Pool,0.0,0.0,0.0,0,0.0,0.0,nan,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,nan,0.0,nan,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,9,9,6.0,Jul,8,8,2,2019-11-28 09:49:11
+Murton Wildlife Reserve,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0,0,0.0,0.0,0,0,5.0,22,8,3,3.0,Apr,8,8,2,2019-11-28 09:49:11
+River Lune - Halton (Crook of Lune) to Caton,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,3,0,1.0,2.0,nan,nan,nan,nan,nan,(0),0.0,nan,3,7.0,3.0,8,7,6.0,8,9,10,7.0,Jan,8,8,2,2019-11-28 09:49:11
+River Ouse through Bedford,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,9,11.0,8,9,8,6.0,Sep,8,8,2,2019-11-28 09:49:11
+Arran,0.0,nan,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,0.0,3.0,3,3,4.0,2.0,2.0,5,6.0,4,3,3.0,3.0,3,2,29.0,2,2,0,0.0,nan,7,7,2,2019-11-28 09:49:11
+Blithfield Reservoir,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,1.0,0.0,0.0,nan,nan,1,8,9.0,9.0,9,9,8.0,7,7,7,5.0,Sep,7,7,2,2019-11-28 09:49:11
+Headley Mill Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,(0),0,0.0,0.0,0,28,12.0,0.0,0.0,23,24.0,0,6,0.0,0.0,1,9,10.0,6,6,4,10.0,Nov,7,7,2,2019-11-28 09:49:11
+Humber Estuary,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,(0),0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0,0.0,0,0,1.0,0.0,3Standard visit under the WeBS Low Tide Count SurveyWeBS,3Standard visit under the WeBS Low Tide Count SurveyWeBS,0.0,1,0,22Supplementary roost count under the WeBS Core Count SurveyWeBS,11.0,May,7,7,2,2019-11-28 09:49:11
+Queens Park Pond Brighton,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,nan,9,8,6,6.0,Jul,7,7,2,2019-11-28 09:49:11
+River Thames - Reading to Pangbourne,nan,nan,0.0,0,0.0,0.0,0.0,nan,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,nan,nan,0.0,0.0,0.0,0,0.0,0,0,1.0,1.0,1,2,3.0,9,13,4,6.0,Oct,7,7,2,2019-11-28 09:49:11
+Ringstead Gravel Pits,nan,nan,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,nan,nan,nan,0,nan,0.0,nan,nan,nan,nan,1,4.0,2.0,4,4,8.0,7,6,6,3.0,Aug,6,6,2,2019-11-28 09:49:11
+WWT Washington,0.0,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0,0,0,0.0,0.0,(0),(0),0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0,0.0,0,(0),0.0,0.0,0,0,0.0,0,0,32,0.0,nan,6,6,2,2019-11-28 09:49:11
+Allestree Park Lakes,nan,nan,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,0.0,nan,nan,nan,17.0,17.0,13.0,13,9.0,nan,nan,nan,nan,7,6,6.0,5,4,5,3.0,Sep,5,5,2,2019-11-28 09:49:11
+Bretton Park,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,nan,nan,nan,nan,nan,nan,0.0,0.0,7,0,nan,9,(0),nan,nan,nan,9,9,2,2019-11-28 09:49:11
+Colne Valley Gravel Pits,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,(0),0.0,1.0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,0.0,2.0,3.0,1,1.0,1,1,3.0,2.0,2,2,1.0,2,2,19,1.0,Nov,5,5,2,2019-11-28 09:49:11
+Diss Mere,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,0.0,0,0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,4,4.0,6,5,5,5.0,Sep,5,5,2,2019-11-28 09:49:11
+Eversley Cross and Yateley Gravel Pits,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,1,1,0.0,2.0,3,7,8.0,7.0,4.0,2,0.0,0,0,0.0,0.0,0,0,0.0,2,6,4,12.0,Sep,5,5,2,2019-11-28 09:49:11
+Port Meadow,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,(0),0,0.0,0.0,0,(0),0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0,23,0,0.0,nan,5,5,2,2019-11-28 09:49:11
+Ribble Estuary,0.0,0.0,0.0,(0),0.0,0.0,0.0,0.0,(0),0.0,(0),(0),0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,21Standard visit under the WeBS Low Tide Count SurveyWeBS,8.0,8,6,3,0.0,nan,5,5,2,2019-11-28 09:49:11
+River Derwent: Cromford to Matlock Bath,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,2.0,4,nan,nan,nan,nan,0.0,0,7,5.0,6,4,4,4.0,Nov,5,5,2,2019-11-28 09:49:11
+River Lune - Caton to Hornby and Wenning Foot (The Snab),nan,nan,nan,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,1,9,12.0,nan,nan,16,12.0,(0),0,5.0,5.0,5,4,4.0,8,0,0,13.0,Feb,5,5,2,2019-11-28 09:49:11
+River Severn - Hawford Loch to Cherry Orchard Nature Reserve,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),1,18,2.0,Sep,7,7,2,2019-11-28 09:49:11
+Shakerley Mere,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,0,0.0,22,9,0.0,12.0,18,0,24.0,17.0,14.0,10,0.0,0,6,8.0,8.0,5,6,7.0,5,6,4,4.0,Nov,5,5,2,2019-11-28 09:49:11
+Winkworth Arboretum,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,nan,3,11,5,2.0,Nov,5,5,2,2019-11-28 09:49:11
+Derwent Water,0.0,0.0,0.0,0,nan,nan,0.0,0.0,nan,0.0,nan,nan,0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,2,1.0,1.0,1.0,0,0.0,0,4,3.0,3.0,3,3,3.0,3,6,5,5.0,Sep,4,4,2,2019-11-28 09:49:11
+Fairlands Valley Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,26.0,29.0,28.0,26,26.0,0,6,0.0,7.0,0,8,7.0,6,4,3,2.0,Jul,4,4,2,2019-11-28 09:49:11
+Gnoll Ponds,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,2.0,5,3,3.0,4,5,2,4.0,Nov,4,4,2,2019-11-28 09:49:11
+Margam Park Ponds,nan,0.0,nan,nan,0.0,0.0,0.0,0.0,nan,nan,0,0,0,0.0,0.0,nan,nan,0.0,0,0,0.0,0.0,0,1,1.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,5,5.0,4,4,4,4.0,Jul,4,4,2,2019-11-28 09:49:11
+Platt Fields Park Boating Lake (Fallowfield Pond),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,20,22.0,20.0,21.0,22,18.0,0,8,9.0,8.0,nan,6,9.0,5,2,3,0.0,nan,4,4,2,2019-11-28 09:49:11
+Roundhay Park Leeds,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,(0),0.0,(0),0,0,0.0,0.0,0,nan,0.0,0.0,0.0,2,0,0,0,0,0,nan,14.0,May,4,4,3,2019-11-28 09:49:45
+Stamford Park Lake (Ashton-under-Lyne),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0.0,nan,0,0,0.0,nan,0,0.0,17,24,23,14.0,13.0,18,14,6.0,nan,5.0,6,5,2,6,4,3,3,3.0,Sep,4,4,3,2019-11-28 09:49:45
+Sutton North Fen Gravel Pit,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3,4Supplementary visit under the WeBS Core Count SurveyWeBS,3Supplementary visit under the WeBS Core Count SurveyWeBS,nan,6.0,Nov,4,4,3,2019-11-28 09:49:45
+Tees Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0,3,4,1.0,0.0,0,0,1.0,0.0,0.0,4,4,2,5,3,4,6,0.0,nan,4,4,3,2019-11-28 09:49:45
+Westport Lake,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,nan,nan,0.0,9.0,9,0,0,0,7,7,0,nan,nan,4,4,3,2019-11-28 09:49:45
+Wythall Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,4,5,5.0,Jul,4,4,3,2019-11-28 09:49:45
+Abercwmboi Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,0.0,0.0,(0),nan,nan,nan,nan,nan,nan,2Supplementary visit under the WeBS Core Count SurveyWeBS,6Supplementary visit under the WeBS Core Count SurveyWeBS,nan,0,4Supplementary visit under the WeBS Core Count SurveyWeBS,0.0,nan,3,3,3,2019-11-28 09:49:45
+Brading Harbour,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,(0),0,0.0,0.0,0,0.0,0,0,1,0.0,0.0,(0),0,1.0,0.0,1.0,1,3,2,2,1,5,2,5.0,Nov,3,3,3,2019-11-28 09:49:45
+Chelsea Reservoirs,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,0.0,0.0,0,0.0,0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0,4,3,2,0,6,6,0.0,nan,3,3,3,2019-11-28 09:49:45
+Decoy Lakes (Newton Abbot),nan,nan,nan,nan,nan,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,nan,0.0,0,0,0,0.0,0.0,0,0.0,0,0,2,0.0,1.0,1,0,1.0,0.0,1.0,1,1,2,1,12,1,1,1.0,Aug,3,3,3,2019-11-28 09:49:45
+Fairburn Ings,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0,0,0,0.0,nan,0,0,0.0,0.0,0.0,0,0,(0),0,0,0,16,0.0,nan,3,3,3,2019-11-28 09:49:45
+Fendrod Pool,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,nan,nan,0.0,0.0,nan,nan,nan,0,0,0.0,0.0,0,7,5.0,6.0,7.0,5,5,4,3,3,3,2,2.0,Jul,3,3,3,2019-11-28 09:49:45
+Forfar Loch,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0,nan,0,0.0,0.0,nan,nan,0.0,9.0,8.0,8,9,7,10,5,0,0,0.0,nan,3,3,3,2019-11-28 09:49:45
+Hardwick Park Lakes,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0,0,1,0.0,3.0,1,1,2.0,2.0,2.0,3,4,3,6,3,2,2,2.0,Jul,3,3,3,2019-11-28 09:49:45
+Hillsborough Park Sheffield,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4,5,5,3,4,4,2,3.0,Jul,3,3,3,2019-11-28 09:49:45
+Lee Valley Gravel Pits,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0,0,0.0,0.0,0,3.0,5,6,4,7.0,5.0,4,4,5.0,7.0,0.0,2,1Supplementary visit under the WeBS Core Count SurveyWeBS,1,3,5,2,5Supplementary visit under the WeBS Core Count SurveyWeBS,1.0,Sep,3,3,3,2019-11-28 09:49:45
+Leeds and Liverpool Canal - Riddlesden,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,3.0,5.0,6,7,5,3,nan,nan,nan,nan,nan,3,3,3,2019-11-28 09:49:45
+Leen Valley and Mill Lake Country Park (Bestwood Lake),nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,1.0,3.0,3,3.0,2,4,2,1.0,2.0,0,2,2.0,6.0,2.0,3,5,3,6,3,2,2,3.0,Jan,3,3,3,2019-11-28 09:49:45
+Linlithgow Loch,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,1.0,0,9,10,9.0,14.0,14,13,0.0,0.0,9.0,1Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,8,5,5,4,3,2,2.0,Sep,3,3,3,2019-11-28 09:49:45
+Livermere and Ampton Water,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0.0,0,0.0,0,0,3,3.0,0.0,0,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,3,2.0,Aug,3,3,3,2019-11-28 09:49:45
+Loch of Papil,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),0,0,12.0,20.0,0,0,0.0,0.0,0.0,0,0,0,17,0,0,0,0.0,nan,3,3,3,2019-11-28 09:49:45
+Marsh Lane Nature Reserve,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,6.0,8,7,8,6,5,3,1,2.0,Aug,3,3,3,2019-11-28 09:49:45
+North Hykeham Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,0,0.0,0,nan,0,0.0,0.0,0,(0),0.0,0.0,0.0,3,5,5,4,4,3,0,nan,nan,3,3,3,2019-11-28 09:49:45
+R Lune - Lancaster (Skerton Weir) to Halton (Crook of Lune),nan,nan,nan,0.0,0.0,0.0,nan,nan,0.0,nan,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0,(0),(0),0.0,0.0,0,0,0.0,0.0,0.0,0,0,6,4,0,9,0,0.0,nan,3,3,3,2019-11-28 09:49:45
+RSPB Beckingham Marshes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,13,0,0,0.0,nan,3,3,3,2019-11-28 09:49:45
+River Cam - Baits Bite Lock to Clayhithe,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,5,4,4,4,3,3,0.0,nan,3,3,3,2019-11-28 09:49:45
+River Penk - Rickerscote Watermeadows,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,nan,0,1,8,2.0,Apr,3,3,3,2019-11-28 09:49:45
+River Trent - Stoke Lock to Radcliff viaduct,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0,0,0,0.0,0.0,1,1,3.0,1.0,1.0,2,3,1,1,1,6,0,8.0,Jan,3,3,3,2019-11-28 09:49:45
+River Wye - Bakewell to Haddon,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,(0),(0),7.0,7.0,7,18.0,28,6,9,7.0,3.0,5,2,nan,0.0,nan,nan,nan,nan,nan,nan,nan,0,5.0,Nov,3,3,3,2019-11-28 09:49:45
+Roxton Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,1,0,2,0.0,0.0,0,0,0.0,1.0,0.0,0,0,0,0,0,15,0,0.0,nan,3,3,3,2019-11-28 09:49:45
+Rufford Lake,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,0,nan,nan,nan,nan,5.0,5,9,9.0,3,7.0,10.0,15.0,14,0.0,1,1,1,Aug,3,3,4,2019-11-28 09:50:20
+Tattershall Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0.0,0,nan,0.0,0,0,0,7,5,4,1.0,2,7.0,5,6,4.0,2,1.0,2.0,3.0,3,nan,nan,nan,nan,nan,3,3,4,2019-11-28 09:50:20
+The Ouse and Lairo Water,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,0,0.0,0,0,6.0,7,9.0,8.0,6.0,4,3.0,3,3,1,Feb,3,3,4,2019-11-28 09:50:20
+Warren Mill Pond,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3,Feb,3,3,4,2019-11-28 09:50:20
+Westbury Ponds,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0.0,nan,0,0.0,nan,0,(0),0,0,0,0.0,0,0.0,0,nan,nan,nan,0.0,0.0,nan,nan,6.0,2,1,nan,nan,3,3,4,2019-11-28 09:50:20
+Wykeham Lakes,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,0,nan,nan,0.0,0,nan,0.0,0,0,0,0,0,0,0.0,0,0.0,0,nan,nan,0,0.0,1.0,0.0,0,0.0,0,0,16,Feb,3,3,4,2019-11-28 09:50:20
+Afan Estuary and Port Talbot Harbour,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,0,2.0,2,2,nan,nan,2,2,4,2019-11-28 09:50:20
+Afon Cynon - Tirfounder Fields,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,2,1.0,1,1,4Supplementary visit under the WeBS Core Count SurveyWeBS,Dec,2,2,4,2019-11-28 09:50:20
+Avon Valley - Salisbury to Fordingbridge,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,(0),0.0,0,0,0,0,0,0,1.0,0,0.0,0,0,0.0,0,0.0,0.0,7.0,(0),0.0,(0),12,0,nan,4,4,4,2019-11-28 09:50:20
+Broadwater Lake (Farncombe),0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,0.0,nan,0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,2.0,2.0,1,2.0,2,1,2,Jan,2,2,4,2019-11-28 09:50:20
+Clumber Park Lake,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,nan,0.0,0,1,1.0,4,1.0,0.0,3.0,2,2.0,3,1,0,nan,2,2,4,2019-11-28 09:50:20
+Doxey Marshes SSSI,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,0,0.0,0,0,0,1,0,0,1.0,0,0.0,0,(0),0.0,1,1.0,1.0,1.0,3,3.0,1,3Supplementary visit under the WeBS Core Count SurveyWeBS,0,nan,2,2,4,2019-11-28 09:50:20
+East Fortune Ponds,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,0,nan,nan,nan,0,0.0,0,0,0.0,3,1.0,2.0,6.0,5,3.0,1,0,1,Oct,2,2,4,2019-11-28 09:50:20
+East Park Hull,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,5,0,0,4.0,0,0.0,0,2,0.0,0,0.0,0.0,0.0,0,1.0,1,0,6,Jan,2,2,4,2019-11-28 09:50:20
+Grantham Canal - Cotgrave to Gamston,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0,0,0,0,nan,nan,nan,nan,9.0,9,0,2.0,2,2.0,6.0,2.0,2,4.0,3,(0),(0),nan,3,3,4,2019-11-28 09:50:20
+Heath Pond (Petersfield),0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,nan,0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,0,3.0,3,2,2,Jul,2,2,4,2019-11-28 09:50:20
+Hereford Quarry,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0.0,1.0,2,0.0,3,4,2,Dec,2,2,4,2019-11-28 09:50:20
+Hogganfield Loch,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,nan,nan,nan,nan,0,0.0,0.0,0,0,0.0,9,0,0,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,5.0,5.0,3,3.0,2,2,0,nan,2,2,4,2019-11-28 09:50:20
+Inner Firth of Clyde,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,(0),0,0.0,(0),(0),0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,0,0.0,0,0,0.0,0,1.0,0.0,0.0,1,2.0,3,1,1,Dec,2,2,4,2019-11-28 09:50:20
+Langford Lakes,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,(0),(0),nan,nan,nan,nan,nan,(0),(0),0.0,(0),0.0,(0),0,0.0,0,0.0,2.0,1.0,1,1.0,1,4,5,Oct,2,2,4,2019-11-28 09:50:20
+Loch of Gutcher,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,7,0,8.0,7,7.0,0,0,0.0,0,7.0,7.0,5.0,5,5.0,0,0,0,nan,2,2,4,2019-11-28 09:50:20
+Markeaton Park Lake,0.0,0.0,0.0,0.0,0,0.0,nan,0.0,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0.0,0,0.0,0,nan,nan,nan,0.0,0.0,1.0,4,1.0,1,1,1,Nov,2,2,4,2019-11-28 09:50:20
+Medway Estuary,0.0,0.0,0.0,0.0,(0),0.0,0.0,0.0,0.0,(0),(0),0.0,0,0,0.0,0.0,0,0,0.0,0,(0),13,(0),(0),0,0.0,0,2.0,23,8,9.0,8,9.0,10.0,1.0,3,3.0,2,2,0,nan,2,2,4,2019-11-28 09:50:20
+Middle Yare Marshes,nan,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,(0),0,0,0,0,0,0.0,3,0.0,0,0,0.0,(0),0.0,0.0,0.0,10,0.0,0,0,0,nan,2,2,4,2019-11-28 09:50:20
+Midross Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,nan,nan,nan,nan,0.0,0,0.0,0.0,0.0,0,0.0,0,2,6,Feb,2,2,4,2019-11-28 09:50:20
+Netherfield Lagoons,nan,nan,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,1,0,0,0.0,0,1.0,0,0,0.0,6,24.0,2.0,0.0,5,0.0,0,0,3,Sep,2,2,4,2019-11-28 09:50:20
+Newmiller Dam,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0.0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,0,4.0,5,0,nan,nan,2,2,4,2019-11-28 09:50:20
+North Norfolk Coast,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0.0,0,0,0.0,0,0,0,1,0,0,0.0,0,0.0,0,0,0.0,0,0.0,2.0,2.0,3,3.0,2,0,1,Mar,2,2,4,2019-11-28 09:50:20
+River Avon - Upper Woodford to Avon Bridge,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3.0,2,2,nan,nan,2,2,4,2019-11-28 09:50:20
+River Don - Dyce Weir to Sewage Works,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,5.0,3,4,0,nan,2,2,4,2019-11-28 09:50:20
+"River Trent, Selford Manor Pastures and Burton Meadows Area",nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,(0),0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,2,Apr,2,2,5,2019-11-28 09:50:54
+Trimpley Reservoir and River Severn,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,0.0,0.0,6,8.0,0,0,0.0,0,nan,2,2,5,2019-11-28 09:50:54
+Tunstall Reservoir,0,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,nan,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,11.0,11.0,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0,5.0,0,nan,2,2,5,2019-11-28 09:50:54
+Weirwood Reservoir,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,(0),(0),(0),(0),(0),(0),0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,6.0,1,4.0,3,5,0.0,0,nan,2,2,5,2019-11-28 09:50:54
+Whisby and North Hykeham Gravel Pits,nan,0,0,nan,0.0,0.0,nan,0.0,0,nan,nan,nan,nan,0.0,0.0,0,0,0,0,0,0,0,(0),0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,3.0,5.0,5,4.0,4,3,0.0,1,Nov,2,2,5,2019-11-28 09:50:54
+Whitlingham Country Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0,1.0,0.0,1.0,1.0,2,2,0.0,0.0,8.0,9.0,7,6.0,2,1,1.0,1,Jul,2,2,5,2019-11-28 09:50:54
+Wilderness Pond,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,0,nan,nan,nan,nan,nan,0,nan,nan,5,5,5,3,2,6,2.0,4.0,nan,nan,nan,0,2.0,1.0,1.0,2.0,1,1.0,1,2,5.0,1,Jul,2,2,5,2019-11-28 09:50:54
+Albert Village Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0.0,(0),0,0.0,5,Sep,1,1,5,2019-11-28 09:50:54
+Alnmouth,nan,nan,nan,0,0.0,nan,nan,nan,nan,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,(0),0.0,0.0,0.0,0.0,0,0,1.0,1.0,1.0,1.0,1,1.0,1,1,1.0,1,Jul,1,1,5,2019-11-28 09:50:54
+Arrow Valley Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,2,1.0,1,Jul,1,1,5,2019-11-28 09:50:54
+Avon - Cumberland Basin to Netham Weir,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),nan,nan,nan,nan,1,Jun,1,1,5,2019-11-28 09:50:54
+Baffins Pond,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,1,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,2,0.0,2,0,1.0,0,nan,1,1,5,2019-11-28 09:50:54
+Balgavies Loch,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,nan,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,3.0,1,May,1,1,5,2019-11-28 09:50:54
+Barcombe Mills Reservoir,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,1,2,2,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,3,0.0,0,nan,1,1,5,2019-11-28 09:50:54
+Bardney Pit,nan,nan,nan,0,0.0,nan,nan,nan,nan,nan,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,nan,0.0,0,0,0.0,0.0,0.0,2.0,1,1.0,2,0,1.0,1,Jul,1,1,5,2019-11-28 09:50:54
+Benbow Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,nan,nan,nan,nan,1,1,5,2019-11-28 09:50:54
+Besthorpe and Girton Gravel Pits and Fleet,0,0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,2,2,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,3.0,3,0.0,2,(0),nan,0,nan,1,1,5,2019-11-28 09:50:54
+Blackwater Estuary,0,(0),0,0,0.0,0.0,0.0,0.0,(0),(0),(0),(0),0.0,0.0,0.0,0,0,0,(0),(0),0,0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,3.0,3,1.0,3,2,0.0,0,nan,1,1,5,2019-11-28 09:50:54
+Bleasby Gibsmere and Hazelford,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0.0,0.0,nan,nan,nan,2,0,0.0,0,nan,1,1,5,2019-11-28 09:50:54
+Broom Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,3.0,1,1.0,1,2,1.0,1,Aug,1,1,5,2019-11-28 09:50:54
+Callendar Loch Falkirk,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0,0,0,9,0.0,0.0,8.0,7.0,3,2,2.0,0.0,2.0,2.0,0,0.0,1,1,1.0,1,Sep,1,1,5,2019-11-28 09:50:54
+Carman Reservoir,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,nan,nan,0,0.0,0.0,0.0,0,0,0,0,0,3,3,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,6,0.0,0,nan,1,1,5,2019-11-28 09:50:54
+Castle Dam Penistone,0,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,0,0.0,nan,nan,nan,0,0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,2,1.0,1,Aug,1,1,5,2019-11-28 09:50:54
+Charnwood Water,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,1.0,1.0,1,0.0,1,1,1.0,1,Oct,1,1,5,2019-11-28 09:50:54
+Chilham and Chartham Gravel Pits,0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,0,0,0,0,2,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,nan,2,1.0,1,1,1.0,0,nan,1,1,5,2019-11-28 09:50:54
+Cleddau Estuary,0,0,(0),0,0.0,nan,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,(0),0,0.0,0.0,0.0,0.0,0,0.0,0,0,5.0,0,nan,1,1,5,2019-11-28 09:50:54
+Clonyard Loch,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,2,2.0,0,0,nan,nan,nan,1,1,5,2019-11-28 09:50:54
+Colne Estuary,(0),0,0,0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0,(0),0,0,0,0,0,4,0.0,3.0,3.0,7.0,2,(0),0.0,3.0,2.0,3.0,1,1.0,2,0,0.0,0,nan,1,1,5,2019-11-28 09:50:54
+Coombe Country Park,(0),nan,nan,(0),0.0,nan,nan,nan,0,0,nan,0,nan,nan,nan,0,0,0,0,0,0,0,0,0,1.0,1.0,0.0,2.0,4,6,3.0,0.0,0.0,0.0,0,0.0,3,nan,nan,(0),nan,2,2,5,2019-11-28 09:50:54
+Coronation Channel and Welland (Spalding),nan,nan,0,nan,nan,0.0,0.0,0.0,0,0,0,0,nan,nan,nan,0,0,(0),0,0,0,9,10,13,13.0,13.0,0.0,0.0,0,0,0.0,4.0,3.0,3.0,2,2.0,2,1,0.0,nan,nan,1,1,5,2019-11-28 09:50:54
+Cotswold Water Park,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0,0,1.0,0,0,0,6,1.0,0,1,7,0,2.0,0,2.0,0.0,2,Oct,1,1,6,2019-11-28 09:51:29
+Cotswold Water Park (Central),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0,0,0,0,1.0,0,nan,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Cotswold Water Park (West),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0,(0),0.0,(0),(0),1.0,(0),(0),(0),6,1.0,(0),1,7,(0),2.0,0,nan,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Daneshill Nature Reserve,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,0,nan,1,1.0,1.0,1,Jul,1,1,6,2019-11-28 09:51:29
+Deene Lake,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,13.0,0,0,0.0,0,(0),nan,1,0,0,0,0.0,0,0,1,1,1.0,0,1.0,1.0,0,nan,1,1,6,2019-11-28 09:51:29
+Ditchford Gravel Pits,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,(0),0,0.0,0,nan,6.0,6,5,0,0,0.0,0,0,0,3,0.0,0,0.0,2.0,2,Oct,1,1,6,2019-11-28 09:51:29
+Dungeness and Rye Bay,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,2,0.0,1,4,1.0,0,0,0.0,4,3,0,7,8.0,0,10,0,8,7.0,0,0.0,0.0,0,nan,1,1,6,2019-11-28 09:51:29
+Earith Gravel Pits,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0,0.0,0,0,0.0,0,nan,nan,nan,nan,nan,nan,0.0,0,0,0,1,1.0,nan,nan,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Falmer Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,1,1.0,0.0,0,nan,1,1,6,2019-11-28 09:51:29
+Fenn's and Whixall Mosses,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,0,0.0,5,0.0,2.0,0,nan,1,1,6,2019-11-28 09:51:29
+Gailey Pools,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0,(0),0.0,nan,nan,0.0,0,0,0,(0),nan,0,0,0,0,0.0,0,0.0,2.0,1,Jun,1,1,6,2019-11-28 09:51:29
+Gartmorn Dam,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,nan,nan,nan,0.0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,2,0,0,0,0.0,0,0,2,0,0.0,0,0.0,0.0,6,Nov,1,1,6,2019-11-28 09:51:29
+Golden Acre Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,6.0,5,3,3,2,1.0,0,nan,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Hartleton Water,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0,0,0.0,0,0,nan,0,0.0,0,0,0,0,0.0,2,1.0,0.0,0,nan,1,1,6,2019-11-28 09:51:29
+Holyrood Park Lochs,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,nan,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Little Ouse - Thetford,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),(0),(0),(0),1.0,1,1.0,0.0,(0),nan,1,1,6,2019-11-28 09:51:29
+Llyn Padarn,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,(0),0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,4,0.0,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Loch Ardinning,nan,nan,nan,nan,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0,1,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,0,0.0,0,nan,nan,4,Mar,1,1,6,2019-11-28 09:51:29
+Loch Duntelchaig,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,2.0,0,nan,1,1,6,2019-11-28 09:51:29
+"Mercia Marina, Willington",nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0,2.0,0,nan,nan,nan,nan,1,1,6,2019-11-28 09:51:29
+Mill Dam and Balfour Mains Pools,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0,0,0.0,0,0,0,0,0.0,0,1,0,0,0.0,0,2.0,0.0,1,Jan,1,1,6,2019-11-28 09:51:29
+Millar's Moss Reservoir,0.0,nan,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,10.0,0,0,0.0,0,0,0,0,0.0,nan,0,0,0,0.0,3,0.0,0.0,0,nan,1,1,6,2019-11-28 09:51:29
+Minsmere,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,(0),(0),5.0,0,0,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,0,0.0,0,0.0,0.0,3,Sep,1,1,6,2019-11-28 09:51:29
+Newbyth Pond,nan,nan,nan,nan,nan,nan,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,2.0,1,1.0,0.0,0,nan,1,1,6,2019-11-28 09:51:29
+Nunnery Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0,1,2.0,0,0,0.0,1,2,2,0,2.0,0,0,0,0,1.0,1,0.0,0.0,1,Dec,1,1,6,2019-11-28 09:51:29
+Ogmore Estuary,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,0.0,0.0,0.0,(0),0,1.0,(0),0,0.0,0,0,0.0,0,0,0,0,6.0,0,1,0,0,0.0,0,0.0,3.0,0,nan,1,1,6,2019-11-28 09:51:29
+Pickering Park Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,3,3.0,0,0,0,0,1.0,1,0,0,0,1.0,1,1.0,0.0,nan,nan,1,1,6,2019-11-28 09:51:29
+Pwll Waun Cynon,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,2,1.0,1.0,2,Apr,1,1,6,2019-11-28 09:51:29
+Queen Elizabeth II Country Park Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0,0,0,0,0.0,0,2,0,0,0.0,0,0.0,4.0,0,nan,1,1,6,2019-11-28 09:51:29
+Rescobie Loch,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,nan,0,0,0.0,0,0,0,0,0.0,0,0,0,0,0.0,0,0.0,1.0,2,Jan,1,1,6,2019-11-28 09:51:29
+River Derwent - Calver to Froggatt,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1.0,5,5,0,1.0,0,0,nan,1,1,7,2019-11-28 09:52:03
+River Ribble - Bull Nose-Clifton Marsh,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,8.0,10,nan,nan,nan,nan,nan,nan,nan,0,8,4.0,nan,nan,2,nan,0,0,nan,1,1,7,2019-11-28 09:52:03
+River Thames by Hurst Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1,1.0,0,1,Oct,1,1,7,2019-11-28 09:52:03
+River Tweed - A1 Bypass to Horncliffe,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,0.0,2,1,Nov,1,1,7,2019-11-28 09:52:03
+Roman Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,9,0.0,19.0,16.0,14,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1,Jul,1,1,7,2019-11-28 09:52:03
+Scampston Lake,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,0.0,0.0,(0),0.0,0.0,1,0,0.0,0,0,0,0,1.0,0,2,0,1.0,0,0,nan,1,1,7,2019-11-28 09:52:03
+Sea Bank (Huttoft) Clay Pits,nan,nan,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,nan,0.0,0,0,nan,nan,nan,nan,nan,0.0,1,1,1,0.0,1,0,nan,1,1,7,2019-11-28 09:52:03
+Severn Estuary,0,0.0,0,0,0.0,0.0,0.0,0.0,(0),(0),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,4.0,3,0,nan,1,1,7,2019-11-28 09:52:03
+Severn Estuary (English counties),0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,4.0,3,0,nan,1,1,7,2019-11-28 09:52:03
+St James's Park,nan,nan,nan,0,0.0,0.0,0.0,0.0,0,0,0.0,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,1,0.0,nan,nan,nan,nan,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,nan,1,1,7,2019-11-28 09:52:03
+Stanborough Lakes,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,1,1,nan,nan,nan,nan,1,1,7,2019-11-28 09:52:03
+Strangford Lough,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1Standard visit under the WeBS Low Tide Count SurveyWeBS,nan,nan,nan,nan,1,1,7,2019-11-28 09:52:03
+"Sykes Reservoirs, Edgeley",nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0.0,0.0,0.0,0,nan,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,nan,2Supplementary visit under the WeBS Core Count SurveyWeBS,nan,nan,1,1,7,2019-11-28 09:52:03
+Testbourne Estate,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,1.0,0,1,0,0,0.0,0,0,1,0.0,2,(0),nan,1,1,7,2019-11-28 09:52:03
+Thoresby Lake,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,1.0,2,0,nan,1,1,7,2019-11-28 09:52:03
+Torr Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,1,3,Mar,1,1,7,2019-11-28 09:52:03
+Trinity Broads,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,nan,nan,nan,0.0,nan,0,0.0,0.0,0.0,0,0.0,0.0,2,0,0.0,0,0,0,0,0.0,0,2,0,0.0,nan,nan,nan,1,1,7,2019-11-28 09:52:03
+Wardown Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,3.0,3,3,1,0.0,0,0,nan,1,1,7,2019-11-28 09:52:03
+Watermead Country Park North,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0.0,4.0,5.0,7,0.0,15.0,nan,nan,8.0,0,2,4,0,0.0,7,5,0,0.0,0,0,nan,1,1,7,2019-11-28 09:52:03
+Whins Pond,nan,0.0,nan,0,0.0,0.0,0.0,0.0,0,0,0.0,nan,0.0,0.0,0.0,0.0,nan,0.0,0.0,0,0.0,0.0,0.0,nan,2.0,0.0,0,(0),0.0,0,0,(0),0,0.0,0,0,0,0.0,3,0,nan,1,1,7,2019-11-28 09:52:03
+Abercairny Loch,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,1.0,0,0,0,0,0.0,0,0,0,0.0,0,0,nan,0,0,7,2019-11-28 09:52:03
+Acton Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,(0),2.0,0,0,0,0.0,0,0,nan,0,0,7,2019-11-28 09:52:03
+Alde Estuary,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,1,4.0,1,0,0,0.0,0,1,Feb,0,0,7,2019-11-28 09:52:03
+Aldenham Reservoir,nan,0.0,nan,nan,0.0,nan,nan,nan,nan,0,nan,0.0,0.0,0.0,nan,nan,nan,nan,0.0,0,1.0,0.0,0.0,0,nan,0.0,0,0,1.0,0,0,0,nan,0.0,0,(0),nan,nan,nan,nan,nan,0,0,7,2019-11-28 09:52:03
+Anglezarke and Yarrow Reservoirs,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,1,2,0.0,0,0,0,0.0,0,0,nan,0,0,7,2019-11-28 09:52:03
+Antermony Loch,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0.0,5.0,1.0,1,0.0,0.0,0,0,0.0,0,0,0,0,0.0,9,0,nan,nan,0,0,nan,0,0,7,2019-11-28 09:52:03
+Auchendores and Leperstone Reservoirs,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,0.0,1,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,(0),(0),0,nan,0.0,(0),nan,nan,0.0,0,0,nan,0,0,7,2019-11-28 09:52:03
+Auchenreoch Loch,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,7,0.0,0.0,0.0,0,0.0,0.0,(0),(0),0.0,3,0,0,0,1.0,0,0,0,0.0,(0),0,nan,0,0,7,2019-11-28 09:52:03
+Auchlochan Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,1.0,0,0,0.0,0,0,0,0,0.0,0,0,0,0.0,2,0,nan,0,0,7,2019-11-28 09:52:03
+Avington Lake,(0),0.0,(0),(0),nan,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,6,0,0,0,1.0,0,0,0,0.0,2,0,nan,0,0,7,2019-11-28 09:52:03
+River Derwent - Calver to Froggatt,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1.0,5,5,0,1.0,0,0,nan,1,1,8,2019-11-28 09:52:37
+River Ribble - Bull Nose-Clifton Marsh,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,8.0,10,nan,nan,nan,nan,nan,nan,nan,0,8,4.0,nan,nan,2,nan,0,0,nan,1,1,8,2019-11-28 09:52:37
+River Thames by Hurst Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1,1.0,0,1,Oct,1,1,8,2019-11-28 09:52:37
+River Tweed - A1 Bypass to Horncliffe,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,0.0,2,1,Nov,1,1,8,2019-11-28 09:52:37
+Roman Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,9,0.0,19.0,16.0,14,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1,Jul,1,1,8,2019-11-28 09:52:37
+Scampston Lake,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,0.0,0.0,(0),0.0,0.0,1,0,0.0,0,0,0,0,1.0,0,2,0,1.0,0,0,nan,1,1,8,2019-11-28 09:52:37
+Sea Bank (Huttoft) Clay Pits,nan,nan,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,nan,0.0,0,0,nan,nan,nan,nan,nan,0.0,1,1,1,0.0,1,0,nan,1,1,8,2019-11-28 09:52:37
+Severn Estuary,0,0.0,0,0,0.0,0.0,0.0,0.0,(0),(0),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,4.0,3,0,nan,1,1,8,2019-11-28 09:52:37
+Severn Estuary (English counties),0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,4.0,3,0,nan,1,1,8,2019-11-28 09:52:37
+St James's Park,nan,nan,nan,0,0.0,0.0,0.0,0.0,0,0,0.0,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,1,0.0,nan,nan,nan,nan,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,nan,1,1,8,2019-11-28 09:52:37
+Stanborough Lakes,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,1,1,nan,nan,nan,nan,1,1,8,2019-11-28 09:52:37
+Strangford Lough,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1Standard visit under the WeBS Low Tide Count SurveyWeBS,nan,nan,nan,nan,1,1,8,2019-11-28 09:52:37
+"Sykes Reservoirs, Edgeley",nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0.0,0.0,0.0,0,nan,0.0,0,0,0.0,0,0,0,0,0.0,0,0,0,nan,2Supplementary visit under the WeBS Core Count SurveyWeBS,nan,nan,1,1,8,2019-11-28 09:52:37
+Testbourne Estate,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,1.0,0,1,0,0,0.0,0,0,1,0.0,2,(0),nan,1,1,8,2019-11-28 09:52:37
+Thoresby Lake,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,1.0,2,0,nan,1,1,8,2019-11-28 09:52:37
+Torr Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,1,3,Mar,1,1,8,2019-11-28 09:52:37
+Trinity Broads,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,nan,nan,nan,0.0,nan,0,0.0,0.0,0.0,0,0.0,0.0,2,0,0.0,0,0,0,0,0.0,0,2,0,0.0,nan,nan,nan,1,1,8,2019-11-28 09:52:37
+Wardown Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,3.0,3,3,1,0.0,0,0,nan,1,1,8,2019-11-28 09:52:37
+Watermead Country Park North,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0.0,4.0,5.0,7,0.0,15.0,nan,nan,8.0,0,2,4,0,0.0,7,5,0,0.0,0,0,nan,1,1,8,2019-11-28 09:52:37
+Whins Pond,nan,0.0,nan,0,0.0,0.0,0.0,0.0,0,0,0.0,nan,0.0,0.0,0.0,0.0,nan,0.0,0.0,0,0.0,0.0,0.0,nan,2.0,0.0,0,(0),0.0,0,0,(0),0,0.0,0,0,0,0.0,3,0,nan,1,1,8,2019-11-28 09:52:37
+Abercairny Loch,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,1.0,0,0,0,0,0.0,0,0,0,0.0,0,0,nan,0,0,8,2019-11-28 09:52:37
+Acton Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,(0),2.0,0,0,0,0.0,0,0,nan,0,0,8,2019-11-28 09:52:37
+Alde Estuary,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,1,4.0,1,0,0,0.0,0,1,Feb,0,0,8,2019-11-28 09:52:37
+Aldenham Reservoir,nan,0.0,nan,nan,0.0,nan,nan,nan,nan,0,nan,0.0,0.0,0.0,nan,nan,nan,nan,0.0,0,1.0,0.0,0.0,0,nan,0.0,0,0,1.0,0,0,0,nan,0.0,0,(0),nan,nan,nan,nan,nan,0,0,8,2019-11-28 09:52:37
+Anglezarke and Yarrow Reservoirs,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,1,2,0.0,0,0,0,0.0,0,0,nan,0,0,8,2019-11-28 09:52:37
+Antermony Loch,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0.0,5.0,1.0,1,0.0,0.0,0,0,0.0,0,0,0,0,0.0,9,0,nan,nan,0,0,nan,0,0,8,2019-11-28 09:52:37
+Auchendores and Leperstone Reservoirs,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,0.0,1,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,(0),(0),0,nan,0.0,(0),nan,nan,0.0,0,0,nan,0,0,8,2019-11-28 09:52:37
+Auchenreoch Loch,0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,7,0.0,0.0,0.0,0,0.0,0.0,(0),(0),0.0,3,0,0,0,1.0,0,0,0,0.0,(0),0,nan,0,0,8,2019-11-28 09:52:37
+Auchlochan Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,1.0,0,0,0.0,0,0,0,0,0.0,0,0,0,0.0,2,0,nan,0,0,8,2019-11-28 09:52:37
+Avington Lake,(0),0.0,(0),(0),nan,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,6,0,0,0,1.0,0,0,0,0.0,2,0,nan,0,0,8,2019-11-28 09:52:37
+Camel Estuary,0.0,0.0,0.0,nan,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,2.0,0,0.0,0,0,0,0.0,0,0.0,1,1,1,1,2.0,1,0.0,1.0,0.0,1,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Carnbee Reservoir,nan,nan,nan,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,(0),0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0,0,0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Carsebreck and Rhynd Lochs,0.0,nan,nan,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,2,0,0.0,0,0.0,0,0,0,0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Castle Island (Ashington),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,0,0.0,0,1.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Castle Loch Lochmaben,0.0,nan,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,0,0,1.0,1,0.0,0,0,2,2,3.0,0,6.0,4.0,2.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Cefni Reservoir,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,0,1,0.0,0,0.0,0,0,0,0,nan,nan,nan,nan,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Chapel Farm Reservoir (North Berwick),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0.0,2,0.0,0.0,0.0,0,1.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Chard Junction Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,1.0,1.0,Oct,0,0,9,2019-11-28 09:53:12
+Charlton Gravel Pits (Andover),0.0,nan,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,nan,nan,nan,nan,nan,25,25,9.0,0,0.0,0,1,0,0,0.0,0,0.0,0.0,0.0,(0),0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Chew Valley Lake,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,7,0,0,0.0,0,1.0,1,3,0,2,1.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Chichester Gravel Pits,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0,0,0,0,9.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Chichester Harbour,0.0,0.0,0.0,(0),0.0,(0),(0),0.0,0.0,0,(0),0.0,0.0,0.0,0.0,(0),(0),0.0,0.0,(0),0.0,0,(0),4,0.0,0,0.0,0,0,0,0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,1.0,Sep,0,0,9,2019-11-28 09:53:12
+Chilton Foliat,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,(0),0,0,0.0,0,1.0,0,0,0,0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,nan,nan,0,0,9,2019-11-28 09:53:12
+Chimney Corner Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,0.0,0,0.0,0,0,1,0.0,0,nan,nan,nan,nan,0,0.0,1,nan,nan,nan,nan,nan,nan,0.0,nan,0,0,9,2019-11-28 09:53:12
+Chorlton Water Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,nan,0.0,nan,0,0,0.0,0.0,0,0.0,1,0,1,0.0,0,0.0,0,0,0,0,0.0,0,0.0,0.0,0.0,nan,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Clea Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0.0,1,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Clifford Hill Gravel Pits Consolidated,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,2,2,1.0,0,1.0,0,1,0,(0),0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Clowes Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1.0,1,1.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Clwyd Estuary,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,nan,0.0,0.0,0,(0),0.0,0.0,0,0.0,0,0,0,0.0,0,1.0,0,0,(0),(0),0.0,nan,0.0,0.0,0.0,(0),0.0,0.0,1.0,May,0,0,9,2019-11-28 09:53:12
+Coate Water,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,1,0.0,1,nan,nan,1.0,nan,nan,2,0,0,0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+College Lake Reserve,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0.0,0,0.0,0,0,0,1.0,3,1.0,1,0,1,1,0.0,0,0.0,1.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Colliford Lake and Dozmary Pool,nan,0.0,nan,nan,nan,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,(0),0,0.0,2.0,2,4.0,4,3,1,0.0,0,0.0,0,0,(0),0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Colne Fen Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0.0,0,0.0,0,0,0,1.0,1,0.0,0,0,0,1,1.0,0,0.0,0.0,0.0,nan,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Coniston Water,nan,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,1,nan,0,nan,0,0.0,(0),0.0,(0),(0),0,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,nan,0,0,9,2019-11-28 09:53:12
+Connaught Water (Epping Forest),nan,nan,nan,nan,nan,nan,0,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,0.0,0,0.0,0,0,0,1.0,0,0.0,0,0,0,0,0.0,0,1.0,1.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Conwy Estuary,0.0,nan,0.0,nan,0.0,0,nan,0.0,0.0,0,0,nan,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0,0,0,0,0.0,0,0.0,1.0,1.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Corsham Lake,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,2,0.0,0,3,2,0.0,0,0.0,2,1,0,0,0.0,0,2.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Cowden Loch and Ponds,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,20,0.0,19,0,0,0.0,1,0.0,20,0,0,0,0.0,0,0.0,0.0,0.0,0,0.0,1.0,1.0,Sep,0,0,9,2019-11-28 09:53:12
+Crime Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,nan,nan,nan,nan,2,0,0.0,(0),0.0,0,0,0,0,0.0,(0),0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Cromarty Firth,0.0,0.0,0.0,0,0.0,0,0,0.0,0.0,(0),0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0,0,2Supplementary visit under the WeBS Core Count SurveyWeBS,0.0,0,0.0,0,0,0,(0),0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0,9,2019-11-28 09:53:12
+Cropston Reservoir,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,8.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Crouch-Roach Estuary,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),(0),0.0,0.0,0.0,0,0,0,1.0,5.0,4,4.0,7.0,1.0,19,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,1.0,0.0,2.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Croxall Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0.0,0,0,0,1.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,nan,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Cultenhove Dam,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0.0,0.0,0,0.0,7.0,nan,4,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dart Estuary,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,nan,0.0,0.0,0.0,0,(0),(0),0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dearne Valley,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dee Estuary (England and Wales),(0),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,3.0,0,4.0,7.0,2.0,5,1.0,0.0,0.0,0.0,0.0,0.0,4.0,0.0,0,2.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dee Estuary (English counties),(0),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,3.0,0,4.0,7.0,2.0,5,1.0,0.0,0.0,0.0,0.0,0.0,4.0,0.0,0,2.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dee Estuary (Welsh counties),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Delph and Belmont Reservoirs,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,nan,nan,0,0,0,0.0,4.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Denton Reservoir,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,nan,0.0,0,0,0,0.0,1.0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dishley Pool,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,2.0,2.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dockacres Gravel Pits,nan,0.0,nan,0.0,nan,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,9.0,8.0,17,17.0,nan,nan,0,0.0,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dowdeswell Reservoir,0,0.0,nan,0.0,0.0,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,nan,0.0,0.0,2.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Drakelow Gravel Pit,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,(0),0,0,0.0,0.0,0,0.0,1.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Draycote Water,0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,1.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Drift Reservoir,0,0.0,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,5.0,5.0,6.0,nan,0.0,0.0,0,0.0,0.0,0.0,0,1,0,nan,0,0,10,2019-11-28 09:53:47
+Duddon Estuary,0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,3.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Dunlop Semtex Pond,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,0.0,0.0,0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,5,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Earls Barton Gravel Pits,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,(0),0.0,0.0,0,0.0,0.0,3.0,(0),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Earlswood Lakes (Surrey),0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,nan,nan,0.0,0,nan,nan,2.0,2,1.0,0.0,0.0,nan,0.0,0.0,nan,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+East Chevington Pools,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,1.0,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+East Fenton Farm Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,4.0,0.0,0.0,0.0,0.0,0.0,4Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+East Wretham Meres,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,nan,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,1.0,1.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Eccup Reservoir,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,1.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Edington Lake,0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0,nan,nan,0.0,0.0,0,0,0,0.0,0.0,1,2.0,3.0,1.0,0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Elton Reservoir,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0,0,0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,4.0,0.0,0.0,0.0,0.0,0,0.0,nan,nan,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Endrick Water - Blane Bridge to Drymen Bridge,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,22.0,27.0,19.0,6.0,0.0,0.0,2.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Endrick Water - Council Boundary to Drymen Bridge,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),0.0,0.0,0,2.0,nan,nan,nan,28.0,6.0,27.0,16.0,5.0,0.0,6.0,0.0,0,0.0,0.0,0.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Epsom Common Ponds,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,0,nan,0,0.0,1.0,(0),nan,0.0,0.0,0,0.0,0.0,0.0,nan,nan,nan,nan,nan,0,0.0,0.0,1.0,0,0,0,nan,0,0,10,2019-11-28 09:53:47
+Erewash Meadows NR,0.0,0.0,0,0.0,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,(0),0.0,(0),(0),1.0,(0),0,1.0,1,0.0,0.0,0.0,0.0,(0),nan,0,0,(0),0,(0),0,(0),0.0,nan,0,0,11,2019-11-28 09:54:21
+Erme Estuary,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,2.0,0,2,2.0,(0),0.0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Esthwaite Water,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,2,12,15.0,12,11.0,0.0,0.0,0.0,1,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Eyebrook Reservoir,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,nan,0,0,0.0,0,0.0,0.0,0.0,1.0,1,1,0,1,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Fagl Lake (Hope),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Fairlop Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,1.0,1,2,0.0,0,1.0,1.0,nan,nan,nan,0,0,0,3,0,0,0,0,1.0,Nov,0,0,11,2019-11-28 09:54:21
+Fedderate Reservoir,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,1,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Ferry Lane Gravel Pit,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,0.0,0,0,0,nan,nan,nan,0,nan,nan,nan,nan,0,0,11,2019-11-28 09:54:21
+Fleet Estuary,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0,0.0,0,0,0.0,0,nan,0,(0),1.0,0,0,0.0,0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,nan,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Fleet and Wey,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,2,3.0,4,1,1.0,0,1.0,7.0,0.0,0.0,0,0,0,0,3,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Foremark Reservoir,0.0,0.0,0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0,nan,nan,0,0.0,0,0,0.0,0,2,0.0,1,0.0,0.0,0.0,nan,nan,nan,nan,0,0,0,0,nan,nan,nan,nan,0,0,11,2019-11-28 09:54:21
+Forth Estuary,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,0,(0),0.0,0,0.0,0,0,0.0,19,16,0.0,0,0.0,0.0,0.0,0.0,0,0,0,6Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,3unspecified sea-watchnull,0,2Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Frisby Gravel Pits,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,0.0,0,0,0,1,0,0,0,1,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Gladhouse Reservoir,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,nan,2,1.0,2,0.0,0.0,0.0,0.0,0,3,0,0,0,0,0,(0),0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Godmanchester Nature Reserve,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,nan,nan,nan,0,1,0,1Supplementary visit under the WeBS Core Count SurveyWeBS,(0),0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Golden Acre Park and Paul's Pond,0.0,0.0,nan,0.0,nan,0.0,nan,0.0,nan,0.0,0.0,0.0,0,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,6,5,3,3,2,1,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Gosford Ponds,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,nan,nan,nan,0,0.0,0,0,0.0,1,0,0.0,0,0.0,1.0,0.0,0.0,0,(0),1Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Gresford Flash,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,0.0,0,0,0.0,0,0.0,0,0,0.0,0,(0),1.0,0,1.0,0.0,0.0,0.0,4,1,(0),4,0,nan,0,0,nan,nan,nan,0,0,11,2019-11-28 09:54:21
+Guernsey Shore,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,(0),0,0.0,0,0.0,(0),(0),23.0,0,0,0.0,0,0.0,0.0,0.0,0.0,0,0,3,0,0,1,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Haddo House Lakes,0.0,nan,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,nan,nan,(0),2.0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,0,0,11,2019-11-28 09:54:21
+Hagnaby Lock Fen,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0.0,1,3.0,2.0,1.0,nan,nan,nan,nan,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Hamford Water,0.0,0.0,(0),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,0,0,0.0,2,1.0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Hamilton Low Parks and Strathclyde Park,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,nan,nan,nan,5,0,3.0,2,2,2.0,2,2.0,2.0,1.0,1.0,1,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Harrold-Odell Country Park,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0,0.0,nan,0,nan,0,0.0,nan,4,12.0,1,2,2.0,0,nan,nan,nan,nan,0,0,0,0,0,0,1,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Harrow Lodge Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,5.0,15,11,9.0,7,13.0,0.0,0.0,0.0,0,0,0,(0),(0),(0),0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Hauxley Nature Reserve,nan,nan,nan,nan,0.0,nan,nan,nan,0.0,0.0,0.0,0.0,0,0.0,nan,(0),0.0,0,nan,nan,nan,nan,0,1,1.0,1,0.0,0.0,0.0,1.0,2,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Hay-a-Park Gravel Pits,nan,0.0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,nan,nan,0.0,14,0,2.0,0,0.0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Heaton Park Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,0,0,0.0,0,0.0,nan,0.0,1.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+High Rid Reservoir,0.0,0.0,0,nan,nan,0.0,0.0,0.0,0.0,0.0,nan,nan,0,nan,0,0,0.0,0,0.0,0,0,0.0,0,0,0.0,0,0.0,0.0,0.0,0.0,0,0,0,0,(0),1,nan,0,0,nan,nan,0,0,11,2019-11-28 09:54:21
+Hightae Loch Lochmaben,nan,nan,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,1.0,0,0,1.0,1,0.0,0.0,0.0,0.0,0,(0),0,0,0,0,0,0,0,0.0,nan,0,0,11,2019-11-28 09:54:21
+Hinchingbrooke Gravel Pit,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,nan,nan,nan,nan,nan,nan,0,1,1,0,0.0,0,0.0,nan,nan,nan,nan,0,0,12,2019-11-28 09:54:56
+Holburn Moss,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,(0),0.0,0.0,0.0,0.0,3,0,0.0,0,0,0,2,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0,0,nan,0,0,12,2019-11-28 09:54:56
+Holland Marshes,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,0,0.0,0.0,0.0,nan,nan,nan,nan,0.0,0,0,0.0,0,0,0,7,3,1.0,5.0,3,3,1,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Hollow Pond (Whipps Cross),nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,4,0.0,0,0,0,5,4,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,0,nan,0,0,12,2019-11-28 09:54:56
+Hornsea Mere,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,nan,nan,nan,0,0.0,nan,0.0,2.0,8,18,12.0,3,6,6,0,0,0.0,0.0,0,0,0,0,4.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Houstonhead Dam,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0,0,0,0.0,4.0,0,0,0,0,0.0,0,nan,nan,nan,nan,nan,0,0,12,2019-11-28 09:54:56
+Hoveringham and Bleasby Gravel Pits,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,0,0,0.0,0,nan,nan,0,0,0.0,3.0,0,0,0,(0),0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Huntsham Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0,0,0,0.0,0.0,1,1,1,1,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Ifield Mill Pond,nan,nan,0.0,nan,nan,nan,nan,0.0,nan,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,0,0,0.0,0.0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Kempston Bypass Pools,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,1,0,nan,nan,nan,nan,nan,0,0,nan,0,nan,nan,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Kenfig Pool,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0,0.0,0.0,0.0,0,nan,nan,0.0,0.0,0,1,0.0,0,0,0,0,0,0.0,0.0,0,0,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Kilmardinny Loch,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,0,0.0,0.0,0.0,0.0,(0),0,4.0,0,0,(0),(0),0,0.0,0.0,0,0,(0),0,0.0,0,0.0,0,(0),0,nan,0,0,12,2019-11-28 09:54:56
+King's Bromley Gravel Pits,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,1.0,0,0,0.0,0,0,0,0,0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,(0),nan,0,0,12,2019-11-28 09:54:56
+Kinnaird Loch,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Kirk Loch Lochmaben,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,2,2,0,1,0,1.0,1.0,1,1,1,1,1.0,1,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Kirkby-on-Bain Gravel Pits,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,nan,0.0,0.0,0,nan,nan,0.0,8.0,2,8,1.0,4,6,2,6,1,3.0,5.0,0,0,0,2,1.0,0,1.0,0,1,0,nan,0,0,12,2019-11-28 09:54:56
+Knightswood Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0.0,0.0,0,1,0.0,0,0,0,0,0,0.0,0.0,0,0,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Lacock GP,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,nan,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,1.0,0,0,0,0,0,0.0,0.0,0,0,0,0,0.0,0,0.0,(0),0,0,nan,0,0,12,2019-11-28 09:54:56
+Lake of Menteith,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,nan,(0),0.0,0.0,0.0,0.0,0,0,1.0,2,1,0,0,0,0.0,0.0,0,0,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Lakeside Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,13,8,0,0,0,4.0,0.0,0,4,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Lanark Loch,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,0,0,1,1,3,3.0,0.0,0,0,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Langstone Harbour,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0,0,0,0.0,0.0,0,2Standard visit under the WeBS Low Tide Count SurveyWeBS,4,1,0.0,0,0.0,0,0,2,Nov,0,0,12,2019-11-28 09:54:56
+Lily Loch,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,(0),0.0,1.0,0,0,nan,nan,nan,nan,nan,0,0,nan,nan,0,0,12,2019-11-28 09:54:56
+Llangorse Lake,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0,1,0,0.0,0.0,0,0,0,0,1.0,(0),0.0,2,0,0,nan,1,1,12,2019-11-28 09:54:56
+Llyn Alaw,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,3.0,0,3,0.0,1,6,1,0,0,0.0,0.0,4,0,nan,nan,0.0,0,nan,nan,nan,(0),nan,0,0,12,2019-11-28 09:54:56
+Llyn Celyn,0.0,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,0,nan,nan,0,0,0,0,0,0.0,0.0,0,0,0,1,1.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Llyn Cwellyn,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,nan,0.0,0,0.0,nan,1.0,1.0,nan,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,nan,nan,nan,0,0,12,2019-11-28 09:54:56
+Llyn Maelog,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,nan,nan,0.0,0,(0),0.0,0,1,0,4,5,9.0,0.0,0,0,0,0,0.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Llyn Pencarreg,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,nan,nan,0,nan,nan,0.0,nan,nan,nan,nan,(0),(0),nan,nan,6,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0,0,12,2019-11-28 09:54:56
+Llyn Tegid,0.0,0.0,nan,nan,0.0,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,nan,nan,0,0,0,0,0,0.0,0.0,1,0,0,3,1.0,0,0.0,0,0,0,nan,0,0,12,2019-11-28 09:54:56
+Llyn Traffwll,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,4,3,0.0,3,3.0,1.0,2,1,0.0,0.0,2.0,0.0,2.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Ard,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,0,0.0,0,1.0,1.0,2,(0),nan,0.0,12.0,0.0,0.0,0,0.0,1,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Coulter,nan,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0,1.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Earn,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,0,0.0,0.0,0,0,0.0,0.0,3.0,2.0,2.0,1,2.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Fada (Benbecula),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,5.0,5.0,0.0,0.0,(0),0.0,(0),0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Insh and Spey Marshes,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,nan,0.0,0.0,nan,0,0.0,0.0,(0),0,0.0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,1,nan,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Lomond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,0,0.0,(0),2.0,0.0,(0),2,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,(0),(0),(0),0,(0),nan,0,0,13,2019-11-28 09:55:31
+Loch Lubnaig,nan,0.0,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0,0,0.0,12,12.0,10.0,10,4,5.0,5.0,0.0,2.0,1.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Monzievaird,nan,nan,nan,0.0,0.0,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0,0.0,0.0,0,0,0.0,5.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Na Claise,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,nan,nan,nan,nan,0.0,9.0,4.0,9.0,(0),7.0,2,(0),0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Tay,nan,0.0,nan,nan,0.0,nan,0.0,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,15.0,0,3,1.0,10.0,7.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch Voil,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,0,0.0,0.0,0,0,0.0,0.0,0.0,1.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch a' Chinn Uacraich (Coot Loch) (Benbecula),nan,nan,nan,0.0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,9.0,16.0,9.0,nan,nan,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch of Boardhouse,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,1,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch of Craiglush,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,1,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch of Hundland,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0.0,0.0,0,0,0.0,0.0,0.0,0.0,1.0,0,0.0,0,0,1,0,0,(0),0,nan,0,0,13,2019-11-28 09:55:31
+Loch of Skaill,nan,nan,0.0,0.0,0.0,nan,0.0,0.0,nan,0.0,0.0,nan,0.0,nan,0.0,0,0.0,0.0,0,0,0.0,(0),0.0,0.0,0,0,0.0,0.0,0.0,0.0,3.0,0,0.0,1,2,2,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Loch of Skene,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,1.0,0.0,0,0,0.0,0.0,0.0,2.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+London Wetland Centre,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,1,1,2.0,3,2.0,4.0,4,0,0.0,0.0,0.0,0.0,0.0,0,0.0,6,0,2,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Longnewton Reservoir,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,5,0.0,0.0,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Longparish Trout Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,0,0,(0),0,nan,0,0,13,2019-11-28 09:55:31
+Lonsdale Road Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,(0),0.0,nan,0,0,0.0,0,0.0,1.0,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Lopwell Dam,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,0.0,nan,nan,0,0.0,0.0,(0),(0),0.0,0,0.0,nan,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Lound Waterworks,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Marden Quarry,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,10.0,13.0,0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Marston Vale Country Park,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,1,0.0,0.0,0,0,nan,nan,nan,nan,nan,(0),0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Mary Stevens Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Mawddach Estuary,0.0,0.0,0.0,nan,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,nan,nan,nan,3.0,0.0,nan,nan,nan,1.0,2.0,0.0,0.0,0,0.0,0,0,0,(0),0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Maxey Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,0.0,1,1,0.0,0,0.0,1.0,1,1,1.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Mayesbrook Park Lakes,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,1,0.0,0.0,0,0,0.0,0.0,nan,nan,nan,nan,nan,(0),0,0,1,0,0,0,nan,0,0,13,2019-11-28 09:55:31
+Medina Estuary,nan,nan,nan,nan,(0),nan,nan,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,0,5,5,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Mesnes Park Wigan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0,nan,0,0.0,0,1,(0),nan,0,0,14,2019-11-28 09:56:05
+Messingham Sand Quarries,0.0,0.0,0.0,0.0,0,nan,0.0,0.0,0.0,nan,0.0,0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,1,0.0,1,nan,nan,0.0,0.0,0,0,0,0,0.0,1,0,0,nan,0,0,14,2019-11-28 09:56:05
+Metheringham Delph,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,nan,nan,nan,0.0,0.0,0,0.0,0,0,0,0,0.0,0,0.0,0,0.0,1,0.0,1.0,0,0,0,1,0.0,0,(0),nan,nan,0,0,14,2019-11-28 09:56:05
+Middle Tame Valley Gravel Pits,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,1,0,0,0,2.0,0,0.0,0,0.0,0,2.0,0.0,0,0,2,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Mill Loch Lochmaben,nan,nan,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,0,0,0,1.0,0,0.0,0,0.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Milton Loch (Dumfries and Galloway),0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,nan,nan,0,0.0,0.0,0,0.0,0,(0),0,(0),0.0,(0),0.0,nan,0.0,1,nan,0.0,0,1,0,0,0.0,0,2,0,nan,0,0,14,2019-11-28 09:56:05
+Morecambe Bay,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,(0),0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,2,1,3,0.0,8,0.0,0,18.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Myerscough Quarry,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,0.0,0,0.0,0.0,0,nan,nan,nan,nan,0,0,1,Mar,0,0,14,2019-11-28 09:56:05
+Newton Pool,nan,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,nan,0,0.0,0,0.0,0.0,nan,nan,nan,nan,0,0,0.0,0,3.0,0,0.0,nan,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Oerley Reservoir,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,0,0,0,4.0,0,0.0,0,0.0,(0),0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Old England Loch,0.0,0.0,0.0,nan,nan,nan,nan,0.0,nan,nan,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0,0.0,0,0.0,1,1.0,0,0.0,0.0,nan,nan,nan,nan,nan,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Ouse Washes,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,0,0,0,0.0,0,0.0,0,2.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Passfield Pond,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,0,0.0,0,(0),0,0,6.0,0,0.0,0,0.0,2,0.0,0.0,0,0,0,(0),0.0,0,0,(0),nan,0,0,14,2019-11-28 09:56:05
+Peasholm Park Lake,nan,nan,nan,nan,nan,0.0,0.0,nan,0.0,0,0.0,0,0,nan,0.0,0,0.0,0.0,0,0.0,0,0,0,5,0.0,1,0.0,0,2.0,1,0.0,0.0,8,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Pevensey Levels,nan,nan,0.0,0.0,0,0.0,0.0,0.0,0.0,nan,nan,0,0,0,0.0,0,0.0,0.0,0,0.0,(0),0,(0),0,0.0,0,0.0,(0),2.0,4,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Pitsford Reservoir,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,(0),1,0,0,0.0,0,0.0,0,2.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Polemere,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,1,1,2,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Pond of Drummond,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,0,0,nan,0.0,0,0.0,3,0.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Poole Harbour,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,(0),(0),(0),0.0,(0),0.0,0.0,0,0.0,0,0,5,0,0.0,0,5.0,5,4.0,0,0.0,0.0,4Supplementary visit under the WeBS Core Count SurveyWeBS,0,0,2,0.0,(0),0,0,nan,1,1,14,2019-11-28 09:56:05
+Portworthy Mica Dam,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,1.0,0,1,1,3,0.0,0,0.0,0,0.0,0,0.0,0.0,0,(0),(0),0,0.0,0,(0),0,nan,0,0,14,2019-11-28 09:56:05
+Possil Loch,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,(0),0.0,0,0,0,1,0.0,0,0.0,0,0.0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0,0,14,2019-11-28 09:56:05
+Primrose Valley Mere,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0.0,0.0,0,0.0,0,0,0,0,0.0,0,0.0,1,0.0,0,0.0,0.0,0,0,0,nan,0.0,0,nan,nan,nan,0,0,14,2019-11-28 09:56:05
+Priory Water and Kirby Lakes,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,0.0,0,4,11,9,6.0,7,4.0,2,0.0,0,0.0,0.0,0,4,2,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Pymmes Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Queen's Park (Swindon),0.0,0.0,0.0,0.0,0,nan,0.0,0.0,0.0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,1.0,0,1,1,1,1.0,1,2.0,1,0.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+R. Lochay and Killin Marshes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0,0,(0),0,0.0,0,1.0,0,0.0,1,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+R.Thames: Moulsford to Streatley,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,1,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Radwell Lakes,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0,0.0,0,0,0,nan,0,nan,nan,nan,nan,3,2,2,2,0.0,0,nan,nan,0.0,0,0.0,0.0,0,0,0,0,0.0,0,0,0,nan,0,0,14,2019-11-28 09:56:05
+Red Moss SSSI,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0,0.0,0,0.0,0,0.0,0.0,0,0,1,0,nan,nan,nan,nan,nan,0,0,14,2019-11-28 09:56:05
+Reddish Vale Visitors Centre (Topmill Pond and Bottom Pond),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,(0),0,12,15,13.0,0,0.0,nan,0.0,0,0,0.0,0.0,nan,nan,nan,0,nan,nan,nan,nan,nan,0,0,15,2019-11-28 09:56:41
+Redgrave and Lopham Fen,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,1,0,0,nan,0,0,15,2019-11-28 09:56:41
+River Cam - Kingfishers Bridge,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,(0),0,4Supplementary visit under the WeBS Core Count SurveyWeBS,2.0,4,3.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+River Devon - Kersiepow Ponds,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0,0,0,0.0,0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0,0,1,0,nan,0,0,15,2019-11-28 09:56:41
+River Eden - Grinsdale to Sandsfield,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,13.0,4.0,1,(0),(0),0,(0),0,(0),nan,0,0,15,2019-11-28 09:56:41
+River Forth - Bridge of Frew to East Frew,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0.0,nan,nan,nan,0.0,1,0,0.0,1.0,nan,0,0,0,0,0,(0),0,nan,0,0,15,2019-11-28 09:56:41
+River Forth - Bridge of Frew to Ladylands,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,0,nan,nan,0.0,nan,1.0,0,0,0.0,0.0,nan,0,nan,0,nan,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+River Irwell,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,3,2,1.0,1,0.0,2.0,1.0,1,0,0.0,0.0,0.0,0,0,0,0,0,0,1,Apr,0,0,15,2019-11-28 09:56:41
+River Kennet - Marlborough,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0.0,0,0.0,0.0,2.0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,nan,nan,0,0,15,2019-11-28 09:56:41
+River Kent 513905-516943,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,0.0,3,6,5,nan,9.0,8,8.0,8.0,8.0,0,nan,nan,nan,nan,nan,nan,0,0,nan,nan,nan,nan,0,0,15,2019-11-28 09:56:41
+River Lea - East Hyde,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,1Supplementary visit under the WeBS Core Count SurveyWeBS,1Supplementary visit under the WeBS Core Count SurveyWeBS,1.0,0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+River Test - Leckford,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0,0,0,0.0,0,0.0,0.0,0.0,0,0,0.0,3.0,0.0,2,9,0,0,0,0,(0),nan,0,0,15,2019-11-28 09:56:41
+River Thames - Putney to Barnes,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,nan,nan,0.0,1,0,2,2,2.0,1,2.0,1.0,0.0,1,0,0.0,nan,0.0,0,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+River Thames behind Molesey Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,1,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+River Trent - Trent Bridge to Radcliffe viaduct,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0,0,15,2019-11-28 09:56:41
+River Welland - Spalding to A16,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,(0),0,0,1.0,1,0.0,0.0,0.0,(0),0,0.0,0.0,0.0,0,0,0,0,0,0,nan,nan,0,0,15,2019-11-28 09:56:41
+River Wey - Lammas Lands,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0,0,0,4.0,1,0.0,0.0,0.0,0,(0),0.0,0.0,0.0,nan,nan,0,(0),0,nan,nan,nan,0,0,15,2019-11-28 09:56:41
+River Wye - Castleton,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0,0.0,0.0,3.0,0,0,0.0,0.0,nan,0,0,0,0,(0),0,0,nan,0,0,15,2019-11-28 09:56:41
+Rivers Eamont and Eden - Honeypot to Edenhall,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,nan,0.0,nan,0.0,0.0,0,0,0,0,nan,0,0.0,0.0,0.0,0,0,0.0,0.0,1.0,0,0,0,0,0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,nan,0,0,15,2019-11-28 09:56:41
+Roding Meadows,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0.0,0,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,(0),0,0,0,0,2,0,nan,0,0,15,2019-11-28 09:56:41
+Rookery North (Stewartby),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,1,0.0,1,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,0,nan,nan,0,nan,0,0,15,2019-11-28 09:56:41
+Rostherne Mere,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0,3.0,1.0,3.0,0,0,1.0,0.0,0.0,0,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+Rother Valley Country Park,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,1,2,0.0,0,0.0,0.0,0.0,nan,nan,nan,nan,nan,0,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+Rowley Lake,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,10,11.0,11,0.0,0.0,15.0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+Royal George Mill Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,2,0,2,0,0.0,0,0.0,1.0,0.0,0,0,0.0,0.0,0.0,1,0,1,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+Ruislip Lido,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0,0,nan,nan,2.0,0.0,0.0,1,1,0.0,0.0,0.0,1,0,0,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+Rumworth Lodge Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0,0.0,0.0,0.0,0,0,0.0,0.0,0.0,1,0,0,nan,nan,0,0,nan,0,0,15,2019-11-28 09:56:41
+Ryde Canoe Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,1.0,1,1,1,0,0,0,0,nan,0,0,15,2019-11-28 09:56:41
+Sale Water Park and Broad Ees Dole,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,0.0,0.0,0,0,0,0,0.0,0,0.0,0.0,0.0,0,0,1.0,0.0,0.0,0,0,0,0,0,nan,0,nan,0,0,15,2019-11-28 09:56:41
+Salterford Dam and Oxton Bogs,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0.0,2.0,0,0,0,nan,nan,nan,nan,nan,0,0,15,2019-11-28 09:56:41
+Sankey Valley Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,0,0,0.0,0,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,nan,(0),(0),(0),(0),(0),(0),(0),(0),1.0,Mar,1,1,16,2019-11-28 09:57:16
+Scaling Dam Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,nan,0.0,0,0,0.0,0,0.0,nan,(0),0.0,0.0,0.0,0,2,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Seaton Gravel Pits and River,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0,0,0.0,(0),0.0,(0),0,0.0,0.0,2.0,0,0,0.0,0,0,0,0,0,0,(0),0,(0),0.0,nan,0,0,16,2019-11-28 09:57:16
+Serpentine and Long Water and Round Pond - Kensington,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,nan,nan,nan,0.0,nan,nan,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Severn Estuary (Welsh counties),nan,0.0,nan,nan,0.0,0.0,0.0,0.0,(0),(0),(0),0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Severn Floodplain - Atcham Bridge to Wroxeter,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Severn Hams,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,0,0.0,(0),0,0.0,(0),0.0,2,0,0.0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Shaftesbury Lake,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,1.0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,1,0.0,nan,0,0,16,2019-11-28 09:57:16
+Sherborne Brook,0.0,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0.0,0.0,0.0,0,1,1.0,0,0,0,1,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Shireoaks Hall Pools,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0,0.0,0.0,nan,nan,0,0.0,0,0,1.0,0,0.0,0,0,nan,nan,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Shobrooke Park Lakes,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0.0,nan,nan,nan,nan,nan,(0),(0),1.0,(0),0.0,0,0,1.0,0.0,0.0,0,(0),0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Shottermill Ponds,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,4,1.0,0.0,0.0,0,0,0.0,0,0,0,0,nan,nan,1,0,0,nan,nan,0,0,16,2019-11-28 09:57:16
+Shrewsbury Sewage Treatment Works,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,1,0.0,0.0,nan,nan,0,0.0,0,0,0,1,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Shustoke Reservoirs,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,nan,0,nan,nan,nan,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Siblyback Reservoir,0.0,0.0,nan,nan,nan,nan,nan,0.0,0,0,0,0.0,nan,0.0,nan,0,0.0,0,0,0.0,0,0.0,0,0,2.0,0.0,0.0,0,(0),0.0,nan,0,0,0,1,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Sinah Gravel Pit,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,3,0,0.0,0.0,0.0,(0),0,0.0,0,0,0,0,0,0,nan,nan,nan,nan,nan,0,0,16,2019-11-28 09:57:16
+Sizewell Belts,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0.0,0,0,0.0,1,0,3,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Slaugham Mill Pond,nan,nan,nan,nan,nan,0.0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0,0,0,0,1.0,Apr,0,0,16,2019-11-28 09:57:16
+Small Heath Park Birmingham,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1Supplementary visit under the WeBS Core Count SurveyWeBS,1,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Somerset Levels,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,1,0,0.0,0.0,1.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Somersham Gravel Pit,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,0.0,1.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+South Huish Marsh,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0.0,0,1.0,0,0,2.0,0.0,2.0,2,0,0.0,2,0,0,1,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+South Muskham Pits,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,2.0,2,2.0,0,nan,nan,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Southampton Water,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,(0),(0),0.0,0.0,0.0,0.0,(0),0.0,0,0,0.0,0,0.0,0,0,0.0,0.0,0.0,0,0,0.0,(0),0,0,0,0,0,0,0,0,1.0,Aug,0,0,16,2019-11-28 09:57:16
+Southill Lake,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0,0.0,0.0,0.0,0.0,0,0.0,0,1,1.0,0,0.0,0,0,0.0,0.0,0.0,0,0,0.0,0,2,0,0,0,(0),(0),0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Southport Marina,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,0.0,nan,nan,0,0,1.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Southwater Quarry,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,2.0,1,1,0.0,0.0,0.0,0,0,0.0,0,0,0,0,1,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Spade Oak Gravel Pit (Little Marlow),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0,0,0.0,0,0.0,0,0,1.0,0.0,0.0,0,0,0.0,0,0,0,1,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Springs and Dingle Reservoirs,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,0,0.0,0,0,1.0,0,0.0,0,0,0.0,0.0,0.0,0,0,0.0,0,0,0,0,0,0,0,0,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Stapleford Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0,0,1,0,0.0,nan,0,0,16,2019-11-28 09:57:16
+Stewartby Lake,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,nan,nan,0,0,0.0,0,1,1,1,0.0,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Stithians Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0.0,0,nan,nan,nan,(0),0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Stour Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0.0,0,0.0,0,0,0,0,0.0,2,1,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Stowe School Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Stratfield Saye,0.0,78.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,(0),0.0,0.0,0,0.0,0,1,1,(0),0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Strinesdale Reservoirs,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,0,0.0,7,7,6,4,3.0,5.0,0,5.0,5,4,4,3,3.0,3,0,0.0,nan,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Summerston and Millichen Flood,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,0,nan,nan,nan,nan,nan,nan,nan,(0),28,0.0,0,0,0,0,0.0,0.0,0,0.0,0,0,nan,0,nan,nan,nan,nan,nan,nan,0,nan,0,0,17,2019-11-28 09:57:52
+Sywell Country Park,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,(0),0.0,0.0,1,1,0.0,0,1,1,0,0.0,0.0,0,0.0,0,0,0,1,1.0,0,0,0.0,0,0.0,(0),nan,0,0,17,2019-11-28 09:57:52
+Tamar Complex,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,(0),4,0,0,0.0,1.0,0,0.0,0,0,0,1,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Tan-y-Grisiau Reservoirs,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,0,0,0.0,1.0,0,0.0,0,0,0,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Taw-Torridge Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,(0),0.0,0.0,0,0,0.0,1,1,3,5,5.0,1.0,3,2.0,2,0,1,0,3.0,1,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Taylor Dam,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,(0),nan,0,nan,nan,nan,0.0,nan,nan,nan,nan,0,0,17,2019-11-28 09:57:52
+Teign Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0.0,0,0.0,0,(0),0,0,0.0,0,(0),1.0,0,0.0,1,Jul,1,1,17,2019-11-28 09:57:52
+Testwood Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0,0,0,0,0.0,1.0,1,0.0,0,0,0,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Thames Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,(0),(0),0.0,0.0,0.0,0,0.0,0.0,0,1,1.0,1,0,0,0,0.0,0.0,0,5.0,9,7,8,4,1.0,0,0,0.0,0,0.0,1,Mar,0,0,17,2019-11-28 09:57:52
+The Wash,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,(0),0,0,0.0,0.0,0.0,0,0.0,0.0,(0),0,0.0,0,0,0,0,0.0,0.0,0,0.0,0,0,0,1,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Theale Gravel Pits,0.0,nan,0.0,0.0,0.0,nan,0.0,0.0,0,0,0,nan,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,nan,0,0,0.0,0.0,0,0.0,0,0,2,2,0.0,1,0,0.0,0,0.0,(0),nan,0,0,17,2019-11-28 09:57:52
+Thorpe Water Park,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,nan,nan,nan,0.0,0.0,0,0.0,0.0,0,(0),0.0,0,2,0,0,0.0,0.0,0,0.0,0,nan,0,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Three Sisters Recreation Area,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,2,0.0,14,17,5,11,0.0,0.0,nan,0.0,nan,nan,0,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Thurlestone Marsh,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,0,0.0,0,(0),(0),(0),0.0,0.0,2,0.0,0,0,0,0,0.0,0,0,0.0,0,nan,nan,nan,0,0,17,2019-11-28 09:57:52
+Tophill Low Reservoirs,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0.0,(0),0.0,(0),0,0,0,0.0,0,0,0.0,1,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Tottenhill Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0.0,0.0,(0),0,0.0,0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4,nan,nan,(0),nan,0,nan,0,0,17,2019-11-28 09:57:52
+Town Loch Dunfermline,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,1,1,0,0,0.0,0.0,0,0.0,nan,0,0,0,0.0,0,0,nan,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Traeth Bach,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,0,0,0.0,4,0,0,0,0.0,0.0,0,0.0,0,0,0,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Tweed Estuary,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,0.0,0.0,0,0.0,0.0,(0),0,0.0,(0),0,3,1,2.0,5.0,0,0.0,4,0,2,0,0.0,0,0,0.0,0,1.0,0,nan,0,0,17,2019-11-28 09:57:52
+Ulpha Meadows,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0.0,1Supplementary visit under the WeBS Core Count SurveyWeBS,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Vale of Coustry Complex,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,0,0,0,0,0.0,0.0,0,0.0,7,0,0,0,1.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Valentines Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,2,1,1,1,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Vasa Loch Shapinsay,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,0.0,0,0.0,0,0,0,0,1.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Walcot Hall Lakes,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,0,0.0,nan,0.0,0,0.0,nan,nan,nan,nan,0,0,0,0,nan,nan,nan,nan,1,0,0,0,0.0,0,0,0.0,0,0.0,0,nan,0,0,17,2019-11-28 09:57:52
+Walthamstow Reservoirs,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,8,8.0,5.0,3.0,4.0,6,0,0.0,2,2,nan,0,0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Walton Colliery Nature Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,4.0,7.0,6.0,6,8,8.0,0,0,0.0,0,0,0,0.0,nan,nan,nan,nan,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wanstead Flats,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,2.0,0.0,0.0,0,0,nan,nan,nan,nan,9,0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Watergrove (Wardle),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0,nan,0.0,0,nan,0.0,0.0,0.0,0,0,1.0,0,0,0.0,(0),(0),(0),0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Watford Lodges,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,2.0,1.0,0.0,1.0,1,1,nan,nan,nan,nan,nan,nan,0,0.0,0,nan,nan,nan,nan,0.0,0.0,18,2019-11-28 09:58:27
+Weaver Estuary to Catton Hall,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,8,0.0,0,0.0,1.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Welbeck Estate,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,nan,0,0.0,0.0,1.0,0.0,(0),(0),0.0,(0),0,0.0,(0),0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+West Lake (Clay Hole),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,nan,0.0,nan,0,0.0,0.0,1.0,0.0,1,1,1.0,0,1,0.0,0,0,0,0.0,(0),nan,0.0,nan,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wicksteed Park Lakes,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,1.0,1.0,1.0,0,0,0.0,0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wigan Flashes,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,nan,nan,nan,nan,nan,0.0,0.0,0,0,0.0,0.0,6,5.0,4.0,4.0,4.0,3,nan,4.0,1,0,0.0,0,(0),0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Williamthorpe Reservoirs,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0,1,0,0.0,2,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wimbleball Lake,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,nan,0.0,0.0,0.0,0,2,1.0,0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Winchester Sewage Treatment Works,nan,0.0,0.0,0.0,nan,nan,nan,nan,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,(0),1.0,1.0,0.0,0.0,0,0,0.0,0,0,0.0,0,0,0,0.0,1,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Windermere,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0,0.0,nan,nan,nan,2.0,4.0,2.0,0,0,0.0,2,7Supplementary visit under the WeBS Core Count SurveyWeBS,9.0,5,2,2,0.0,0,0.0,nan,nan,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wingerworth Lido,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,nan,nan,0.0,0.0,0,0,0.0,1,1,0.0,1,0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wollaton Park Lake,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,nan,nan,nan,nan,nan,1,0.0,0,0,0.0,0,0,0,0.0,0,0.0,nan,1,Mar,0.0,0.0,18,2019-11-28 09:58:27
+Wootton Creek,0.0,nan,nan,nan,0.0,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,(0),0.0,nan,0,0.0,nan,0.0,1.0,0,0,0.0,0,0,0.0,0,0,0,0.0,0,0.0,0.0,1,Oct,0.0,0.0,18,2019-11-28 09:58:27
+Worthington Lakes,nan,0.0,nan,0.0,0.0,nan,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,0.0,0,1.0,2.0,2.0,1.0,2,2,1.0,1,nan,0.0,0,0,1,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wotton Underwood Lakes,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,1,0.0,0,0,0.0,0,1,1,1.0,0,nan,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Wyboston Lakes,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,1.0,0.0,0.0,0,1,0.0,0,0,0.0,0,0,0,0.0,0,0.0,0.0,(0),nan,0.0,0.0,18,2019-11-28 09:58:27
+Yeadon Tarn,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,1,1.0,1.0,1.0,0.0,2,1,1.0,0,0,0.0,0,0,0,0.0,0,1.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Yealm Estuary,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,(0),0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,0,0,0,0.0,0,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Ynys-y-Fro Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,nan,nan,nan,nan,nan,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,1,0.0,0.0,0,nan,0.0,0.0,18,2019-11-28 09:58:27
+Arnfield Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0,1,6.0,0.0,0,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Astley Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0,0,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Auchencrieff Loch Locharbriggs,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,0,0,2.0,0.0,0,0.0,0.0,0.0,0.0,0,nan,0.0,nan,0,0.0,nan,nan,0,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Auchendores Reservoir,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,0,1.0,0.0,0,0.0,0.0,0.0,0.0,0,0,0.0,0,0,0.0,nan,0,0,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Barnstone Pools,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0,2.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Barnwell Country Park Lakes,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,nan,2.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Bellflask,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,4,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,18,2019-11-28 09:58:27
+Belper River Gardens,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,nan,nan,nan,nan,0.0,1,0.0,nan,nan,0,0,0.0,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Belvoir Lakes,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,(0),0,0,1.0,(0),0,0.0,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Black Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Blake Mere (Whitchurch),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,0,2.0,2.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Boggart Hole Clough,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,3,2.0,4,nan,0.0,0.0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Bottoms Reservoir (Derbyshire),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3.0,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Bracewell Ponds,nan,nan,nan,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,nan,0.0,0,0.0,0.0,0.0,4.0,0.0,4,4.0,nan,0,(0),0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Bramhall Park Lakes,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,8.0,0.0,8,6.0,4,nan,0,0,0.0,nan,nan,nan,2.0,2,2,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Branston Water Park and gravel pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0,0,0,0.0,0,0,0.0,nan,2,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Brownrigg,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Carlton Miniott Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3,25,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Chesterfield Canal,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4,11,nan,nan,nan,nan,nan,nan,nan,3,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Clarydale Water,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,(0),0.0,0,2,0,0,2.0,2,2,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Colemans Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,nan,0.0,0,2.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Compton Verney Lakes,0.0,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,(0),0.0,(0),0,0,1,0.0,0,(0),2.0,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Dannemarche Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,0,0.0,0,0,0.0,5.0,2,2,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Dove Valley Park Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,0.0,3,0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Dudley Canal - Warrens Hall Park,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,1,1.0,1,1,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Eastfenton - Drem Area,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1Icelandic-breeding Goose CensusWildfowl and Wetlands Trust,4unspecified sea-watchnull,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Felix Lane Gravel Pits,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1,0,0.0,0.0,7,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Fewston Reservoir,nan,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,nan,0.0,0.0,nan,0.0,nan,nan,2.0,nan,(0),0.0,1,nan,nan,0,0.0,nan,0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Fowlmere (Croxton),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2,1,0.0,0.0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Foxhill Bank Nature Reserve,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,6,6.0,nan,6,6,4,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Gorton Reservoirs,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,0.0,0.0,0.0,0.0,1,0.0,0,0,0,0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Grand Mare,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Grands Vaux Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,0.0,0.0,0.0,nan,nan,0.0,1,0,1,0,0.0,0,0,3.0,0.0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Grange Waters Complex,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,0,0,0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Hagnaby Fen Restoration,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,nan,nan,0,3,0,2.0,1,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+High Batts NR,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Hindley Golf Course,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,0.0,1,33.0,10,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,19,2019-11-28 09:59:01
+Holme Mills Pools,0.0,0.0,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,0.0,0,0.0,0.0,0,0.0,2.0,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Holmer Tarn,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,nan,0.0,0,0.0,0.0,0,0.0,1.0,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Jackhouse Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,4.0,4.0,9,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Johnny Browns Common,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,(0),0.0,0.0,(0),0.0,22.0,0.0,12.0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Johnston Loch,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,2,0,0,0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+"King George V Pool, Altrincham",nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3Supplementary visit under the WeBS Core Count SurveyWeBS,0.0,0,4,3,1,1,nan,nan,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Knipton Reservoir,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,(0),0.0,0,1,0,0,0,0.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+La Hague Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0.0,0.0,12,0.0,13.0,12.0,15.0,0,nan,0,15,0,2,4,3.0,3.0,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Leeming Reservoir near Oxenhope,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,5.0,5.0,nan,nan,nan,nan,(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Leperstone Reservoir,nan,nan,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,0.0,1,0.0,0.0,0.0,0.0,0,0.0,0,0,0,(0),(0),nan,nan,0.0,(0),nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Letton Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,0.0,0.0,0,1.0,1.0,0.0,0.0,0,0.0,0,0,nan,nan,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Lightwater Valley,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,2,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Llyn Brenig,nan,0.0,0.0,0.0,0.0,nan,nan,0.0,nan,nan,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,0,0.0,0.0,0.0,0.0,0,0.0,0,0,0,1,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Loch Dalbeg (Lewis),nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Loch Linnhe - Duror to Salachan Burn,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),0.0,2.0,3.0,0.0,2,3.0,0,(0),(0),nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Longendale Reservoirs,0.0,nan,0.0,0.0,0.0,nan,0.0,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0,0.0,3.0,2,1.0,1.0,1.0,2.0,2,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Longshaw Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,2.0,2.0,2,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Lothing Lake and Oulton Broad,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0,0.0,0.0,1,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Melbourne Pool,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,nan,nan,nan,0.0,0.0,0.0,1,0.0,0,0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Morehall Reservoir,0.0,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,nan,nan,0.0,0,0.0,0.0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,5.0,1,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Norbury Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Ogden Reservoir (Denholme),nan,nan,nan,0.0,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0,0.0,0.0,0,0.0,0.0,0.0,nan,nan,nan,nan,2,0,1,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Osberton,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,3,2,4,1.0,2.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Parkers Pond,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Parsloes Park,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,12.0,4.0,6.0,5,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Queens Park Boating Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0,nan,nan,2.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Queens Valley Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,0,0.0,0.0,0,nan,nan,9.0,0.0,0,nan,0,nan,nan,0,0,0.0,nan,8.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Reedham Water,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,0.0,0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Rhodes Lodges,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,0.0,0.0,0,0.0,0.0,4.0,0.0,0,0.0,5,8,5,nan,0,0.0,0.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+Rhodeswood Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,20,2019-11-28 09:59:38
+River Derwent - Matlock,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,2,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+River Severn - Haw Bridge to Tewkesbury,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,6.0,(0),nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+River Thames - Boveney to Bray Lock,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,4.0,5.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+River Thames - Cavesham Bridge,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+River Thames - Maidenhead,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,4.0,6,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+River Trent - Gunthorpe to Hoveringham,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,1.0,2,11.0,0.0,nan,nan,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+River Trent - Willington to Twyford,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,6,0.0,0.0,0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Sand Hutton,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,(0),4.0,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Shellhouse,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,2.0,5.0,0.0,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+"Stamford Park Lake, Altrincham",nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,3.0,nan,0,3.0,1.0,1.0,1.0,0.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Stantons Pit,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,1.0,2.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Strathallan Castle Loch,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,0.0,3.0,0.0,2.0,0,0.0,2.0,0,0.0,0.0,0.0,nan,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Strines Dams,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0.0,1,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Strinesdale Lower,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,7.0,nan,nan,4.0,nan,nan,nan,nan,5.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Swinsty Reservoir,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,0.0,0.0,nan,0.0,0.0,nan,0.0,nan,nan,1.0,1.0,1.0,3,3.0,0.0,0,0.0,nan,nan,4.0,4.0,4.0,1.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Thorpe Marsh Power Station,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,nan,0.0,0.0,0.0,nan,nan,nan,nan,nan,2.0,0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Thurrock Anglers Lake,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,0.0,0,2.0,0.0,0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Torside Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,1,2.0,2.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Valehouse Reservoir,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,1.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Whittlesford Gravel Pits,nan,nan,nan,nan,0.0,0.0,nan,0.0,0.0,0.0,0.0,0.0,0.0,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2Supplementary visit under the WeBS Core Count SurveyWeBS,1.0,0.0,2,1.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
+Yarwell Gravel Pits,nan,nan,nan,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,nan,12.0,0.0,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,nan,21,2019-11-28 10:00:13
 END

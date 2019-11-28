@@ -159,7 +159,7 @@ try:
                 print(" -  - Found old '{}.csv'...".format(birdfilename))
                 # If it failed, then one already exists
                 # Therefore treat according to overwrite policy already set, or ask for a choice on that matter
-                if overwritepolicy not in ["a", "o"]:
+                if overwritepolicy not in ["a", "x"]:
                     overwritepolicy = input("\nKeep this file?\n"
                                             " - Enter to keep the old file,\n"
                                             " - a then Enter to keep all,\n"
@@ -207,7 +207,7 @@ try:
                     break
                 # Gets the current GMT time in a neat format
                 accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
-                print(" - Processing page {} [{}]...".format(birdpage, time.strftime("%H:%M:%S")))
+                print(" - Processing {} page {} [{}]...".format(birdname, birdpage, time.strftime("%H:%M:%S")))
                 # Get the element corresponding to the visible table
                 newbirdtablehtml = birdtablehtml
                 checks = 0
@@ -222,9 +222,10 @@ try:
                 birdtablehtml = newbirdtablehtml
                 # Convert the html of the table into a DataFrame of population data + Supplementary info
                 birdtabledata = read_html(birdtable.get_attribute("innerHTML"))[0]
-                # Scroll back 5 years 3 times, to bring the total table range to 20 years
-                for i in range(3):
+                # Scroll back 5 years 7 times, to bring the total table range to 40 years
+                for i in range(7):
                     for j in range(5):
+                        # TODO: Add some sort of handling for when the year goes out of range
                         backyearbutton.click()
                     time.sleep(1)
                     # Get the table each 5 new years
@@ -247,7 +248,12 @@ try:
                 birdtabledata = birdtabledata.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
                 # Get the column names and organise them Site - Population (oldest to youngest) - Metadata
                 cols = birdtabledata.columns.tolist()
-                cols = [cols[0]] + cols[22:27] + cols[17:22] + cols[12:17] + cols[2:7] + cols[8:11] + cols[27:]
+                tempcols = []
+                for i in range(12, len(cols) - 2, 5):
+                    tempcols = cols[i:i + 5] + tempcols
+                tempcols = [cols[0]] + tempcols
+                tempcols += cols[2:7] + cols[8:11] + cols[-2:]
+                cols = tempcols
                 print(cols)
 
                 try:
