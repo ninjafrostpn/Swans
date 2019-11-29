@@ -10,7 +10,7 @@ import scipy.stats as sps
 
 # Array of which plots to plot
 # TODO: Seriously, find a better way of doing this
-plotids = [3, 10]
+plotids = [11]
 # Name of the bird to plot against Mute Swans
 birdname = "Canada Goose"
 
@@ -175,7 +175,7 @@ trenddata = [*sps.linregress(muteswandiff[muteswanlocsharedmask][notnanmask].fla
                              birddiff[birdlocsharedmask][notnanmask].flatten())]
 if trenddata[3] >= 0.05:
     trenddata[0] = 0
-print(trenddata)
+print("m={}, c={}, r={}, p={}, err={}".format(*trenddata))
 
 if 3 in plotids:
     # Plot [other bird] population changes over mute swan population changes
@@ -299,10 +299,10 @@ def trendgetter(sitedata):
 
 
 # Get trend data for both datasets
-muteswantrenddata = np.float64([trendgetter(sitedata)for sitedata
-                                in muteswanpop[muteswanlocsharedmask]])
-birdtrenddata = np.float64([trendgetter(sitedata)for sitedata
-                            in birdpop[birdlocsharedmask]])
+muteswantrenddata = np.float64([trendgetter(sitedata) for sitedata
+                                in muteswanpop])
+birdtrenddata = np.float64([trendgetter(sitedata) for sitedata
+                            in birdpop])
 # Set gradients to 0 for all non-significant gradients
 # TODO: Ensure that bonferroni shouldn't be used here
 # TODO: Figure out whether to do anything with the trends based on 3 or fewer points
@@ -310,23 +310,52 @@ muteswantrenddata[muteswantrenddata[:, 1] >= 0.05][:, 0] = 0
 birdtrenddata[birdtrenddata[:, 1] >= 0.05][:, 0] = 0
 # Determine in which pairs both gradients are significant or fits are good
 # TODO: Figure out what R² counts as a good fit, or indeed if should filter by that
-significantmask = (muteswantrenddata[:, 1] < 0.05) & (birdtrenddata[:, 1] < 0.05)
-goodfitmask = (muteswantrenddata[:, 2] > 0.5) & (birdtrenddata[:, 2] > 0.5)
+significantmask = (muteswantrenddata[muteswanlocsharedmask][:, 1] < 0.05) &\
+                  (birdtrenddata[birdlocsharedmask][:, 1] < 0.05)
+goodfitmask = (muteswantrenddata[muteswanlocsharedmask][:, 2] > 0.5) &\
+              (birdtrenddata[birdlocsharedmask][:, 2] > 0.5)
 print(np.nansum(significantmask), np.nansum(goodfitmask),
       np.nansum(significantmask & goodfitmask))
-trenddata = [*sps.linregress(muteswantrenddata[goodfitmask][:, 0],
-                             birdtrenddata[goodfitmask][:, 0])]
+trenddata = [*sps.linregress(muteswantrenddata[muteswanlocsharedmask][goodfitmask][:, 0],
+                             birdtrenddata[birdlocsharedmask][goodfitmask][:, 0])]
 if trenddata[3] >= 0.05:
     trenddata[0] = 0
 print(trenddata)
 if 10 in plotids:
-    plt.plot(muteswantrenddata[goodfitmask][:, 0],
-             birdtrenddata[goodfitmask][:, 0], ".")
-    trendx = np.arange(int(np.min(muteswantrenddata[goodfitmask][:, 0])),
-                       np.max(muteswantrenddata[goodfitmask][:, 0]))
+    plt.plot(muteswantrenddata[muteswanlocsharedmask][goodfitmask][:, 0],
+             birdtrenddata[birdlocsharedmask][goodfitmask][:, 0], ".")
+    trendx = np.arange(int(np.min(muteswantrenddata[muteswanlocsharedmask][goodfitmask][:, 0])),
+                       np.max(muteswantrenddata[muteswanlocsharedmask][goodfitmask][:, 0]))
     plt.plot(trendx, (trenddata[0] * trendx) + trenddata[1], "--")
     plt.show()
 
+# Take a look at where and how much the other bird is in decline
+birddeclinemask = birdtrenddata[:, 0] < 0
+print(birdloc[birddeclinemask],
+      "{}/{}".format(sum(birddeclinemask), len(birdloc)),
+      np.nanmin(birdtrenddata[:, 0]),
+      sep="\n")
+
+# Just as a thought, try plotting percentage increase/decrease in numbers of the highly populated sites
+# (This actually takes all data points where pop. is above the 95th percentile, so may take subsets of data from a site)
+highpopmask = (muteswanpop[:, :-1] > np.nanpercentile(muteswanpop, 95))[muteswanlocsharedmask] & \
+              (birdpop[:, :-1] > np.nanpercentile(birdpop, 95))[birdlocsharedmask]
+muteswanpercdiff = (muteswandiff[muteswanlocsharedmask][highpopmask] /
+                    muteswanpop[:, :-1][muteswanlocsharedmask][highpopmask]).flatten() * 100
+birdpercdiff = (birddiff[birdlocsharedmask][highpopmask] /
+                birdpop[:, :-1][birdlocsharedmask][highpopmask]).flatten() * 100
+
+notnanmask = ~(np.isnan(muteswanpercdiff) | np.isnan(birdpercdiff))
+trenddata = [*sps.linregress(muteswanpercdiff[notnanmask], birdpercdiff[notnanmask])]
+if trenddata[3] >= 0.05:
+    trenddata[0] = 0
+print("m={}, c={}, r={}, p={}, err={}".format(*trenddata))
+
+if 11 in plotids:
+    plt.plot(muteswanpercdiff, birdpercdiff, ".")
+    trendx = np.arange(int(np.nanmin(muteswanpercdiff)), np.nanmax(muteswanpercdiff))
+    plt.plot(trendx, (trenddata[0] * trendx) + trenddata[1], "--")
+    plt.show()
 
 """
 0 https://stackoverflow.com/a/8251668
