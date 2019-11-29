@@ -10,7 +10,7 @@ import scipy.stats as sps
 
 # Array of which plots to plot
 # TODO: Seriously, find a better way of doing this
-plotids = [10]
+plotids = [3, 10]
 # Name of the bird to plot against Mute Swans
 birdname = "Canada Goose"
 
@@ -81,15 +81,15 @@ birdpop = birdpop[~birdpopnanrowmask]
 birdloc = birdloc[~birdpopnanrowmask]
 
 # Year labels for the x-axis
-xlab = ["{:02d}-{:02d}".format(i % 100, (i + 1) % 100) for i in np.arange(98, 118)]
+xlab = ["{:02d}-{:02d}".format(i % 100, (i + 1) % 100) for i in np.arange(78, 118)]
 
 if 0 in plotids:
-    # Plot the top 10 sites (by 5-yr average up to 2017/18) as Swan numbers over the last 20yr
+    # Plot the top 10 sites (by 5-yr average up to 2017/18) as Swan numbers over the last 40yr
     for i in range(10):
         plt.plot(xlab, muteswanpop[i], ".-")
     plt.legend(muteswanloc)
     plt.xticks(rotation="vertical")
-    plt.suptitle("Top 10 sites' Mute Swan numbers over the last 20yr")
+    plt.suptitle("Top 10 sites' Mute Swan numbers over the last 40yr")
     plt.title("(Ranked according to 13/14 - 17/18 population average)")
     plt.ylabel("Maximum Recorded Mute Swan Population in Recording Period")
     plt.xlabel("Recording Period")
@@ -112,12 +112,12 @@ if 0 in plotids:
     plt.show()
 
 if 1 in plotids:
-    # Plot the top 10 sites (by 5-yr average up to 2017/18) as [Whatever other bird] numbers over the last 20yr
+    # Plot the top 10 sites (by 5-yr average up to 2017/18) as [Whatever other bird] numbers over the last 40yr
     for i in range(10):
         plt.plot(xlab, birdpop[i, :], ".-")
     plt.legend(birdloc)
     plt.xticks(rotation="vertical")
-    plt.suptitle("Top 10 sites' {} numbers over the last 20yr".format(birdname))
+    plt.suptitle("Top 10 sites' {} numbers over the last 40yr".format(birdname))
     plt.title("(Ranked according to 13/14 - 17/18 population average)")
     plt.ylabel("Maximum Recorded {} Population in Recording Period".format(birdname))
     plt.xlabel("Recording Period")
@@ -135,7 +135,7 @@ if 1 in plotids:
     ax.set_ylabel("\n\n\n\nWeBS Year")
     ax.set_xticklabels(" " * 20)
     ax.set_yticklabels(xlab, rotation="vertical")
-    ax.set_zlabel("{}} Population".format(birdname))
+    ax.set_zlabel("{} Population".format(birdname))
     fig.legend(birdloc, loc="right")
     plt.show()
 
@@ -170,6 +170,13 @@ if 2 in plotids:
 muteswandiff = muteswanpop[:, 1:] - muteswanpop[:, :-1]
 birddiff = birdpop[:, 1:] - birdpop[:, :-1]
 
+notnanmask = ~(np.isnan(muteswandiff[muteswanlocsharedmask]) | np.isnan(birddiff[birdlocsharedmask]))
+trenddata = [*sps.linregress(muteswandiff[muteswanlocsharedmask][notnanmask].flatten(),
+                             birddiff[birdlocsharedmask][notnanmask].flatten())]
+if trenddata[3] >= 0.05:
+    trenddata[0] = 0
+print(trenddata)
+
 if 3 in plotids:
     # Plot [other bird] population changes over mute swan population changes
     # Same cross pattern as seen when carried out in R; maybe shows uncorrelated data
@@ -181,6 +188,9 @@ if 3 in plotids:
     plt.xlabel("Difference in Maximum Recorded Mute Swan Population\nat Site from one Recording Period to the next")
     plt.ylabel("Difference in Maximum Recorded {} Population\n"
                "at Site from one Recording Period to the next".format(birdname))
+    trendx = np.arange(int(np.nanmin(muteswandiff[muteswanlocsharedmask])),
+                       np.nanmax(muteswandiff[muteswanlocsharedmask]))
+    plt.plot(trendx, (trenddata[0] * trendx) + trenddata[1], "--")
     plt.show()
 
 # Plot [other bird] population changes over mute swan population changes occurring up to 5yr ago
@@ -275,8 +285,9 @@ if 9 in plotids:
     plt.ylabel("Frequency")
     plt.show()
 
-# Try comparing the 20yr trends in increase and decrease (if they exist)
+# Try comparing the 40yr trends in increase and decrease (if they exist)
 years = np.arange(muteswanpop.shape[1])
+
 
 def trendgetter(sitedata):
     notnanmask = ~np.isnan(sitedata)  # {Article on missing data in source 4}
@@ -285,6 +296,7 @@ def trendgetter(sitedata):
         m, c, r, p, err = sps.linregress(years[notnanmask], sitedata[notnanmask])
         return m, p, r ** 2, n
     return np.nan, np.nan, np.nan, np.nan
+
 
 # Get trend data for both datasets
 muteswantrenddata = np.float64([trendgetter(sitedata)for sitedata
@@ -302,9 +314,17 @@ significantmask = (muteswantrenddata[:, 1] < 0.05) & (birdtrenddata[:, 1] < 0.05
 goodfitmask = (muteswantrenddata[:, 2] > 0.5) & (birdtrenddata[:, 2] > 0.5)
 print(np.nansum(significantmask), np.nansum(goodfitmask),
       np.nansum(significantmask & goodfitmask))
+trenddata = [*sps.linregress(muteswantrenddata[goodfitmask][:, 0],
+                             birdtrenddata[goodfitmask][:, 0])]
+if trenddata[3] >= 0.05:
+    trenddata[0] = 0
+print(trenddata)
 if 10 in plotids:
     plt.plot(muteswantrenddata[goodfitmask][:, 0],
              birdtrenddata[goodfitmask][:, 0], ".")
+    trendx = np.arange(int(np.min(muteswantrenddata[goodfitmask][:, 0])),
+                       np.max(muteswantrenddata[goodfitmask][:, 0]))
+    plt.plot(trendx, (trenddata[0] * trendx) + trenddata[1], "--")
     plt.show()
 
 
