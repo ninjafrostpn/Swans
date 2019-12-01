@@ -180,7 +180,7 @@ try:
             # Enter the bird's name into the species searchbox and hit Enter ("\n")
             birdsearchbox.send_keys(birdname + "\n")
             # Wait a moment to give the page a chance to load
-            time.sleep(1)  # TODO: find a way to do this more efficiently, but just as certainly
+            time.sleep(1)
             # Initialise interface for easily writing to the csv file
             birdwriter = csv.writer(birdfile)
             # Get the elements which move the table to the next page...
@@ -199,7 +199,7 @@ try:
                 except UnexpectedAlertPresentException:
                     # If the finalyearbutton is pressed whilst the "you are viewing the last page" alert is still
                     # visible, then this Exception is raised
-                    # (This Exception being raised also means that the alert is dismissed)
+                    # (This Exception being raised also means that the alert is dismissed?)
                     print(" - Reaching end of table...")
                     # Write an obvious END on the csv
                     birdwriter.writerow(["END"])
@@ -224,9 +224,17 @@ try:
                 birdtabledata = read_html(birdtable.get_attribute("innerHTML"))[0]
                 # Scroll back 5 years 7 times, to bring the total table range to 40 years
                 for i in range(7):
+                    newcolno = 0
                     for j in range(5):
-                        # TODO: Add some sort of handling for when the year goes out of range
-                        backyearbutton.click()
+                        try:
+                            backyearbutton.click()
+                            newcolno += 1
+                        except UnexpectedAlertPresentException:
+                            # TODO: deal with resulting alert from this (darn you, Wood Duck) issue if it occurs on 5th
+                            driver.switch_to.alert.dismiss()
+                            break
+                    if newcolno == 0:
+                        break
                     time.sleep(1)
                     # Get the table each 5 new years
                     newbirdtablehtml = birdtablehtml
@@ -243,17 +251,16 @@ try:
                     # Convert its html into a DataFrame, as before
                     pagetabledata = read_html(birdtablehtml)[0]
                     # Connect the new data columns onto the end of the existing table
-                    birdtabledata = pd.concat([birdtabledata, pagetabledata[pagetabledata.columns[2:7]]], axis=1)
+                    birdtabledata = pd.concat([birdtabledata, pagetabledata[pagetabledata.columns[2:7 - newcolno]]],
+                                              axis=1)
                 # Add columns giving the table page number and time of access as metadata alongside the population data
                 birdtabledata = birdtabledata.assign(WebPageNo=birdpage, RoughTimeAccessed=accesstime)
                 # Get the column names and organise them Site - Population (oldest to youngest) - Metadata
                 cols = birdtabledata.columns.tolist()
                 tempcols = []
                 for i in range(12, len(cols) - 2, 5):
-                    tempcols = cols[i:i + 5] + tempcols
-                tempcols = [cols[0]] + tempcols
-                tempcols += cols[2:7] + cols[8:11] + cols[-2:]
-                cols = tempcols
+                    tempcols = cols[i:min(i + 5, len(cols) - 2)] + tempcols
+                cols = [cols[0]] + tempcols + cols[2:7] + cols[8:11] + cols[-2:]
                 print(cols)
 
                 try:
