@@ -75,12 +75,15 @@ template = (
             # "8" for unknown
             "&habicat=0"
 
-            # No idea? Argument doesn't appear to mind omission TODO: Find out what this is for
-            # "&_=1575160388994"
+            # Looks like a "cachebusting" parameter; ensures that each request distinct to avoid being served old data?
+            # This one appears to be made up of the time since the epoch to 3 D.P. at the first open of the page
+            # to which one is added each time a new request is made {discovered thanks to source 3}
+            "&_={:d}"
             )
 
 """
 0 https://stackoverflow.com/a/17630918
 1 https://benbernardblog.com/web-scraping-and-crawling-are-perfectly-legal-right/
 2 https://bto.org/robots.txt
+3 https://stackoverflow.com/a/3687765
 """
