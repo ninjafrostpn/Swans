@@ -1,10 +1,15 @@
 # Script First Worked on: 2019-12-1
 # By: Charles S Turvey (With huge thanks to BitBait)
 
+from collections import OrderedDict
 import json
+import numpy as np
+import pandas as pd
 import requests
+import time
 
 # The request template (all one string lines are one string, just formatted in unusual python {source 0})
+# (Request format discovered using the Networks tab of the Chrome analysis window; thanks BitBait!)
 template = (
             # The website
             "https://app.bto.org/webs-reporting/"
@@ -81,9 +86,30 @@ template = (
             "&_={:d}"
             )
 
+
+def tablegetter(speciescode, startrow=0):
+    timestamp = int(time.time() * 1000)
+    requesttext = template.format(startrow, speciescode, timestamp)
+    r = requests.get(requesttext)
+    # Proceeds if the request succeeded
+    if r.status_code == 200:
+        return json.loads(r.text)
+
+
+accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
+a = tablegetter(46)
+print(a)
+# Earliest possible record year is 1947 (pretty sure, according to {source 4})
+b = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1947, 2018)}, "RoughTimeAccessed": []})
+print(b)
+for row in a:
+    b = b.append({"Site": row["siteName"], **row["allYears"], "RoughTimeAccessed": accesstime}, ignore_index=True)
+print(b[["Site", "2017"]])
+
 """
 0 https://stackoverflow.com/a/17630918
 1 https://benbernardblog.com/web-scraping-and-crawling-are-perfectly-legal-right/
 2 https://bto.org/robots.txt
 3 https://stackoverflow.com/a/3687765
+4 https://www.bto.org/our-science/projects/wetland-bird-survey
 """
