@@ -10,7 +10,7 @@ import scipy.stats as sps
 
 # Array of which plots to plot
 # TODO: Seriously, find a better way of doing this
-plotids = [11]
+plotids = [0]
 # Name of the bird to plot against Mute Swans
 birdname = "Canada Goose"
 
@@ -86,7 +86,7 @@ xlab = ["{:02d}-{:02d}".format(i % 100, (i + 1) % 100) for i in np.arange(78, 11
 if 0 in plotids:
     # Plot the top 10 sites (by 5-yr average up to 2017/18) as Swan numbers over the last 40yr
     for i in range(10):
-        plt.plot(xlab, muteswanpop[i], ".-")
+        plt.plot(xlab, muteswanpop[i], ".-")  # Log axes for population data
     plt.legend(muteswanloc)
     plt.xticks(rotation="vertical")
     plt.suptitle("Top 10 sites' Mute Swan numbers over the last 40yr")

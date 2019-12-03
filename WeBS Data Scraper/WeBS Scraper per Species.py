@@ -1,7 +1,8 @@
 # Script First Worked on: 2019-11-20
 # By: Charles S Turvey
+# With huge thanks to BitBait for pointing out requests and BeautifulSoup!
 
-# TODO: Try to cut down on some of these dependencies...
+from bs4 import BeautifulSoup
 import csv
 import json
 import numpy as np
@@ -11,10 +12,10 @@ import re
 import requests
 import time
 
-
 # Urls to the data portal and to the mute swan species page
 webs_url = "https://app.bto.org/webs-reporting/"
 muteswan_url = webs_url + "?tab=numbers&speciescode=46"
+namesidsrequest = webs_url + "NumbersUniqueSpecies?reported_year=2017&selected_species="
 
 # The names of the requests for rows of data
 # SpecLocReport will only return up to the first 120 lines, but must be requested before Pasteriser will return
@@ -127,26 +128,26 @@ try:
     print("Extracting bird name list...")
     # Get the full list of bird species/subspecies/variants from the site
     # or from a file that was saved as a copy of this earlier
-    birdnames = []
     try:
-        print(" - Checking for 'birdnames.txt'...")
+        print(" - Checking for 'birdnames.csv'...")
         # Try to create a birdnames file
-        birdnamesfile = open("birdnames.txt", "x", encoding="utf-8")
-        print(" -  - Created new 'birdnames.txt'.")
+        birdnamesidsfile = open("birdnames.csv", "x", encoding="utf-8", newline="")
+        print(" -  - Created new 'birdnames.csv'.")
         # If a success, that means none existed yet
         # Get the contents of the bird name dropdown
-        # TODO: replace this line (and its equivalent) with a request
-        birdnames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result")]'
-                                                  '/div')
+        namesidshtml = s.get(namesidsrequest).text
+        namesidshtml = "".join(namesidshtml.split("\\"))
+        namesidssoup = BeautifulSoup(namesidshtml)
+        # Extract bird names and species ids from it
         print(" - Processing name data...")
-        # Extract the bird names from each of the dropdown's elements
-        birdnames = ["".join(re.split(r"<span.*span>", birdname.get_attribute("innerHTML")))
-                     for birdname in birdnames]
-        print(" -  - Writing site names to 'birdnames.txt'...")
+        birdnamesids = [[o.string, int(o["value"])] for o in namesidssoup.find_all("option")[1:]]
+        print(" -  - Writing site names to 'birdnames.csv'...")
         # Save these to the file for later use
-        birdnamesfile.write("\n".join(birdnames))
+        birdnameswriter = csv.writer(birdnamesidsfile)
+        for row in birdnamesids:
+            birdnameswriter.writerow(row)
     except FileExistsError:
-        print(" -  - Found old 'birdnames.txt'...")
+        print(" -  - Found old 'birdnames.csv'...")
         # If there already exists a file with the names in, give the option to use it
         # TODO: Variable needs a better name
         ohgoonthen = input("\nUse this file?\n"
@@ -155,28 +156,33 @@ try:
                            ">>> ").lower()
         if ohgoonthen == "o":
             # Overwrite the old file with a blank new one
-            birdnamesfile = open("birdnames.txt", "w", encoding="utf-8")
+            birdnamesidsfile = open("birdnames.csv", "w", encoding="utf-8", newline="")
             # TODO: Reroute this code to avoid duplication
-            print(" -  - Old 'birdnames.txt' overwritten.")
+            print(" -  - Old 'birdnames.csv' overwritten.")
             # Get the contents of the bird name dropdown
-            birdnames = driver.find_elements_by_xpath('//li[contains(@class, "select2-result")]'
-                                                      '/div')
+            namesidshtml = s.get(namesidsrequest).text
+            namesidshtml = "".join(namesidshtml.split("\\"))
+            namesidssoup = BeautifulSoup(namesidshtml)
+            # Extract bird names and species ids from it
             print(" - Processing name data...")
-            # Extract the bird names from each of the dropdown's elements
-            birdnames = ["".join(re.split(r"<span.*span>", birdname.get_attribute("innerHTML")))
-                         for birdname in birdnames]
-            print(" -  - Writing site names to 'birdnames.txt'...")
+            birdnamesids = [[o.string, int(o["value"])] for o in namesidssoup.find_all("option")[1:]]
+            print(" -  - Writing site names to 'birdnames.csv'...")
             # Save these to the file for later use
-            birdnamesfile.write("\n".join(birdnames))
+            birdnameswriter = csv.writer(birdnamesidsfile)
+            for row in birdnamesids:
+                print(row)
+                birdnameswriter.writerow(row)
         else:
             # Otherwise read the names from a previously saved file
-            birdnamesfile = open("birdnames.txt", "r", encoding="utf-8")
-            birdnames = birdnamesfile.read()
-            birdnames = birdnames.split("\n")
+            birdnamesidsfile = open("birdnames.csv", "r", encoding="utf-8", newline="")
+            birdnamesids = [row for row in csv.reader(birdnamesidsfile)]
     finally:
         # Always sure to close the file afterwards (Although python would probably clean up otherwise anyway)
-        birdnamesfile.close()
-    print(" -  - Bird names ready.\n\n", birdnames, "\n - Bird names extracted.")
+        birdnamesidsfile.close()
+    birdnamesids = np.object_(birdnamesids)
+    birdnames = birdnamesids[:, 0]
+    birdids = np.int32(birdnamesids[:, 1])
+    print(" -  - Bird names and IDs ready.\n\n", birdnames, "\n - Bird names and IDs extracted.")
 
     while True:
         # Take input of regex to match a set of bird names whose tables to download
@@ -248,6 +254,8 @@ try:
             n = len(birdtableraw)
             for i, row in enumerate(birdtableraw):
                 print(" -  - Converting site {} of {} [{}]...".format(i, n, time.strftime("%Y-%m-%d %H:%M:%S")))
+                # TODO: Have it separate out the components of each array representing a data point
+                # TODO: Use WeBS years as column headers
                 birdtabledata = birdtabledata.append({"Site": row["siteName"], **row["allYears"]}, ignore_index=True)
             print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Add column for time of access as metadata alongside the population data
@@ -264,7 +272,7 @@ finally:
     # Shut the session if there is some kind of error or the script terminates
     print("Closing session...")
     s.close()
-    print(" - Driver session.")
+    print(" - Session closed.")
 
 """
 Handy Webpages
@@ -287,4 +295,11 @@ https://www.techbeamers.com/handle-alert-popup-selenium-python/
 https://stackoverflow.com/questions/12555323/adding-new-column-to-existing-dataframe-in-python-pandas
 https://www.gobirding.eu/Photos/Swoose.php
 https://www.gobirding.eu/Photos/HybridGeese.php
+https://2.python-requests.org//en/v1.1.0/api/#module-requests
+https://stackoverflow.com/a/17630918
+https://benbernardblog.com/web-scraping-and-crawling-are-perfectly-legal-right/
+https://bto.org/robots.txt
+https://stackoverflow.com/a/3687765
+https://www.bto.org/our-science/projects/wetland-bird-survey
+https://beautiful-soup-4.readthedocs.io/en/latest/#quick-start
 """
