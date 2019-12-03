@@ -8,16 +8,23 @@ import pandas as pd
 import requests
 import time
 
+# Start a web session, so that cookies will persist between requests
+s = requests.Session()
+
+# The names of the requests for rows of data
+# SpecLocReport will only return up to the first 120 lines, but must be requested before Pasteriser will return
+# anything, since it gets the session's cookies
+requestnames = ["SpecLocReport", "Pasteriser"]
+
 # The request template (all one string lines are one string, just formatted in unusual python {source 0})
 # (Request format discovered using the Networks tab of the Chrome analysis window; thanks BitBait!)
-# TODO: find out why the request can't seem to go beyond row 120 and if there's a way to get around this
 template = (
             # The website
             "https://app.bto.org/webs-reporting/"
             
             # The first year of the desired WeBS report edition (2005 up to 2017, we're using 17/18 so 2017)
             # (Years later than 2017 default to 2017 (writing this in Dec 2019), earlier than 2005 fail)
-            "SpecLocReport?reported_year=2017"
+            "{}?reported_year=2017"
             
             # The first table row index to collect...
             "&start_at={:d}"
@@ -88,30 +95,27 @@ template = (
             )
 
 
-def tablegetter(speciescode, startrow=0, rows=100):
+def tablegetter(speciescode, startrow=0, rows=100, mode=1):
     timestamp = int(time.time() * 1000)
-    requesttext = template.format(startrow, rows, speciescode, timestamp)
-    r = requests.get(requesttext)
+    requesttext = template.format(requestnames[mode], startrow, rows, speciescode, timestamp)
+    r = s.get(requesttext)
     # Proceeds if the request succeeded
     if r.status_code == 200:
         return json.loads(r.text)
 
 
-# Earliest possible record year is 1947 (pretty sure, according to {source 4})
-b = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1947, 2018)}, "RoughTimeAccessed": []})
-print(b)
-
-startrowno = 0
-while True:
-    accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
-    a = tablegetter(46, startrowno, 100)
-    print(a)
-    if len(a) == 0:
-        break
-    for row in a:
-        b = b.append({"Site": row["siteName"], **row["allYears"], "RoughTimeAccessed": accesstime},
-                     ignore_index=True)
-    startrowno += 100
+# Initialise the websession
+tablegetter(46, rows=1, mode=0)
+# Initialise DataFrame (Earliest possible record year is 1947 (pretty sure, according to {source 4}))
+b = pd.DataFrame({"Site": [], **{str(i): [] for i in range(2000, 2018)}})
+# Get the entire data table in one go
+accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
+a = tablegetter(46, 0, 10000)
+# Process the data into the DataFrame
+for i, row in enumerate(a):
+    print(i)
+    b = b.append({"Site": row["siteName"], **row["allYears"]}, ignore_index=True)
+b = b.assign(RoughTimeAccessed=accesstime)
 print(b[["Site", "2017"]])
 
 """
