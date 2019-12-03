@@ -10,6 +10,7 @@ import time
 
 # The request template (all one string lines are one string, just formatted in unusual python {source 0})
 # (Request format discovered using the Networks tab of the Chrome analysis window; thanks BitBait!)
+# TODO: find out why the request can't seem to go beyond row 120 and if there's a way to get around this
 template = (
             # The website
             "https://app.bto.org/webs-reporting/"
@@ -22,8 +23,8 @@ template = (
             "&start_at={:d}"
             
             # ... and the number of rows to get starting from this, inclusive
-            # (Appears to cap out at 120, i.e. 4 pages of data at the standard 30 per page)
-            "&go_on_for=100"
+            # (Request appears to only return data from rows 0-120; any range outside of these returns nothing)
+            "&go_on_for={:d}"
             
             # Whether or not to include supplementary data (presumably can be y or n)
             "&inc_supps=y"
@@ -87,23 +88,30 @@ template = (
             )
 
 
-def tablegetter(speciescode, startrow=0):
+def tablegetter(speciescode, startrow=0, rows=100):
     timestamp = int(time.time() * 1000)
-    requesttext = template.format(startrow, speciescode, timestamp)
+    requesttext = template.format(startrow, rows, speciescode, timestamp)
     r = requests.get(requesttext)
     # Proceeds if the request succeeded
     if r.status_code == 200:
         return json.loads(r.text)
 
 
-accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
-a = tablegetter(46)
-print(a)
 # Earliest possible record year is 1947 (pretty sure, according to {source 4})
 b = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1947, 2018)}, "RoughTimeAccessed": []})
 print(b)
-for row in a:
-    b = b.append({"Site": row["siteName"], **row["allYears"], "RoughTimeAccessed": accesstime}, ignore_index=True)
+
+startrowno = 0
+while True:
+    accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
+    a = tablegetter(46, startrowno, 100)
+    print(a)
+    if len(a) == 0:
+        break
+    for row in a:
+        b = b.append({"Site": row["siteName"], **row["allYears"], "RoughTimeAccessed": accesstime},
+                     ignore_index=True)
+    startrowno += 100
 print(b[["Site", "2017"]])
 
 """
