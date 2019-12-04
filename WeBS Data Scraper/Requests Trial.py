@@ -107,7 +107,7 @@ def tablegetter(speciescode, startrow=0, rows=100, mode=1):
 # Initialise the websession
 tablegetter(46, rows=1, mode=0)
 # Initialise DataFrame (Earliest possible record year is 1947 (pretty sure, according to {source 4}))
-b = pd.DataFrame({"Site": [], **{str(i): [] for i in range(2000, 2018)}})
+b = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1947, 2018)}})
 # Get the entire data table in one go
 accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
 a = tablegetter(46, 0, 10000)

@@ -240,7 +240,7 @@ try:
             # Initialise interface for easily writing to the csv file
             birdwriter = csv.writer(birdfile)
             # Initialise the DataFrame
-            birdtabledata = pd.DataFrame({"Site": [], **{str(i): [] for i in range(2000, 2018)}})
+            birdtabledata = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1947, 2018)}})
             # Gets the current GMT time in a neat format
             accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
             # Obtain the raw data from servers
@@ -260,6 +260,7 @@ try:
             print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Add column for time of access as metadata alongside the population data
             birdtabledata = birdtabledata.assign(RoughTimeAccessed=accesstime)
+            print(birdtabledata.columns)
             # Write the data to the csv file
             print(" - Writing data to file [{}]...".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             birdwriter.writerow(birdtabledata.columns)
