@@ -204,12 +204,13 @@ try:
             # Return to asking for a new selection if selection not confirmed
             continue
 
+        chosenmask = np.isin(birdnames, chosenbirdnames)
+        chosenbirdnamesids = birdnamesids[chosenmask]
         # Go through each bird name in the selection and download the relevant table
         overwritepolicy = ""
-        for birdname in chosenbirdnames:
+        for birdname, birdid in chosenbirdnamesids:
             # Initialise the session
-            # TODO: Actually make it change bird by id
-            tablegetter(46, rows=1, mode=0)
+            tablegetter(int(birdid), rows=1, mode=0)
             print("\nExtracting data table [{}]...".format(time.strftime("%H:%M:%S")))
             # Prevent issues with file name misinterpretation as folder/file by replacing all /s with -s
             birdfilename = "-".join(birdname.split("/"))
@@ -246,8 +247,7 @@ try:
             # Obtain the raw data from servers
             # (10000 rows requested since total no of sites is an order of magnitude lower; definitely gets all of them)
             print(" - Requesting raw data [{}]...".format(accesstime))
-            # TODO: Get different bird IDs
-            birdtableraw = tablegetter(46, 0, 10000)
+            birdtableraw = tablegetter(int(birdid), 0, 10000)
             print(" -  - Raw data obtained [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Process the data into the DataFrame
             print(" - Converting raw data to DataFrame [{}]...".format(time.strftime("%Y-%m-%d %H:%M:%S")))
@@ -255,11 +255,13 @@ try:
             for i, row in enumerate(birdtableraw):
                 print(" -  - Converting site {} of {} [{}]...".format(i, n, time.strftime("%Y-%m-%d %H:%M:%S")))
                 # TODO: Have it separate out the components of each array representing a data point
-                # TODO: Use WeBS years as column headers
                 birdtabledata = birdtabledata.append({"Site": row["siteName"], **row["allYears"]}, ignore_index=True)
             print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Add column for time of access as metadata alongside the population data
             birdtabledata = birdtabledata.assign(RoughTimeAccessed=accesstime)
+            # Convert calendar year column names to WeBS years (No overlap in abbreviation for another 30yr yet)
+            birdtabledata = birdtabledata.rename(columns={str(i): "{:02d}/{:02d}".format(i % 100, (i + 1) % 100)
+                                                          for i in range(1947, 2018)})
             print(birdtabledata.columns)
             # Write the data to the csv file
             print(" - Writing data to file [{}]...".format(time.strftime("%Y-%m-%d %H:%M:%S")))
