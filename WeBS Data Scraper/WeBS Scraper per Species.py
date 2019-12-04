@@ -15,7 +15,7 @@ import time
 # Urls to the data portal and to the mute swan species page
 webs_url = "https://app.bto.org/webs-reporting/"
 muteswan_url = webs_url + "?tab=numbers&speciescode=46"
-namesidsrequest = webs_url + "NumbersUniqueSpecies?reported_year=2017&selected_species="
+iddatarequest = webs_url + "NumbersUniqueSpecies?reported_year=2017&selected_species="
 
 # The names of the requests for rows of data
 # SpecLocReport will only return up to the first 120 lines, but must be requested before Pasteriser will return
@@ -101,7 +101,7 @@ template = (
 )
 
 
-def tablegetter(speciescode, startrow=0, rows=100, mode=1):
+def birdtablegetter(speciescode, startrow=0, rows=100, mode=1):
     timestamp = int(time.time() * 1000)
     requesttext = template.format(requestnames[mode], startrow, rows, speciescode, timestamp)
     r = s.get(requesttext)
@@ -131,58 +131,50 @@ try:
     try:
         print(" - Checking for 'birdnames.csv'...")
         # Try to create a birdnames file
-        birdnamesidsfile = open("birdnames.csv", "x", encoding="utf-8", newline="")
+        birdiddatafile = open("birdnames.csv", "x", encoding="utf-8", newline="")
         print(" -  - Created new 'birdnames.csv'.")
         # If a success, that means none existed yet
-        # Get the contents of the bird name dropdown
-        namesidshtml = s.get(namesidsrequest).text
-        namesidshtml = "".join(namesidshtml.split("\\"))
-        namesidssoup = BeautifulSoup(namesidshtml)
-        # Extract bird names and species ids from it
-        print(" - Processing name data...")
-        birdnamesids = [[o.string, int(o["value"])] for o in namesidssoup.find_all("option")[1:]]
-        print(" -  - Writing site names to 'birdnames.csv'...")
-        # Save these to the file for later use
-        birdnameswriter = csv.writer(birdnamesidsfile)
-        for row in birdnamesids:
-            birdnameswriter.writerow(row)
+        # TODO: Variable needs a better name
+        iddataoverwritepolicy = "o"
     except FileExistsError:
         print(" -  - Found old 'birdnames.csv'...")
         # If there already exists a file with the names in, give the option to use it
-        # TODO: Variable needs a better name
-        ohgoonthen = input("\nUse this file?\n"
-                           " - Enter to proceed with this name list,\n"
-                           " - o then Enter to overwrite it.\n"
-                           ">>> ").lower()
-        if ohgoonthen == "o":
+        iddataoverwritepolicy = input("\nUse this file?\n"
+                                      " - Enter to proceed with this name list,\n"
+                                      " - o then Enter to overwrite it.\n"
+                                      ">>> ").lower()
+        if iddataoverwritepolicy == "o":
             # Overwrite the old file with a blank new one
-            birdnamesidsfile = open("birdnames.csv", "w", encoding="utf-8", newline="")
-            # TODO: Reroute this code to avoid duplication
+            birdiddatafile = open("birdnames.csv", "w", encoding="utf-8", newline="")
             print(" -  - Old 'birdnames.csv' overwritten.")
-            # Get the contents of the bird name dropdown
-            namesidshtml = s.get(namesidsrequest).text
-            namesidshtml = "".join(namesidshtml.split("\\"))
-            namesidssoup = BeautifulSoup(namesidshtml)
-            # Extract bird names and species ids from it
-            print(" - Processing name data...")
-            birdnamesids = [[o.string, int(o["value"])] for o in namesidssoup.find_all("option")[1:]]
-            print(" -  - Writing site names to 'birdnames.csv'...")
-            # Save these to the file for later use
-            birdnameswriter = csv.writer(birdnamesidsfile)
-            for row in birdnamesids:
-                print(row)
-                birdnameswriter.writerow(row)
-        else:
-            # Otherwise read the names from a previously saved file
-            birdnamesidsfile = open("birdnames.csv", "r", encoding="utf-8", newline="")
-            birdnamesids = [row for row in csv.reader(birdnamesidsfile)]
-    finally:
-        # Always sure to close the file afterwards (Although python would probably clean up otherwise anyway)
-        birdnamesidsfile.close()
-    birdnamesids = np.object_(birdnamesids)
-    birdnames = birdnamesids[:, 0]
-    birdids = np.int32(birdnamesids[:, 1])
-    print(" -  - Bird names and IDs ready.\n\n", birdnames, "\n - Bird names and IDs extracted.")
+    # Write to the bird name/id/etc file if necessary
+    if iddataoverwritepolicy == "o":
+        # Get the contents of the bird name dropdown
+        iddatahtml = s.get(iddatarequest).text
+        iddatahtml = "".join(iddatahtml.split("\\"))
+        iddatasoup = BeautifulSoup(iddatahtml)
+        # Extract bird names and species ids from it
+        print(" - Processing name data...")
+        birdiddata = [[o.string, int(o["value"]), o["data-taxon"],
+                       o["data-reg"], o["data-migratoriness"], o["data-ranginess"]]
+                      for o in iddatasoup.find_all("option")[1:]]
+        print(" -  - Writing site names to 'birdnames.csv'...")
+        # Save these to the file for later use
+        birdnameswriter = csv.writer(birdiddatafile)
+        birdnameswriter.writerow(["Name", "ID", "Binomial", "IsSummerMigrant", "MigrantStatus", "Range"])
+        for row in birdiddata:
+            print(row)
+            birdnameswriter.writerow(row)
+    else:
+        # Otherwise read the names from a previously saved file
+        birdiddatafile = open("birdnames.csv", "r", encoding="utf-8", newline="")
+        birdiddata = [row for row in csv.reader(birdiddatafile)]
+    # Always sure to close the file afterwards (Although python would probably clean up otherwise anyway)
+    birdiddatafile.close()
+    birdiddata = np.object_(birdiddata[1:])
+    print(birdiddata)
+    birdnames = birdiddata[:, 0]
+    print(" -  - Bird names etc ready.\n\n", birdnames, "\n - Bird names etc extracted.")
 
     while True:
         # Take input of regex to match a set of bird names whose tables to download
@@ -196,22 +188,22 @@ try:
             continue
         print(" - Bird name matches found ({}).\n\n".format(len(chosenbirdnames)), "\n".join(chosenbirdnames), sep="")
         # Confirm selection before moving on
-        ohgoonthen = input("\nUse these birds?\n"
-                           " - Enter to proceed with extracting data for these birds,\n"
-                           " - n then Enter to try a different search.\n"
-                           ">>> ")
-        if ohgoonthen == "n":
+        iddataoverwritepolicy = input("\nUse these birds?\n"
+                                      " - Enter to proceed with extracting data for these birds,\n"
+                                      " - n then Enter to try a different search.\n"
+                                      ">>> ")
+        if iddataoverwritepolicy == "n":
             # Return to asking for a new selection if selection not confirmed
             continue
 
         chosenmask = np.isin(birdnames, chosenbirdnames)
-        chosenbirdnamesids = birdnamesids[chosenmask]
+        chosenbirdiddata = birdiddata[chosenmask]
         # Go through each bird name in the selection and download the relevant table
         overwritepolicy = ""
-        for birdname, birdid in chosenbirdnamesids:
+        for birdname, birdid, _, birdsummig in chosenbirdiddata[:, :4]:
             # Initialise the session
-            tablegetter(int(birdid), rows=1, mode=0)
-            print("\nExtracting data table [{}]...".format(time.strftime("%H:%M:%S")))
+            birdtablegetter(int(birdid), rows=1, mode=0)
+            print("\nExtracting data table for {} [{}]...".format(birdname, time.strftime("%H:%M:%S")))
             # Prevent issues with file name misinterpretation as folder/file by replacing all /s with -s
             birdfilename = "-".join(birdname.split("/"))
             try:
@@ -247,21 +239,33 @@ try:
             # Obtain the raw data from servers
             # (10000 rows requested since total no of sites is an order of magnitude lower; definitely gets all of them)
             print(" - Requesting raw data [{}]...".format(accesstime))
-            birdtableraw = tablegetter(int(birdid), 0, 10000)
+            birdtableraw = birdtablegetter(int(birdid), 0, 10000)
             print(" -  - Raw data obtained [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Process the data into the DataFrame
             print(" - Converting raw data to DataFrame [{}]...".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             n = len(birdtableraw)
             for i, row in enumerate(birdtableraw):
                 print(" -  - Converting site {} of {} [{}]...".format(i, n, time.strftime("%Y-%m-%d %H:%M:%S")))
+                # Input data to dataframe:
+                #   Site gives the name of the recording site (oddly enough)
+                #   Columns headed with calendar years have items which are each a four-part array:
+                #       [Population record (during month of WeBS year where highest numbers were recorded),
+                #        Count completeness (?): 1 for "complete" count, 2 for "incomplete",
+                #        Month of year where this population record was taken (or "" when population record is 0),
+                #        Count supplementariness: 0 for Core counts, 1 for supplementary counts,
+                #        The name of the supplementary count scheme,
+                #        The name of the group from which the supplementary count came]
+                #       (The array can also be replaced by a nan, where pandas fills in the blanks in a site's row)
                 # TODO: Have it separate out the components of each array representing a data point
                 birdtabledata = birdtabledata.append({"Site": row["siteName"], **row["allYears"]}, ignore_index=True)
             print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Add column for time of access as metadata alongside the population data
             birdtabledata = birdtabledata.assign(RoughTimeAccessed=accesstime)
             # Convert calendar year column names to WeBS years (No overlap in abbreviation for another 30yr yet)
-            birdtabledata = birdtabledata.rename(columns={str(i): "{:02d}/{:02d}".format(i % 100, (i + 1) % 100)
-                                                          for i in range(1947, 2018)})
+            # (But don't do this for Summer Migrants, since the calendar year is used for these)
+            if birdsummig != "y":
+                birdtabledata = birdtabledata.rename(columns={str(i): "{:02d}/{:02d}".format(i % 100, (i + 1) % 100)
+                                                              for i in range(1947, 2018)})
             print(birdtabledata.columns)
             # Write the data to the csv file
             print(" - Writing data to file [{}]...".format(time.strftime("%Y-%m-%d %H:%M:%S")))
