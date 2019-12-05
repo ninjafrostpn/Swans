@@ -14,7 +14,6 @@ import time
 
 # Urls to the data portal and to the mute swan species page
 webs_url = "https://app.bto.org/webs-reporting/"
-muteswan_url = webs_url + "?tab=numbers&speciescode=46"
 iddatarequest = webs_url + "NumbersUniqueSpecies?reported_year=2017&selected_species="
 
 # The names of the requests for rows of data
@@ -258,7 +257,6 @@ try:
                 #       (The array can also be replaced by a nan, where pandas fills in the blanks in a site's row)
                 # TODO: Have it separate out the components of each array representing a data point
                 birdtabledata = birdtabledata.append({"Site": row["siteName"], **row["allYears"]}, ignore_index=True)
-            print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             # Add column for time of access as metadata alongside the population data
             birdtabledata = birdtabledata.assign(RoughTimeAccessed=accesstime)
             # Convert calendar year column names to WeBS years (No overlap in abbreviation for another 30yr yet)
@@ -266,6 +264,7 @@ try:
             if birdsummig != "y":
                 birdtabledata = birdtabledata.rename(columns={str(i): "{:02d}/{:02d}".format(i % 100, (i + 1) % 100)
                                                               for i in range(1947, 2018)})
+            print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             print(birdtabledata.columns)
             # Write the data to the csv file
             print(" - Writing data to file [{}]...".format(time.strftime("%Y-%m-%d %H:%M:%S")))
