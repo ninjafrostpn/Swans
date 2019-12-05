@@ -232,7 +232,7 @@ try:
             # Initialise interface for easily writing to the csv file
             birdwriter = csv.writer(birdfile)
             # Initialise the DataFrame
-            birdtabledata = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1947, 2018)}})
+            birdtabledata = pd.DataFrame({"Site": [], **{str(i): [] for i in range(1945, 2018)}})
             # Gets the current GMT time in a neat format
             accesstime = time.strftime("%Y-%m-%d %H:%M:%S")
             # Obtain the raw data from servers
@@ -263,7 +263,7 @@ try:
             # (But don't do this for Summer Migrants, since the calendar year is used for these)
             if birdsummig != "y":
                 birdtabledata = birdtabledata.rename(columns={str(i): "{:02d}/{:02d}".format(i % 100, (i + 1) % 100)
-                                                              for i in range(1947, 2018)})
+                                                              for i in range(1945, 2018)})
             print(" -  - DataFrame complete [{}].".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             print(birdtabledata.columns)
             # Write the data to the csv file
