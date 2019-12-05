@@ -1,4 +1,4 @@
-Name,ID,Binomial,IsSummerMigrant,MigrantStatus,Range
+Name,ID,Taxon,IsSummerMigrant,MigrantStatus,Range
 Magpie Goose,1151,Anseranas semipalmata,n,Escape,null
 White-faced Whistling Duck,1197,Dendrocygna viduata,n,Escape,null
 Black-bellied Whistling Duck,51302,Dendrocygna autumnalis,n,Vagrant,null

@@ -160,7 +160,7 @@ try:
         print(" -  - Writing site names to 'birdnames.csv'...")
         # Save these to the file for later use
         birdnameswriter = csv.writer(birdiddatafile)
-        birdnameswriter.writerow(["Name", "ID", "Binomial", "IsSummerMigrant", "MigrantStatus", "Range"])
+        birdnameswriter.writerow(["Name", "ID", "Taxon", "IsSummerMigrant", "MigrantStatus", "Range"])
         for row in birdiddata:
             print(row)
             birdnameswriter.writerow(row)
