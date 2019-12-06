@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 # Which plots to plot and whether to display or save them
-whichplots = ["WWTpop", "top10pop", "xWWTcombinedpop"]
+whichplots = ["xtop10pop", "xWWTpop", "WWTcombinedpop"]
 showfigures = False
 savefigures = True
 
@@ -88,19 +88,20 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     mng.state("zoomed")
     plt.gcf().set_size_inches(mng.winfo_width() / 100, mng.winfo_height() / 100)
     # Plot grid lines
-    plt.hlines(10 ** np.arange(0, 6), 0, 76, "#BBBBBB", "--")
+    plt.hlines(10 ** np.arange(0, 6), 0, 85, "#BBBBBB", "--")
     # Plot each site as a new trace
     for row in birdpop[sitemask]:
-        plt.plot(row, ".-")
+        # The rows are flattened due to issues with masks adding superfluous dimensions etc
+        plt.plot(row.flatten(), ".-")
     # Add a title
     plt.title("{} Populations over the years {}".format(birdname, maskname))
     # The y scale is logarithmic until below 1, at which point it's linear to allow 0s to be plotted
     plt.yscale("symlog", linthreshy=1)
     # Define the bounds of the figure
-    plt.xlim(0, 75)
+    plt.xlim(0, 85)
     plt.ylim(0, 100000)
-    # Labels every 5 years for 75 years on the x axis
-    plt.xticks(range(0, 76, 5), yearlabels[::5])
+    # Labels every 5 years for 83 years on the x axis
+    plt.xticks(range(0, 86, 5), yearlabels[::5])
     # Label the y axis with actual numbers, with space-separated thousands {source 2}
     plt.yticks([0, *(10 ** np.arange(0, 6))],
                ["{:,}".format(i).replace(",", " ") for i in [0, *(10 ** np.arange(0, 6))]])
@@ -118,7 +119,7 @@ def selectsites(fromsites, choosesites):
 
 # Import the data for the three main swanses
 swannames = ["Mute Swan", "Whooper Swan", "Bewick's Swan"]
-swannames, swantables, swanlocs, swanpops = getmultibirddata()
+swannames, swantables, swanlocs, swanpops = getmultibirddata(*swannames)
 
 
 # Import the data for some geeses
@@ -131,7 +132,7 @@ goosenames, goosetables, gooselocs, goosepops = getmultibirddata(*goosenames)
 
 # Import the data for some duckses
 # Pochard and Scaup are also on the red list
-# The Scoters and Long-tailed Ducks are species of seaduck on the red list
+# The Scoters and Long-tailed Ducks are on the red list
 # Tufted ducks are on the green list
 # Shelduck are not exactly ducks... but also not exactly geese
 # Mandarin ducks and Ruddy ducks are introduced
@@ -177,15 +178,15 @@ if "WWTpop" in whichplots:
 if "WWTcombinedpop"in whichplots:
     for sitename in WWTsitenames:
         plotpop("Swan",
-                [swanpops[k][swanlocs[k] == sitename] for k in range(len(swannames))],
+                np.object_([swanpops[k][swanlocs[k] == sitename] for k in range(len(swannames))]),
                 swannames, maskname="at " + sitename)
         showsave("Swan Species at " + sitename)
         plotpop("Goose",
-                [goosepops[k][gooselocs[k] == sitename] for k in range(len(goosenames))],
+                np.object_([goosepops[k][gooselocs[k] == sitename] for k in range(len(goosenames))]),
                 goosenames, maskname="at " + sitename)
         showsave("Goose Species at " + sitename)
         plotpop("Duck",
-                [duckpops[k][ducklocs[k] == sitename] for k in range(len(ducknames))],
+                np.object_([duckpops[k][ducklocs[k] == sitename] for k in range(len(ducknames))]),
                 ducknames, maskname="at " + sitename)
         showsave("Duck Species at " + sitename)
 
