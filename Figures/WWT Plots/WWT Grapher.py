@@ -22,7 +22,7 @@ def showsave(filename):
 
 
 # Labels for the WeBS years
-yearlabels = ["{:02d}/{:02d}".format(i % 100, (i + 1) % 100) for i in range(1945, 2021)]
+yearlabels = ["{:02d}/{:02d}".format(i % 100, (i + 1) % 100) for i in range(1935, 2021)]
 
 # List of the WeBS sites corresponding to the 9 WWT sites {using sources 0, 1}
 WWTsitenames = ["Strangford Lough",       # WWT Castle Espie
