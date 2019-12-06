@@ -12,6 +12,10 @@ import re
 import requests
 import time
 
+# TODO: Investigate infrequent error:
+# requests.exceptions.ConnectionError:
+# ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
 # Urls to the data portal and to the mute swan species page
 webs_url = "https://app.bto.org/webs-reporting/"
 iddatarequest = webs_url + "NumbersUniqueSpecies?reported_year=2017&selected_species="
