@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 # Which plots to plot and whether to display or save them
-whichplots = ["WWTpop", "top10pop"]
+whichplots = ["-WWTpop", "-top10pop", "WWTcombinedpop"]
 showfigures = True
 savefigures = True
 
@@ -65,6 +65,8 @@ def getbirddata(birdname):
 
 
 def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
+    if sitemask is None:
+        sitemask = [True] * len(birdloc)
     # Resize the visible figure to fit the screen, then resize the figure object to match
     # (The second line may not work on all systems. See other answers around {source  3})
     mng = plt.get_current_fig_manager().window
@@ -123,6 +125,16 @@ if "WWTpop" in whichplots:
     showsave("WS at WWT")
     plotpop("Bewick's Swan", BSpop, BSloc, selectsites(BSloc, WWTsitenames), maskname=maskname)
     showsave("BS at WWT")
+
+if "WWTcombinedpop":
+    for sitename in WWTsitenames:
+        plotpop("Swan",
+                np.float32([MSpop[MSloc == sitename][0],
+                            WSpop[WSloc == sitename][0],
+                            BSpop[BSloc == sitename][0]]),
+                np.object_(["Mute Swan", "Whooper Swan", "Bewick's Swan"]),
+                maskname="at " + sitename)
+        showsave("Three Swans at " + sitename)
 
 """
 0 https://www.wwt.org.uk/wetland-centres/
