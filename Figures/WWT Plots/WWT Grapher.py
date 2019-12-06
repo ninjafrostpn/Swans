@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 
 # Which plots to plot and whether to display or save them
-whichplots = ["-WWTpop", "-top10pop", "WWTcombinedpop"]
-showfigures = True
+whichplots = ["WWTpop", "top10pop", "xWWTcombinedpop"]
+showfigures = False
 savefigures = True
 
 
@@ -64,6 +64,21 @@ def getbirddata(birdname):
     return birdtable, birdloc, birdpop
 
 
+def getmultibirddata(*birdnames):
+    birdnames = np.object_(birdnames)
+    birdtables = []
+    birdlocs = []
+    birdpops = []
+    for birdname in birdnames:
+        birdtable, birdloc, birdpop = getbirddata(birdname)
+        birdtables.append(birdtable)
+        birdlocs.append(birdloc)
+        birdpops.append(birdpop)
+    birdlocs = np.object_(birdlocs)
+    birdpops = np.object_(birdpops)
+    return birdnames, birdtables, birdlocs, birdpops
+
+
 def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     if sitemask is None:
         sitemask = [True] * len(birdloc)
@@ -73,7 +88,7 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     mng.state("zoomed")
     plt.gcf().set_size_inches(mng.winfo_width() / 100, mng.winfo_height() / 100)
     # Plot grid lines
-    plt.hlines(10 ** np.arange(0, 5), 0, 76, "#BBBBBB", "--")
+    plt.hlines(10 ** np.arange(0, 6), 0, 76, "#BBBBBB", "--")
     # Plot each site as a new trace
     for row in birdpop[sitemask]:
         plt.plot(row, ".-")
@@ -83,12 +98,12 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     plt.yscale("symlog", linthreshy=1)
     # Define the bounds of the figure
     plt.xlim(0, 75)
-    plt.ylim(0, 10000)
+    plt.ylim(0, 100000)
     # Labels every 5 years for 75 years on the x axis
     plt.xticks(range(0, 76, 5), yearlabels[::5])
     # Label the y axis with actual numbers, with space-separated thousands {source 2}
-    plt.yticks([0, *(10 ** np.arange(0, 5))],
-               ["{:,}".format(i).replace(",", " ") for i in [0, *(10 ** np.arange(0, 5))]])
+    plt.yticks([0, *(10 ** np.arange(0, 6))],
+               ["{:,}".format(i).replace(",", " ") for i in [0, *(10 ** np.arange(0, 6))]])
     # Label the axes
     plt.xlabel("WeBS Sampling Year")
     plt.ylabel("Max {} Population Recorded in Period".format(birdname))
@@ -102,43 +117,82 @@ def selectsites(fromsites, choosesites):
 
 
 # Import the data for the three main swanses
-MStable, MSloc, MSpop = getbirddata("Mute Swan")
-WStable, WSloc, WSpop = getbirddata("Whooper Swan")
-BStable, BSloc, BSpop = getbirddata("Bewick's Swan")
+swannames = ["Mute Swan", "Whooper Swan", "Bewick's Swan"]
+swannames, swantables, swanlocs, swanpops = getmultibirddata()
+
+
+# Import the data for some geeses
+# White-fronted geese are on the red list
+# Canada Geese and Egyptian Geese are introduced
+goosenames = ["Greylag Goose", "Pink-footed Goose", "Brent Goose", "Barnacle Goose", "Taiga-Tundra Bean Goose",
+              "White-fronted Goose",
+              "Canada Goose", "Egyptian Goose"]
+goosenames, goosetables, gooselocs, goosepops = getmultibirddata(*goosenames)
+
+# Import the data for some duckses
+# Pochard and Scaup are also on the red list
+# The Scoters and Long-tailed Ducks are species of seaduck on the red list
+# Tufted ducks are on the green list
+# Shelduck are not exactly ducks... but also not exactly geese
+# Mandarin ducks and Ruddy ducks are introduced
+ducknames = ["Mallard", "Eider (except Shetland)", "Goldeneye", "Wigeon", "Shoveler", "Gadwall", "Smew", "Pintail",
+             "Pochard", "Scaup", "Velvet Scoter", "Common Scoter", "Long-tailed Duck",
+             "Tufted Duck",
+             "Shelduck",
+             "Mandarin Duck", "Ruddy Duck"]
+ducknames, ducktables, ducklocs, duckpops = getmultibirddata(*ducknames)
+
 
 # Plot the top 10 sites' population as they come off the database
 if "top10pop" in whichplots:
-    maskname = "at the 10 sites with highest recent 5-year average population"
-    plotpop("Mute Swan", MSpop, MSloc, range(10), maskname=maskname)
-    showsave("Top 10 MS Sites")
-    plotpop("Whooper Swan", WSpop, WSloc, range(10), maskname=maskname)
-    showsave("Top 10 WS Sites")
-    plotpop("Bewick's Swan", BSpop, BSloc, range(10), maskname=maskname)
-    showsave("Top 10 BS Sites")
+    for k in range(len(swannames)):
+        plotpop(swannames[k], swanpops[k], swanlocs[k],
+                range(10), maskname="at the 10 sites with highest recent 5-year average population")
+        showsave("Top 10 {} Sites".format(swannames[k]))
+    for k in range(len(goosenames)):
+        plotpop(goosenames[k], goosepops[k], gooselocs[k],
+                range(10), maskname="at the 10 sites with highest recent 5-year average population")
+        showsave("Top 10 {} Sites".format(goosenames[k]))
+    for k in range(len(ducknames)):
+        plotpop(ducknames[k], duckpops[k], ducklocs[k],
+                range(10), maskname="at the 10 sites with highest recent 5-year average population")
+        showsave("Top 10 {} Sites".format(ducknames[k]))
 
-# Plot populations for the sites
+# Plot swan populations across all sites with WWT centres
 if "WWTpop" in whichplots:
-    maskname = "at sites with WWT centres"
-    plotpop("Mute Swan", MSpop, MSloc, selectsites(MSloc, WWTsitenames), maskname=maskname)
-    showsave("MS at WWT")
-    plotpop("Whooper Swan", WSpop, WSloc, selectsites(WSloc, WWTsitenames), maskname=maskname)
-    showsave("WS at WWT")
-    plotpop("Bewick's Swan", BSpop, BSloc, selectsites(BSloc, WWTsitenames), maskname=maskname)
-    showsave("BS at WWT")
+    for k in range(len(swannames)):
+        plotpop(swannames[k], swanpops[k], swanlocs[k],
+                selectsites(swanlocs[k], WWTsitenames), maskname="at sites with WWT centres")
+        showsave("WWT site " + swannames[k])
+    for k in range(len(goosenames)):
+        plotpop(goosenames[k], goosepops[k], gooselocs[k],
+                selectsites(gooselocs[k], WWTsitenames), maskname="at sites with WWT centres")
+        showsave("WWT site " + goosenames[k])
+    for k in range(len(ducknames)):
+        plotpop(ducknames[k], duckpops[k], ducklocs[k],
+                selectsites(ducklocs[k], WWTsitenames), maskname="at sites with WWT centres")
+        showsave("WWT site " + ducknames[k])
 
-if "WWTcombinedpop":
+# Plot the population of all swan species at each site with a WWT centre
+if "WWTcombinedpop"in whichplots:
     for sitename in WWTsitenames:
         plotpop("Swan",
-                np.float32([MSpop[MSloc == sitename][0],
-                            WSpop[WSloc == sitename][0],
-                            BSpop[BSloc == sitename][0]]),
-                np.object_(["Mute Swan", "Whooper Swan", "Bewick's Swan"]),
-                maskname="at " + sitename)
-        showsave("Three Swans at " + sitename)
+                [swanpops[k][swanlocs[k] == sitename] for k in range(len(swannames))],
+                swannames, maskname="at " + sitename)
+        showsave("Swan Species at " + sitename)
+        plotpop("Goose",
+                [goosepops[k][gooselocs[k] == sitename] for k in range(len(goosenames))],
+                goosenames, maskname="at " + sitename)
+        showsave("Goose Species at " + sitename)
+        plotpop("Duck",
+                [duckpops[k][ducklocs[k] == sitename] for k in range(len(ducknames))],
+                ducknames, maskname="at " + sitename)
+        showsave("Duck Species at " + sitename)
 
 """
 0 https://www.wwt.org.uk/wetland-centres/
 1 http://app.bto.org/websonline/sites/data/sites-data.jsp
 2 https://stackoverflow.com/a/18891054
 3 https://stackoverflow.com/a/19823837
+4 https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/ducks-geese-and-swans/
 """
