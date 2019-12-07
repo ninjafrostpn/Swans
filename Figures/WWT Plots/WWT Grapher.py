@@ -7,7 +7,7 @@ import numpy as np
 import pandas as pd
 
 # Which plots to plot and whether to display or save them
-whichplots = ["xtop10pop", "xWWTpop", "WWTcombinedpop"]
+whichplots = ["top10pop", "WWTpop", "WWTcombinedpop"]
 showfigures = False
 savefigures = True
 
@@ -112,7 +112,15 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     plt.legend(birdloc[sitemask], fontsize=7)
 
 
+# Find indices in fromsites of sites matching each of those in choosesites, where possible
+# (Indices in order corresponding to choosesites only if all choosesites are in fromsites;
+#  will omit indices of missing sites, messing up order.
+#  This is better than the alternative, which is allowing searchsorted to return the alphabetically nearest named site.
+#  I was warned this might happen, and knew it would come to bite me, yet ignored it anyway.)
 def selectsites(fromsites, choosesites):
+    # Strips out sites that are not in fromsites {reminded how to list comprehend by source 5}
+    choosesites = [site for site in choosesites if site in fromsites]
+    # Find the indices of the remaining sites in fromsites
     sortedmask = np.argsort(fromsites)
     return sortedmask[np.searchsorted(fromsites[sortedmask], choosesites)]
 
@@ -196,4 +204,5 @@ if "WWTcombinedpop"in whichplots:
 2 https://stackoverflow.com/a/18891054
 3 https://stackoverflow.com/a/19823837
 4 https://www.rspb.org.uk/birds-and-wildlife/wildlife-guides/bird-a-z/ducks-geese-and-swans/
+5 https://stackoverflow.com/a/41467237
 """
