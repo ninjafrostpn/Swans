@@ -37,7 +37,7 @@ WWTsitenames = ["Strangford Lough",       # WWT Castle Espie
 
 
 # Gets and processes population data from the csvs in the BirdCSVs folder
-def getbirddata(birdname):
+def getbirddata(birdname, popthreshold=None):
     # Read out the raw data from the csv corresponding to the bird name requested
     birdfilename = "-".join(birdname.split("/"))
     birdfile = open("../../WeBS Data Scraper/BirdCSVs/{}.csv".format(birdfilename))
@@ -61,16 +61,20 @@ def getbirddata(birdname):
                     continue
             birdpop[i, j] = np.nan
     birdpop = np.float32(birdpop)
+    # Strip out all timeseries with an average of less than popthreshold, as per 2019-12-10 email
+    if popthreshold is not None:
+        popthresholdmask = ~(np.nanmean(birdpop, axis=1) < popthreshold)
+        return birdtable.loc[popthresholdmask], birdloc[popthresholdmask], birdpop[popthresholdmask]
     return birdtable, birdloc, birdpop
 
 
-def getmultibirddata(*birdnames):
+def getmultibirddata(*birdnames, popthreshold=None):
     birdnames = np.object_(birdnames)
     birdtables = []
     birdlocs = []
     birdpops = []
     for birdname in birdnames:
-        birdtable, birdloc, birdpop = getbirddata(birdname)
+        birdtable, birdloc, birdpop = getbirddata(birdname, popthreshold)
         birdtables.append(birdtable)
         birdlocs.append(birdloc)
         birdpops.append(birdpop)
@@ -90,6 +94,7 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     # Plot grid lines
     plt.hlines(10 ** np.arange(0, 6), 0, 85, "#BBBBBB", "--")
     # Plot each site as a new trace
+    print(sitemask)
     for row in birdpop[sitemask]:
         # The rows are flattened due to issues with masks adding superfluous dimensions etc
         plt.plot(row.flatten(), ".-")
@@ -117,17 +122,20 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
 #  will omit indices of missing sites, messing up order.
 #  This is better than the alternative, which is allowing searchsorted to return the alphabetically nearest named site.
 #  I was warned this might happen, and knew it would come to bite me, yet ignored it anyway.)
-def selectsites(fromsites, choosesites):
-    # Strips out sites that are not in fromsites {reminded how to list comprehend by source 5}
-    choosesites = [site for site in choosesites if site in fromsites]
-    # Find the indices of the remaining sites in fromsites
-    sortedmask = np.argsort(fromsites)
-    return sortedmask[np.searchsorted(fromsites[sortedmask], choosesites)]
+def selectsites(fromsites, choosesites, inorder=True):
+    # If not required to be in order, just returns a boolean mask
+    if inorder:
+        # Strips out sites that are not in fromsites {reminded how to list comprehend by source 5}
+        choosesites = [site for site in choosesites if site in fromsites]
+        # Find the indices of the remaining sites in fromsites
+        sortedmask = np.argsort(fromsites)
+        return sortedmask[np.searchsorted(fromsites[sortedmask], choosesites)]
+    return np.isin(fromsites, choosesites)
 
 
 # Import the data for the three main swanses
 swannames = ["Mute Swan", "Whooper Swan", "Bewick's Swan"]
-swannames, swantables, swanlocs, swanpops = getmultibirddata(*swannames)
+swannames, swantables, swanlocs, swanpops = getmultibirddata(*swannames, popthreshold=10)
 
 
 # Import the data for some geeses
@@ -136,7 +144,7 @@ swannames, swantables, swanlocs, swanpops = getmultibirddata(*swannames)
 goosenames = ["Greylag Goose", "Pink-footed Goose", "Brent Goose", "Barnacle Goose", "Taiga-Tundra Bean Goose",
               "White-fronted Goose",
               "Canada Goose", "Egyptian Goose"]
-goosenames, goosetables, gooselocs, goosepops = getmultibirddata(*goosenames)
+goosenames, goosetables, gooselocs, goosepops = getmultibirddata(*goosenames, popthreshold=10)
 
 # Import the data for some duckses
 # Pochard and Scaup are also on the red list
@@ -149,22 +157,26 @@ ducknames = ["Mallard", "Eider (except Shetland)", "Goldeneye", "Wigeon", "Shove
              "Tufted Duck",
              "Shelduck",
              "Mandarin Duck", "Ruddy Duck"]
-ducknames, ducktables, ducklocs, duckpops = getmultibirddata(*ducknames)
+ducknames, ducktables, ducklocs, duckpops = getmultibirddata(*ducknames, popthreshold=10)
 
 
 # Plot the top 10 sites' population as they come off the database
+# (Or as near to 10 as are available, if too few location records exist)
 if "top10pop" in whichplots:
     for k in range(len(swannames)):
         plotpop(swannames[k], swanpops[k], swanlocs[k],
-                range(10), maskname="at the 10 sites with highest recent 5-year average population")
+                range(min(10, len(swanlocs[k]))),
+                maskname="at the 10 sites with highest recent 5-year average population")
         showsave("Top 10 {} Sites".format(swannames[k]))
     for k in range(len(goosenames)):
         plotpop(goosenames[k], goosepops[k], gooselocs[k],
-                range(10), maskname="at the 10 sites with highest recent 5-year average population")
+                range(min(10, len(gooselocs[k]))),
+                maskname="at the 10 sites with highest recent 5-year average population")
         showsave("Top 10 {} Sites".format(goosenames[k]))
     for k in range(len(ducknames)):
         plotpop(ducknames[k], duckpops[k], ducklocs[k],
-                range(10), maskname="at the 10 sites with highest recent 5-year average population")
+                range(min(10, len(ducklocs[k]))),
+                maskname="at the 10 sites with highest recent 5-year average population")
         showsave("Top 10 {} Sites".format(ducknames[k]))
 
 # Plot swan populations across all sites with WWT centres
