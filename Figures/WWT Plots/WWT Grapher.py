@@ -2,14 +2,15 @@
 # By: Charles S Turvey
 
 import csv
+from cv2 import COLOR_HSV2RGB, cvtColor
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
 # Which plots to plot and whether to display or save them
 whichplots = ["top10pop", "WWTpop", "WWTcombinedpop"]
-showfigures = False
-savefigures = True
+showfigures = True
+savefigures = False
 
 
 def showsave(filename):
@@ -19,6 +20,15 @@ def showsave(filename):
         plt.show()
     else:
         plt.clf()
+
+
+def colgen(ncols, ms=9.1, mv=8.4):
+    # Deterministically generates a number of (hopefully) distinct colours
+    # Note that the colour space is 0-1 on each axis, not 0-255
+    h = np.linspace(0, 0.9, ncols + 1, dtype="float32")[:-1]
+    s = 0.75 + (0.25 * np.sin(np.arange(0, ncols, dtype="float32") * ms))
+    v = 0.8 + (0.1 * np.sin(np.arange(0, ncols, dtype="float32") * mv))
+    return cvtColor(np.uint8(np.transpose([h, s, v]).reshape(1, -1, 3) * 255), COLOR_HSV2RGB)[0] / 255
 
 
 # Labels for the WeBS years
@@ -86,6 +96,7 @@ def getmultibirddata(*birdnames, popthreshold=None):
 def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     if sitemask is None:
         sitemask = [True] * len(birdloc)
+    cols = colgen(len(birdpop[sitemask]))
     # Resize the visible figure to fit the screen, then resize the figure object to match
     # (The second line may not work on all systems. See other answers around {source  3})
     mng = plt.get_current_fig_manager().window
@@ -95,9 +106,9 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     plt.hlines(10 ** np.arange(0, 6), 0, 85, "#BBBBBB", "--")
     # Plot each site as a new trace
     print(sitemask)
-    for row in birdpop[sitemask]:
+    for col, row in zip(cols, birdpop[sitemask]):
         # The rows are flattened due to issues with masks adding superfluous dimensions etc
-        plt.plot(row.flatten(), ".-")
+        plt.plot(row.flatten(), ".-", c=col)
     # Add a title
     plt.title("{} Populations over the years {}".format(birdname, maskname))
     # The y scale is logarithmic until below 1, at which point it's linear to allow 0s to be plotted
