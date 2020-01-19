@@ -9,8 +9,8 @@ import pandas as pd
 
 # Which plots to plot and whether to display or save them
 whichplots = ["top10pop", "WWTpop", "WWTcombinedpop"]
-showfigures = True
-savefigures = False
+showfigures = False
+savefigures = True
 
 
 def showsave(filename):
@@ -22,10 +22,11 @@ def showsave(filename):
         plt.clf()
 
 
+# TODO: Scrap this and go through and pick colours by hand per bird and per site
 def colgen(ncols, ms=9.1, mv=8.4):
     # Deterministically generates a number of (hopefully) distinct colours
     # Note that the colour space is 0-1 on each axis, not 0-255
-    h = np.linspace(0, 0.9, ncols + 1, dtype="float32")[:-1]
+    h = np.linspace(0, 0.5, ncols + 1, dtype="float32")[:-1]
     s = 0.75 + (0.25 * np.sin(np.arange(0, ncols, dtype="float32") * ms))
     v = 0.8 + (0.1 * np.sin(np.arange(0, ncols, dtype="float32") * mv))
     return cvtColor(np.uint8(np.transpose([h, s, v]).reshape(1, -1, 3) * 255), COLOR_HSV2RGB)[0] / 255
@@ -105,7 +106,6 @@ def plotpop(birdname, birdpop, birdloc, sitemask=None, maskname=""):
     # Plot grid lines
     plt.hlines(10 ** np.arange(0, 6), 0, 85, "#BBBBBB", "--")
     # Plot each site as a new trace
-    print(sitemask)
     for col, row in zip(cols, birdpop[sitemask]):
         # The rows are flattened due to issues with masks adding superfluous dimensions etc
         plt.plot(row.flatten(), ".-", c=col)
